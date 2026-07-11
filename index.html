@@ -38,7 +38,9 @@
             <p style="color: #c5c6c7;">You need to watch a short ad to download the video.</p>
         </div>
         
-        <button id="skipAdBtn" class="skip-btn" disabled>Skip Ad in 3s</button>
+        <div id="container-be62a4ec65714d8eb53ac0ced85baa6d"></div>
+
+        <button id="skipAdBtn" class="skip-btn" disabled>Skip Ad in 5s</button>
     </div>
 </div>
 
@@ -127,11 +129,11 @@
 
             <h4 style="color:#00ff88; margin-top: 15px;">What Can You Record?</h4>
             <p style="font-size:14px; text-align:left; line-height:1.8;">
-                `✅ Any PC / Mobile Game`<br>
-                `✅ YouTube Videos & Streams`<br>
-                `✅ Zoom / Google Meet`<br>
-                `✅ Coding & Education Tutorials`<br>
-                `✅ Live Browser Activity`
+                ✅ Any PC / Mobile Game<br>
+                ✅ YouTube Videos & Streams<br>
+                ✅ Zoom / Google Meet<br>
+                ✅ Coding & Education Tutorials<br>
+                ✅ Live Browser Activity
             </p>
         </div>
     </div>
@@ -170,11 +172,12 @@
     </div>
 </div>
 
+<script src="https://www.highperformanceformat.com/be62a4ec65714d8eb53ac0ced85baa6d/invoke.js"></script>
+
 <script>
 let mediaRecorder, recordedChunks = [], startTime, timerInterval, stream;
 let isPaused = false;
 
-// DOM Elements
 const startBtn = document.getElementById('startBtn'), 
       stopBtn = document.getElementById('stopBtn'), 
       pauseBtn = document.getElementById('pauseBtn'),
@@ -200,55 +203,33 @@ function updateTimer(){
     timer.innerText = `${h}:${m}:${s}`;
 }
 
-// Intercept click on download button to check quality first
 function handleDownloadClick() {
     const quality = document.getElementById('quality').value;
     
-    // Agar user ne 2K quality select ki hui hai, toh pehle ad system dikhao
     if (quality === 'ultra') {
-    adBanner.style.display = 'flex'; // Overlay open
-    let timeLeft = 5; // 👈 3 ko badal kar 5 kar diya (Earning badhane ke liye)
-    skipBtn.disabled = true;
-    skipBtn.innerText = `Skip Ad in ${timeLeft}s`;
+        adBanner.style.display = 'flex'; 
+        let timeLeft = 5; 
+        skipBtn.disabled = true;
+        skipBtn.innerText = `Skip Ad in ${timeLeft}s`;
 
-    const adTimer = setInterval(() => {
-        timeLeft--;
-        if (timeLeft > 0) {
-            skipBtn.innerText = `Skip Ad in ${timeLeft}s`;
-        } else {
-            clearInterval(adTimer);
-            skipBtn.innerText = "Skip Ad ➜";
-            skipBtn.disabled = false; // 5 sec baad active hoga
-        }
-    }, 1000);
-} else {
-    // Agar standard quality hai toh direct bina ad ke download ho jaye
-    triggerActualDownload();
-}
+        const adTimer = setInterval(() => {
+            timeLeft--;
+            if (timeLeft > 0) {
+                skipBtn.innerText = `Skip Ad in ${timeLeft}s`;
+            } else {
+                clearInterval(adTimer);
+                skipBtn.innerText = "Skip Ad ➜";
+                skipBtn.disabled = false; 
+            }
+        }, 1000);
+    } else {
+        triggerActualDownload();
+    }
 }
 
-// Yeh function skip click hone par hi chalega jab ultra quality ho
 if(skipBtn) {
     skipBtn.addEventListener("click", () => {
-        // 1. Adsterra Popunder inject aur execute hoga
-       <script>
-  atOptions = {
-    'key' : 'be62a4ec65714d8eb53ac0ced85baa6d',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-</script>
-
-<!-- Adsterra Ad Code (Proper Place) -->
-<script src="https://www.highperformanceformat.com/be62a4ec65714d8eb53ac0ced85baa6d/invoke.js"></script>
-
-<script>
-// Niche ka code yahan se bilkul sahi chalega
         adBanner.style.display = "none"; 
-        
         triggerActualDownload();
     });
 }
@@ -261,6 +242,148 @@ function triggerActualDownload() {
     a.download = 'UniRec_' + new Date().toISOString().slice(0,19).replace(/:/g,'-') + '.webm';
     a.click();
     status.innerText = 'Downloaded successfully! ✅';
-} </script>
+}
+
+async function startRecording(){
+    try{
+        const mic = document.getElementById('micAudio').checked;
+        const system = document.getElementById('systemAudio').checked;
+        const fps = document.getElementById('fps').value;
+        const quality = document.getElementById('quality').value;
+
+        let videoWidth = 1280, videoHeight = 720;
+        if(quality === 'ultra') { videoWidth = 2560; videoHeight = 1440; }
+        else if(quality === 'high') { videoWidth = 1920; videoHeight = 1080; }
+        else if(quality === 'low') { videoWidth = 854; videoHeight = 480; }
+
+        let constraints = {
+            video: { 
+                frameRate: parseInt(fps),
+                width: { ideal: videoWidth },
+                height: { ideal: videoHeight }
+            },
+            audio: system
+        };
+
+        stream = await navigator.mediaDevices.getDisplayMedia(constraints);
+
+        if(mic){
+            try {
+                const micStream = await navigator.mediaDevices.getUserMedia({
+                    audio: { echoCancellation: true, noiseSuppression: true }
+                });
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const dest = audioContext.createMediaStreamDestination();
+
+                if (stream.getAudioTracks().length > 0) {
+                    audioContext.createMediaStreamSource(stream).connect(dest);
+                }
+                audioContext.createMediaStreamSource(micStream).connect(dest);
+                
+                stream.getAudioTracks().forEach(track => stream.removeTrack(track));
+                dest.stream.getAudioTracks().forEach(track => stream.addTrack(track));
+            } catch(e) {
+                console.log("Microphone audio injection bypassed/failed.");
+            }
+        }
+
+        recordedChunks = [];
+        mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9,opus' });
+
+        mediaRecorder.ondataavailable = e => { if(e.data.size > 0) recordedChunks.push(e.data); };
+        
+        mediaRecorder.onstop = () => {
+            const blob = new Blob(recordedChunks, { type: 'video/webm' });
+            preview.src = URL.createObjectURL(blob);
+            preview.style.display = 'block';
+            
+            const speed = document.getElementById('playbackSpeed').value;
+            preview.playbackRate = parseFloat(speed);
+
+            downloadBtn.style.display = 'inline-block';
+            status.innerText = 'Recording completed successfully! Review video speed or download.';
+        };
+
+        mediaRecorder.start(100);
+        
+        startBtn.disabled = true;
+        stopBtn.disabled = false;
+        pauseBtn.disabled = false;
+        stickyStopBtn.disabled = false;
+        stickyPauseBtn.disabled = false;
+
+        startTime = Date.now();
+        timerInterval = setInterval(updateTimer, 1000);
+        status.innerText = 'Recording in progress...';
+
+        stream.getVideoTracks()[0].onended = () => stopRecording();
+
+    } catch(err){
+        if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            status.innerText = '⚠️ Screen recording is supported on PC/Laptop browsers!';
+            alert('⚠️ Screen Recording is supported on PC/Laptop. Mobile browsers block direct screen sharing.');
+        } else {
+            status.innerText = 'Permission Error: Screen recording was blocked or your device does not support it.';
+        }
+    }
+}
+
+function pauseRecording() {
+    if (mediaRecorder && mediaRecorder.state === 'recording') {
+        mediaRecorder.pause();
+        isPaused = true;
+        clearInterval(timerInterval);
+        pauseBtn.innerText = "▶️ Resume";
+        stickyPauseBtn.innerText = "▶️ Resume";
+        status.innerText = 'Recording Paused.';
+    } else if (mediaRecorder && mediaRecorder.state === 'paused') {
+        mediaRecorder.resume();
+        isPaused = false;
+        startTime = Date.now() - (parseTimerToMs(timer.innerText));
+        timerInterval = setInterval(updateTimer, 1000);
+        pauseBtn.innerText = "⏸️ Pause";
+        stickyPauseBtn.innerText = "⏸️ Pause";
+        status.innerText = 'Recording Resumed...';
+    }
+}
+
+function parseTimerToMs(timerStr) {
+    const parts = timerStr.split(':');
+    return ((parseInt(parts[0]) * 3600) + (parseInt(parts[1]) * 60) + parseInt(parts[2])) * 1000;
+}
+
+function stopRecording(){
+    if(mediaRecorder && mediaRecorder.state !== 'inactive'){
+        mediaRecorder.stop();
+        stream.getTracks().forEach(track => track.stop());
+    }
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+    pauseBtn.disabled = true;
+    stickyStopBtn.disabled = true;
+    stickyPauseBtn.disabled = true;
+    clearInterval(timerInterval);
+}
+
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installBtn').style.display = 'inline-block';
+});
+
+function installApp(){
+    if(deferredPrompt){
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
+    } else {
+        alert('App ready for desktop! Click three dots menu > Install App shortcut.');
+    }
+}
+
+function openModal(id){document.getElementById(id).style.display="block";}
+function closeModal(id){document.getElementById(id).style.display="none";}
+window.onclick = function(e){if(e.target.className === "modal"){e.target.style.display="none";}}
+</script>
 </body>
 </html>
