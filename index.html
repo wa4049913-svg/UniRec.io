@@ -240,164 +240,27 @@ if(skipBtn) {
     'params' : {}
   };
 </script>
+</script>
+
+<!-- Adsterra Ad Code (Proper Place) -->
 <script src="https://www.highperformanceformat.com/be62a4ec65714d8eb53ac0ced85baa6d/invoke.js"></script>
 
-
-        // 2. Banner ko hide karo
+<script>
+// Niche ka code yahan se bilkul sahi chalega
         adBanner.style.display = "none"; 
         
-        // 3. Asli download function ko yahan se execute karenge
         triggerActualDownload();
     });
 }
 
-// Core download function
 function triggerActualDownload() {
     if(recordedChunks.length === 0) return;
     const blob = new Blob(recordedChunks, { type: 'video/webm' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `UniRec_${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.webm`;
+    a.download = 'UniRec_' + new Date().toISOString().slice(0,19).replace(/:/g,'-') + '.webm';
     a.click();
     status.innerText = 'Downloaded successfully! ✅';
-}
-
-// Baki ka purana regular code settings same hain
-async function startRecording(){
-    try{
-        const mic = document.getElementById('micAudio').checked;
-        const system = document.getElementById('systemAudio').checked;
-        const fps = document.getElementById('fps').value;
-        const quality = document.getElementById('quality').value;
-
-        let videoWidth = 1280, videoHeight = 720;
-        if(quality === 'ultra') { videoWidth = 2560; videoHeight = 1440; }
-        else if(quality === 'high') { videoWidth = 1920; videoHeight = 1080; }
-        else if(quality === 'low') { videoWidth = 854; videoHeight = 480; }
-
-        let constraints = {
-            video: { 
-                frameRate: parseInt(fps),
-                width: { ideal: videoWidth },
-                height: { ideal: videoHeight }
-            },
-            audio: system
-        };
-
-        stream = await navigator.mediaDevices.getDisplayMedia(constraints);
-
-        if(mic){
-            try {
-                const micStream = await navigator.mediaDevices.getUserMedia({
-                    audio: { echoCancellation: true, noiseSuppression: true }
-                });
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const dest = audioContext.createMediaStreamDestination();
-
-                if (stream.getAudioTracks().length > 0) {
-                    audioContext.createMediaStreamSource(stream).connect(dest);
-                }
-                audioContext.createMediaStreamSource(micStream).connect(dest);
-                
-                stream.getAudioTracks().forEach(track => stream.removeTrack(track));
-                dest.stream.getAudioTracks().forEach(track => stream.addTrack(track));
-            } catch(e) {
-                console.log("Microphone audio injection bypassed/failed.");
-            }
-        }
-
-        recordedChunks = [];
-        mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9,opus' });
-
-        mediaRecorder.ondataavailable = e => { if(e.data.size > 0) recordedChunks.push(e.data); };
-        
-        mediaRecorder.onstop = () => {
-            const blob = new Blob(recordedChunks, { type: 'video/webm' });
-            preview.src = URL.createObjectURL(blob);
-            preview.style.display = 'block';
-            
-            const speed = document.getElementById('playbackSpeed').value;
-            preview.playbackRate = parseFloat(speed);
-
-            downloadBtn.style.display = 'inline-block';
-            status.innerText = 'Recording completed successfully! Review video speed or download.';
-        };
-
-        mediaRecorder.start(100);
-        
-        startBtn.disabled = true;
-        stopBtn.disabled = false;
-        pauseBtn.disabled = false;
-        stickyStopBtn.disabled = false;
-        stickyPauseBtn.disabled = false;
-
-        startTime = Date.now();
-        timerInterval = setInterval(updateTimer, 1000);
-        status.innerText = 'Recording in progress... (PC Screen / Mobile View Active)';
-
-        stream.getVideoTracks()[0].onended = () => stopRecording();
-
-    } catch(err){
-        status.innerText = 'Permission Error: Screen recording was blocked or your device does not support it.';
-    }
-}
-
-function pauseRecording() {
-    if (mediaRecorder && mediaRecorder.state === 'recording') {
-        mediaRecorder.pause();
-        isPaused = true;
-        clearInterval(timerInterval);
-        pauseBtn.innerText = "▶️ Resume";
-        stickyPauseBtn.innerText = "▶️ Resume";
-        status.innerText = 'Recording Paused.';
-    } else if (mediaRecorder && mediaRecorder.state === 'paused') {
-        mediaRecorder.resume();
-        isPaused = false;
-        startTime = Date.now() - (parseTimerToMs(timer.innerText));
-        timerInterval = setInterval(updateTimer, 1000);
-        pauseBtn.innerText = "⏸️ Pause";
-        stickyPauseBtn.innerText = "⏸️ Pause";
-        status.innerText = 'Recording Resumed...';
-    }
-}
-
-function parseTimerToMs(timerStr) {
-    const parts = timerStr.split(':');
-    return ((parseInt(parts[0]) * 3600) + (parseInt(parts[1]) * 60) + parseInt(parts[2])) * 1000;
-}
-
-function stopRecording(){
-    if(mediaRecorder && mediaRecorder.state !== 'inactive'){
-        mediaRecorder.stop();
-        stream.getTracks().forEach(track => track.stop());
-    }
-    startBtn.disabled = false;
-    stopBtn.disabled = true;
-    pauseBtn.disabled = true;
-    stickyStopBtn.disabled = true;
-    stickyPauseBtn.disabled = true;
-    clearInterval(timerInterval);
-}
-
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  document.getElementById('installBtn').style.display = 'inline-block';
-});
-
-function installApp(){
-    if(deferredPrompt){
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
-    } else {
-        alert('App ready for desktop! Click three dots menu > Install App shortcut.');
-    }
-}
-
-function openModal(id){document.getElementById(id).style.display="block";}
-function closeModal(id){document.getElementById(id).style.display="none";}
-window.onclick = function(e){if(e.target.className === "modal"){e.target.style.display="none";}}
-</script>
+} </script>
 </body>
 </html>
