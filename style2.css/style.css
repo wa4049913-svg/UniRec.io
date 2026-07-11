@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0b0c10; /* Pure Ultra Dark Black */
+    color: #c5c6c7;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* SLEEK CONTRAST HEADER */
+header {
+    background-color: #1f2833; /* Dark Charcoal */
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #45f3ff; /* Electric Cyan Accent */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    color: #45f3ff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.menu-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #45f3ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    color: #66fcf1;
+    transform: rotate(90deg);
+}
+
+/* DYNAMIC 2K BANNER (DEEP BLACK STRIP WITH WARNING ORANGE) */
+.ad-notification-banner {
+    display: none;
+    background-color: #000000;
+    color: #ffa502;
+    border-bottom: 2px solid #ffa502;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    z-index: 95;
+    animation: slideDown 0.3s ease-out;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1450px;
+    margin: auto;
+}
+
+.main { flex: 3; min-width: 0; }
+.sidebar { flex: 1; }
+
+/* CLEAN SOLID DARK BOXES */
+.box {
+    background-color: #1f2833; /* Dark Charcoal Slate */
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #2f3e46;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.box h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.box p.sub {
+    text-align: center;
+    color: #a8a9ad;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.option {
+    background-color: #151a21; /* Deep Matte Black Box */
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #2f3e46;
+    transition: all 0.2s ease;
+}
+
+.option:hover {
+    border-color: #45f3ff;
+    transform: translateY(-2px);
+}
+
+.option h4 {
+    color: #45f3ff;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.option label {
+    display: block;
+    margin: 14px 0;
+    font-size: 14px;
+    color: #c5c6c7;
+    cursor: pointer;
+}
+.option label:hover { color: #ffffff; }
+
+input[type=checkbox] {
+    accent-color: #45f3ff;
+    transform: scale(1.2);
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+select {
+    background-color: #1f2833;
+    color: #45f3ff;
+    border: 1px solid #2f3e46;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 6px;
+    outline: none;
+    cursor: pointer;
+}
+select:focus {
+    border-color: #45f3ff;
+}
+
+/* --- MODERN NEON GLOW BUTTON SYSTEM --- */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin: 30px 0;
+}
+
+/* Base style for all buttons */
+.btn, .sticky-btn {
+    padding: 14px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* 🔴 START BUTTONS (Electric Cyan Outline & Glow) */
+.btn#startBtn, .sticky-btn.start {
+    background: rgba(69, 243, 255, 0.08);
+    color: #45f3ff;
+    border: 1px solid #45f3ff;
+    box-shadow: 0 0 15px rgba(69, 243, 255, 0.1);
+}
+.btn#startBtn:hover:not(:disabled), .sticky-btn.start:hover:not(:disabled) {
+    background: #45f3ff;
+    color: #0b0c10;
+    box-shadow: 0 0 25px rgba(69, 243, 255, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* ⏸️ PAUSE BUTTONS (Cyber Orange) */
+.btn.pause, .sticky-btn.pause {
+    background: rgba(255, 165, 2, 0.08);
+    color: #ffa502;
+    border: 1px solid #ffa502;
+    box-shadow: 0 0 15px rgba(255, 165, 2, 0.1);
+}
+.btn.pause:hover:not(:disabled), .sticky-btn.pause:hover:not(:disabled) {
+    background: #ffa502;
+    color: #0b0c10;
+    box-shadow: 0 0 25px rgba(255, 165, 2, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* ⏹️ STOP BUTTONS (Crimson Red) */
+.btn.stop, .sticky-btn.stop {
+    background: rgba(255, 71, 87, 0.08);
+    color: #ff4757;
+    border: 1px solid #ff4757;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.1);
+}
+.btn.stop:hover:not(:disabled), .sticky-btn.stop:hover:not(:disabled) {
+    background: #ff4757;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* 📥 DOWNLOAD BUTTON (Emerald Green) */
+.btn.download {
+    background: rgba(46, 213, 115, 0.08);
+    color: #2ed573;
+    border: 1px solid #2ed573;
+    box-shadow: 0 0 15px rgba(46, 213, 115, 0.1);
+}
+.btn.download:hover:not(:disabled) {
+    background: #2ed573;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(46, 213, 115, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* ⬇️ INSTALL BUTTON (Royal Blue) */
+.btn.install {
+    background: rgba(30, 144, 255, 0.08);
+    color: #1e90ff;
+    border: 1px solid #1e90ff;
+}
+.btn.install:hover:not(:disabled) {
+    background: #1e90ff;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(30, 144, 255, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Active Press Effect */
+.btn:active:not(:disabled), .sticky-btn:active:not(:disabled) {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Glassmorphism Disabled State */
+.btn:disabled, .sticky-btn:disabled {
+    background: rgba(255, 255, 255, 0.02) !important;
+    color: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    transform: none !important;
+    opacity: 0.3;
+}
+
+/* SOLID CONTEXT EMBEDDED PREVIEW */
+video {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid #2f3e46;
+    margin: 25px 0;
+    background-color: #000000;
+}
+
+/* CYAN TIMER */
+.timer {
+    font-size: 46px;
+    text-align: center;
+    color: #45f3ff;
+    font-weight: 700;
+    margin: 20px;
+    letter-spacing: 1px;
+}
+
+.status {
+    text-align: center;
+    font-size: 14px;
+    color: #66fcf1;
+    margin: 12px;
+    font-weight: 500;
+}
+
+.ad-box {
+    background-color: #151a21;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px dashed #2f3e46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CLEAN SIDE BAR */
+.side-bar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    right: 0;
+    background-color: #151a21;
+    overflow-x: hidden;
+    transition: 0.3s ease;
+    padding-top: 70px;
+    border-left: 2px solid #45f3ff;
+}
+
+.side-bar a {
+    padding: 16px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #c5c6c7;
+    display: block;
+    cursor: pointer;
+}
+
+.side-bar a:hover {
+    color: #45f3ff;
+    background-color: #1f2833;
+}
+
+.side-bar .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 36px;
+    color: #ff4757;
+}
+
+.side-bar h3 {
+    padding: 15px 32px;
+    color: #ffffff;
+}
+
+/* FOOTER */
+footer {
+    background-color: #151a21;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #2f3e46;
+}
+
+footer a {
+    color: #45f3ff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+}
+footer a:hover { text-decoration: underline; }
+
+/* MODALS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #1f2833;
+    margin: 12% auto;
+    padding: 40px;
+    border: 1px solid #45f3ff;
+    width: 85%;
+    max-width: 650px;
+    border-radius: 12px;
+}
+
+.close {
+    color: #ff4757;
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- PERFECT RESPONSIVE PC & MOBILE FIXED VIEW --- */
+
+/* By default PC/Desktop par top floating control bar gayeeb rahegi */
+.mobile-sticky-bar {
+    display: none !important;
+}
+
+/* 📱 MOBILE VIEW (For Screen Size 950px or smaller) */
+@media (max-width: 950px) {
+    body {
+        background-color: #0b0c10;
+        padding-top: 70px; /* Space for the top bar so content doesn't overlap */
+    }
+
+    /* Floating control bar fixed like a glass app header on mobile */
+    .mobile-sticky-bar {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(21, 26, 33, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid rgba(69, 243, 255, 0.3);
+        padding: 12px 6px;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 9999;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+
+    /* Premium Pill-shaped sleek mobile buttons */
+    .sticky-btn {
+        flex: 1;
+        margin: 0 6px;
+        padding: 10px 0;
+        font-size: 12px;
+        border-radius: 25px; /* Perfect pill style */
+        text-align: center;
+    }
+
+    /* Hide PC headers and double buttons on mobile layout */
+    header, .box .btn-group {
+        display: none !important;
+    }
+
+    /* Compress elements grid for mobile screen bounds */
+    .container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .box {
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+
+    .box h2 {
+        font-size: 22px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .option {
+        padding: 18px;
+    }
+
+    .timer {
+        font-size: 36px;
+        margin: 10px 0;
+    }
+}
