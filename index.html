@@ -29,14 +29,19 @@
 <header>
     <h1>🎥 UNIVERSAL SCREEN RECORDER PRO</h1>
     <button class="menu-btn" onclick="openNav()">⋮</button>
-   
 </header>
 
-<div id="adNotificationBanner" class="ad-notification-banner" style="display: none;">
-    <div class="ad-video-box">
-        <div class="ad-content-area">
-          <p style="color: #c5c6c7;">You need to watch a short ad to download the video.</p>
-
+<!-- AD BANNER WITH FIXED SKIP BUTTON -->
+<div id="adNotificationBanner" class="ad-notification-banner" style="display: none; justify-content: center; align-items: center; background: rgba(0,0,0,0.85); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; flex-direction: column;">
+    <div class="ad-video-box" style="background: #202225; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+        <p style="color: #c5c6c7; font-size: 18px; margin-bottom: 20px;">You need to watch a short ad to download the video.</p>
+        <!-- AD SLOT REPLICATED INSIDE POPUP -->
+        <div style="margin-bottom: 20px;">
+            <p style="color: #72767d; font-size: 12px;">Advertisement</p>
+        </div>
+        <button id="skipAdBtn" class="btn" style="padding: 10px 20px; font-weight: bold; background: #00ff88; color: #000; border: none; border-radius: 5px; cursor: pointer;" disabled>Skip Ad in 5s</button>
+    </div>
+</div>
 
 <div class="container">
     <div class="main">
@@ -91,7 +96,7 @@
             <div class="timer" id="timer">00:00:00</div>
             <div class="status" id="status">Step 1: Click Start and choose what to record - Screen, Window, or Tab</div>
             
-            <video id="preview" controls style="display:none;"></video>
+            <video id="preview" controls style="display:none; max-width: 100%; margin-top: 20px;"></video>
         </div>
 
         <div class="ad-box" style="min-height:90px;margin-top:20px;">
