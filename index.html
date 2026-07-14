@@ -31,15 +31,17 @@
     <button class="menu-btn" onclick="openNav()">⋮</button>
 </header>
 
-<!-- AD BANNER WITH FIXED SKIP BUTTON -->
+<!-- PURE 5-SECOND TIMER POPUP (NO SMART LINK / NO REDIRECT) -->
 <div id="adNotificationBanner" class="ad-notification-banner" style="display: none; justify-content: center; align-items: center; background: rgba(0,0,0,0.85); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; flex-direction: column;">
-    <div class="ad-video-box" style="background: #202225; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
-        <p style="color: #c5c6c7; font-size: 18px; margin-bottom: 20px;">You need to watch a short ad to download the video.</p>
-        <!-- AD SLOT REPLICATED INSIDE POPUP -->
-        <div style="margin-bottom: 20px;">
-            <p style="color: #72767d; font-size: 12px;">Advertisement</p>
+    <div class="ad-video-box" style="background: #202225; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); max-width: 90%; width: 340px;">
+        <p style="color: #c5c6c7; font-size: 16px; margin-bottom: 15px;">Please wait while your high-quality download link is generating...</p>
+        
+        <div style="margin-bottom: 20px; background: #151618; padding: 15px; border-radius: 5px;">
+            <p style="color: #00ff88; font-size: 14px; font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">⚡ Premium 2K Resolution</p>
+            <p style="color: #72767d; font-size: 11px;">Your file is being processed locally on your secure device.</p>
         </div>
-        <button id="skipAdBtn" class="btn" style="padding: 10px 20px; font-weight: bold; background: #00ff88; color: #000; border: none; border-radius: 5px; cursor: pointer;" disabled>Skip Ad in 5s</button>
+        
+        <button id="skipAdBtn" class="btn" style="padding: 10px 20px; font-weight: bold; background: #555; color: #fff; border: none; border-radius: 5px; width: 100%; cursor: not-allowed;" disabled>Generating Download Link in 5s</button>
     </div>
 </div>
 
@@ -59,7 +61,7 @@
                     <h4>🎥 Video Settings</h4>
                     <label>Resolution:
                         <select id="quality">
-                            <option value="ultra">2K - 2560x1440 (Premium Ad View)</option>
+                            <option value="ultra">2K - 2560x1440 (Premium 5s Processing)</option>
                             <option value="high">1080p - Full HD</option>
                             <option value="medium" selected>720p - HD</option>
                             <option value="low">480p - SD</option>
@@ -96,9 +98,10 @@
             <div class="timer" id="timer">00:00:00</div>
             <div class="status" id="status">Step 1: Click Start and choose what to record - Screen, Window, or Tab</div>
             
-            <video id="preview" controls style="display:none; max-width: 100%; margin-top: 20px;"></video>
+            <video id="preview" controls controlsList="nodownload" oncontextmenu="return false;" style="display:none; max-width: 100%; margin-top: 20px;"></video>
         </div>
 
+        <!-- MAIN BOTTOM AD (SAFE & ACTIVE) -->
         <div class="ad-box" style="min-height:90px;margin-top:20px;">
             <script>
               atOptions = {
@@ -113,6 +116,7 @@
         </div>
     </div>
 
+    <!-- SIDEBAR AD (SAFE & ACTIVE) -->
     <div class="sidebar">
         <div class="box">
             <script>
@@ -159,7 +163,7 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('privacyModal')">&times;</span>
         <h2>Privacy Policy</h2>
-        <p>Your privacy matters. All screen recording and audio processing happens 100% locally in your browser. We never upload, store, or access your videos or microphone data. No accounts required.</p>
+        <p>Your privacy matters. All screen recording and audio processing happens 100% locally in your browser. We never upload, store, or access your videos.</p>
     </div>
 </div>
 
@@ -167,7 +171,7 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('termsModal')">&times;</span>
         <h2>Terms of Service</h2>
-        <p>This tool is free for personal and commercial use. You are responsible for the content you record. Do not record copyrighted material without permission.</p>
+        <p>This tool is free for personal and commercial use. You are responsible for the content you record.</p>
     </div>
 </div>
 
@@ -206,18 +210,24 @@ function handleDownloadClick() {
     const quality = document.getElementById('quality').value;
     
     if (quality === 'ultra') {
+        // Sirf website ke andar 5 second ka popup show hoga (No Smart Link)
         adBanner.style.display = 'flex'; 
         let timeLeft = 5; 
         skipBtn.disabled = true;
-        skipBtn.innerText = `Skip Ad in ${timeLeft}s`;
+        skipBtn.style.background = "#555";
+        skipBtn.style.cursor = "not-allowed";
+        skipBtn.innerText = `Generating Download Link in ${timeLeft}s`;
 
         const adTimer = setInterval(() => {
             timeLeft--;
             if (timeLeft > 0) {
-                skipBtn.innerText = `Skip Ad in ${timeLeft}s`;
+                skipBtn.innerText = `Generating Download Link in ${timeLeft}s`;
             } else {
                 clearInterval(adTimer);
-                skipBtn.innerText = "Skip Ad ➜";
+                skipBtn.innerText = "Get File ➜";
+                skipBtn.style.background = "#00ff88";
+                skipBtn.style.color = "#000";
+                skipBtn.style.cursor = "pointer";
                 skipBtn.disabled = false; 
             }
         }, 1000);
@@ -244,6 +254,11 @@ function triggerActualDownload() {
 }
 
 async function startRecording(){
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+        status.innerText = '⚠️ Screen recording is not supported on this device/browser.';
+        return;
+    }
+
     try{
         const mic = document.getElementById('micAudio').checked;
         const system = document.getElementById('systemAudio').checked;
@@ -282,7 +297,7 @@ async function startRecording(){
                 stream.getAudioTracks().forEach(track => stream.removeTrack(track));
                 dest.stream.getAudioTracks().forEach(track => stream.addTrack(track));
             } catch(e) {
-                console.log("Microphone audio injection bypassed/failed.");
+                console.log("Microphone audio bypassed.");
             }
         }
 
@@ -300,7 +315,7 @@ async function startRecording(){
             preview.playbackRate = parseFloat(speed);
 
             downloadBtn.style.display = 'inline-block';
-            status.innerText = 'Recording completed successfully! Review video speed or download.';
+            status.innerText = 'Recording completed successfully!';
         };
 
         mediaRecorder.start(100);
@@ -318,12 +333,8 @@ async function startRecording(){
         stream.getVideoTracks()[0].onended = () => stopRecording();
 
     } catch(err){
-        if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            status.innerText = '⚠️ Screen recording is supported on PC/Laptop browsers!';
-            alert('⚠️ Screen Recording is supported on PC/Laptop. Mobile browsers block direct screen sharing.');
-        } else {
-            status.innerText = 'Permission Error: Screen recording was blocked or your device does not support it.';
-        }
+        status.innerText = 'Error: Recording was stopped.';
+        console.error(err);
     }
 }
 
@@ -334,7 +345,6 @@ function pauseRecording() {
         clearInterval(timerInterval);
         pauseBtn.innerText = "▶️ Resume";
         stickyPauseBtn.innerText = "▶️ Resume";
-        status.innerText = 'Recording Paused.';
     } else if (mediaRecorder && mediaRecorder.state === 'paused') {
         mediaRecorder.resume();
         isPaused = false;
@@ -342,7 +352,6 @@ function pauseRecording() {
         timerInterval = setInterval(updateTimer, 1000);
         pauseBtn.innerText = "⏸️ Pause";
         stickyPauseBtn.innerText = "⏸️ Pause";
-        status.innerText = 'Recording Resumed...';
     }
 }
 
@@ -375,8 +384,6 @@ function installApp(){
     if(deferredPrompt){
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
-    } else {
-        alert('App ready for desktop! Click three dots menu > Install App shortcut.');
     }
 }
 
