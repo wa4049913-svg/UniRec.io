@@ -7,158 +7,288 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    body{background:linear-gradient(135deg, #0f2027, #203a43);color:#ddd;font-family:'Poppins',Arial;margin:0;padding:0;}
-    header{background:rgba(0,0,0,0.5);padding:20px;text-align:center;border-bottom:2px solid #00ff88;}
-    header h1{color:#00ff88;margin:0;font-weight:700;}
     
-    .container{display:flex;gap:20px;max-width:1400px;margin:20px auto;padding:0 20px;}
-    .left-ad, .right-ad{width:300px;flex-shrink:0;}
-    .main-content{flex:1;background:#1a2e35;padding:40px;border-radius:15px;border:2px solid #00ff88;box-shadow:0 8px 30px rgba(0,0,0,0.4);}
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43);
+        color: #ddd;
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
     
-    h1{color:#00ff88;text-align:center;margin-bottom:10px;}
-    h3{color:#00ff88;margin-top:25px;font-weight:600;}
-    p,li{line-height:1.8;font-size:15px;color:#ccc;}
-    a{color:#00ffff;text-decoration:none;}
-    a:hover{text-decoration:underline;}
+    header {
+        background: rgba(0,0,0,0.5);
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #000000;
+    }
+    header h1 {
+        color: #ffffff83;
+        margin: 0;
+        font-weight: 700;
+    }
     
-    /* AD BOX */
-    .ad-box{background:rgba(255,255,255,0.04);padding:10px;border-radius:10px;border:2px dashed #00ff88;min-height:600px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#888;font-weight:600;font-size:14px;text-align:center;transition:0.3s;}
-    .ad-box:hover{border-color:#00ff88;background:rgba(0,255,136,0.05);color:#00ff88;}
-    .ad-bottom{text-align:center;margin:20px auto;max-width:900px;}
-    .ad-note{font-size:12px;color:#ffaa00;text-align:center;margin-top:8px;}
+    /* Isolated Container to avoid style conflicts */
+    .terms-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 1400px;
+        margin: 20px auto;
+        padding: 0 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .ad-sidebar-left, .ad-sidebar-right {
+        width: 300px;
+        min-width: 300px;
+        flex-shrink: 0;
+    }
+    
+    .main-terms-content {
+        flex: 1;
+        background: #1a2e35;
+        padding: 40px;
+        border-radius: 15px;
+        border: 1.7px solid #000000;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        box-sizing: border-box;
+    }
+    
+    h1 {
+        color: rgba(255, 255, 255, 0.623);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    h3 {
+        color: #00ff88;
+        margin-top: 25px;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 5px;
+    }
+    p, li {
+        line-height: 1.8;
+        font-size: 15px;
+        color: #ccc;
+    }
+    a {
+        color: #00ffff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Standard Ad Boxes */
+    .terms-ad-box {
+        background: #1c1e22;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1.7px solid #2f3136;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    .ad-bottom-wrapper {
+        text-align: center;
+        margin: 30px auto 10px auto;
+        max-width: 728px;
+        min-height: 90px;
+        width: 100%;
+    }
+    
+    .ad-note-text {
+        font-size: 11px;
+        color: #72767d;
+        text-align: center;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
     
     /* DISCLAIMER BOX */
-    .ad-disclaimer{background:rgba(255,170,0,0.1);border:1px solid #ffaa00;padding:15px;border-radius:10px;margin-bottom:20px;font-size:13px;color:#ffdd88;}
+    .ad-disclaimer {
+        background: rgba(255,170,0,0.1);
+        border: 1px solid #ffaa00;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        color: #ffdd88;
+    }
 
-    footer{background:rgba(0,0,0,0.6);padding:20px;text-align:center;margin-top:30px;border-top:2px solid #00ff88;}
+    footer {
+        background: rgba(0,0,0,0.6);
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+        border-top: 2px solid #00ff88;
+    }
     
-    @media (max-width:1200px){.left-ad, .right-ad{display:none;}}
+    footer a {
+        margin: 0 10px;
+    }
+    
+    /* Responsive Design for Mobile & Tablets */
+    @media (max-width: 1200px) {
+        .terms-container {
+            flex-direction: column;
+        }
+        .ad-sidebar-left, .ad-sidebar-right {
+            width: 100%;
+            min-width: 100%;
+        }
+        .terms-ad-box {
+            min-height: auto;
+            padding: 20px;
+        }
+    }
 </style>
 </head>
 <body>
 
-<header><h1>🎥 UNIVERSAL SCREEN RECORDER PRO</h1></header>
+<header>
+    <h1>UNIVERSAL SCREEN RECORDER PRO</h1>
+</header>
 
-<div class="container">
-    <!-- LEFT AD -->
-    <div class="left-ad">
-        <div class="ad-box">
-          <script>
-  atOptions = {
-    'key' : '39669d5b2153d57ec9782b10688ce7ff',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
- <br>
-           
+<div class="terms-container">
+    <!-- LEFT AD (ADSTERRA REMOVED / GOOGLE ADSENSE PLACEHOLDER) -->
+    <div class="ad-sidebar-left">
+        <div class="terms-ad-box">
+            <p class="ad-note-text">Advertisement</p>
+            <!-- 
+            Aap apna Google AdSense ad code yahan lagayenge.
+            Adsterra code comment out kar diya gaya hai.
+            -->
+            <!--
+            <script>
+              atOptions = {
+                'key' : '875b3d035716220ffba121a20c313621',
+                'format' : 'iframe',
+                'height' : 600,
+                'width' : 160,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/875b3d035716220ffba121a20c313621/invoke.js"></script>
+            -->
+            <p style="color: #444; font-size: 12px; text-align: center; margin: 0;">Left Sidebar Ad Slot</p>
         </div>
-        <p class="ad-note">*We are not responsible for any ads shown here</p>
     </div>
 
     <!-- MAIN TERMS -->
-    <div class="main-content">
+    <div class="main-terms-content">
         <h1>Terms of Service</h1>
-        <p style="text-align:center;color:#aaa;">Last Updated: April 2026</p>
+        <p style="text-align:center; color:#aaa;">Last Updated: July 2026</p>
 
-        <!-- AD DISCLAIMER -->
         <div class="ad-disclaimer">
-            <b>⚠️ Advertisement Disclaimer:</b> This website displays third-party advertisements. We do not control, monitor, or take responsibility for ad content. Any issues with ads are between you and the ad provider.
+            <strong>IMPORTANT DISCLAIMER:</strong> Universal Screen Recorder Pro is a utility application designed for client-side recording. All screen capturing, rendering, and processing occur locally inside your browser environment. Users are fully responsible for the content captured, stored, or distributed using this utility.
         </div>
-
-        <h3>IMPORTANT DISCLAIMER</h3>
-        <p>Universal Screen Recorder Pro is a tool only. We do not monitor, store, or control what users record. 
-        The user is 100% responsible for the content they record and share. We are not liable for any misuse or any third-party ads.</p>
         
         <h3>1. Acceptance of Terms</h3>
-        <p>By using Universal Screen Recorder Pro, you agree to these Terms of Service.</p>
+        <!-- UPDATED WITH NEW CUSTOM DOMAIN -->
+        <p>By accessing or utilizing Universal Screen Recorder Pro (unirecorder.online), you agree to comply with and be bound by these Terms of Service. If you do not accept these terms, please discontinue your use of the website.</p>
 
-        <h3>2. Prohibited Use</h3>
-        <p>You may not use this tool to record: 
-        <br>1. Copyrighted movies, shows, music without permission
-        <br>2. Private meetings, calls without consent  
-        <br>3. Banking details, passwords, personal data
-        <br>Violation may result in legal action. We reserve the right to block access.</p>
+        <h3>2. Restricted and Prohibited Uses</h3>
+        <p>You agree not to use this utility to capture, record, or stream:
+        <br>• Copyrighted movies, broadcasts, software, or digital media without legal authorization.
+        <br>• Private communications, calls, or webinars without the express consent of all participants.
+        <br>• Unauthorized proprietary, sensitive, or personal identification records.
+        <br>Violations of proprietary intellectual property rights may result in a suspension of website access and appropriate legal remedies.</p>
 
-        <h3>3. Use of Service</h3>
-        <p>This tool is for recording your own screen, gameplay, and meetings. You must have permission to record any content.</p>
+        <h3>3. Acceptable Use of Service</h3>
+        <p>This web-based tool is built strictly for the personal or commercial recording of your own device screen, gameplays, local presentations, and authorized online calls. Users must retain all necessary permissions for any captured source elements.</p>
 
-        <h3>4. No Illegal Use</h3>
-        <p>You agree not to use this service to record copyrighted material, private conversations, or any illegal activity without permission.</p>
+        <h3>4. Legal Adherence</h3>
+        <p>Users agree to use all system tools in strict accordance with local and international copyright acts, privacy legislation, and communication rules.</p>
 
-        <h3>5. Local Processing</h3>
-        <p>All recordings are processed locally in your browser. We do not store or access your videos.</p>
+        <h3>5. Local Browser Processing</h3>
+        <p>All software functions are executed locally via client-side APIs (such as the MediaRecorder API). No media streams, audio inputs, or recording files are processed or hosted on our remote storage servers.</p>
 
-        <h3>6. No Warranty</h3>
-        <p>This service is provided "as is" without any warranties. We do not guarantee it will be error-free or uninterrupted.</p>
+        <h3>6. No Warranties</h3>
+        <p>This utility is provided "as is" and "as available" without any explicit or implicit warranties of any kind. We do not guarantee uninterrupted execution, cross-browser compatibility, or error-free rendering.</p>
 
         <h3>7. Limitation of Liability</h3>
-        <p>We are not responsible for any damage, data loss, legal issues, or ad-related problems arising from your use of this tool or this website.</p>
+        <p>Under no circumstances shall the developer of Universal Screen Recorder Pro be liable for any direct, indirect, incidental, or consequential damages (including data corruption or system errors) arising out of the use of this free tool.</p>
 
-        <h3>8. Copyright Responsibility</h3>
-        <p>You are solely responsible for the content you record and share. Respect copyright laws.</p>
+        <h3>8. Intellectual Property and Copyright</h3>
+        <p>Users maintain full ownership and liability over any media file generated via the client interface. Universal Screen Recorder Pro claims no ownership over user-generated WebM recordings.</p>
 
-        <h3>9. Third Party Advertisements</h3>
-        <p>This website may display ads from third-party networks. We do not endorse any ads and are not responsible for their content, links, or any errors. Use ads at your own risk.</p>
+        <h3>9. Third-Party Advertisements</h3>
+        <p>This site contains third-party ad blocks to maintain server costs and keep the utility free. Ad networks may deploy cookies and tracking methods to optimize advertising. Interaction with any ad networks or externally linked websites is governed by the respective terms of those third-party services.</p>
 
-        <h3>10. Changes to Terms</h3>
-        <p>We may update these terms anytime. Continued use means you accept the new terms.</p>
+        <h3>10. Modification of Terms</h3>
+        <p>We reserve the right to revise or update these Terms of Service at any time. Continued usage of the site after updates indicates full agreement with the revised policies.</p>
 
-        <h3>11. Termination</h3>
-        <p>We reserve the right to block access if terms are violated.</p>
+        <h3>11. Service Access Terminations</h3>
+        <p>We reserve the right to restrict or terminate access to our online recording interface for users found violating terms of compliance or general fair-use policies.</p>
 
         <h3>12. Contact Information</h3>
-        <p>For questions: support wa404913@gmail.com</p>
+        <!-- FIXED EMAIL TO ONLY SHOW WA4049913 GMAIL AND REMOVED SUPPORT@UNIREC.IO -->
+        <p>For inquiries, support, or legal clarification, please contact us at: <strong><a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></strong>.</p>
 
         <br><a href="index.html">← Back to Home</a>
     </div>
 
-    <!-- RIGHT AD -->
-    <div class="right-ad">
-        <div class="ad-box">
-          <script>
-  atOptions = {
-    'key' : '39669d5b2153d57ec9782b10688ce7ff',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
- <br>
-          
+    <!-- RIGHT AD (ADSTERRA REMOVED / GOOGLE ADSENSE PLACEHOLDER) -->
+    <div class="ad-sidebar-right">
+        <div class="terms-ad-box">
+            <p class="ad-note-text">Advertisement</p>
+            <!-- 
+            Aap apna Google AdSense ad code yahan lagayenge.
+            Adsterra code comment out kar diya gaya hai.
+            -->
+            <!--
+            <script>
+              atOptions = {
+                'key' : '875b3d035716220ffba121a20c313621',
+                'format' : 'iframe',
+                'height' : 600,
+                'width' : 160,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/875b3d035716220ffba121a20c313621/invoke.js"></script>
+            -->
+            <p style="color: #444; font-size: 12px; text-align: center; margin: 0;">Right Sidebar Ad Slot</p>
         </div>
-        <p class="ad-note">*We are not responsible for any ads shown here</p>
     </div>
 </div>
 
-<!-- BOTTOM AD -->
-<div class="ad-bottom">
-    <div class="ad-box" style="min-height:90px;">
-       <script>
-  atOptions = {
-    'key' : '39669d5b2153d57ec9782b10688ce7ff',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
- <br>
-       
+<!-- BOTTOM AD 728x90 (ADSTERRA REMOVED / GOOGLE ADSENSE PLACEHOLDER) -->
+<div class="ad-bottom-wrapper">
+    <p class="ad-note-text">Advertisement</p>
+    <div class="terms-ad-box" style="min-height:90px;">
+        <!-- 
+        Aap apna Google AdSense ad code yahan lagayenge.
+        Adsterra code comment out kar diya gaya hai.
+        -->
+        <!--
+        <script>
+          atOptions = {
+            'key' : '39669d5b2153d57ec9782b10688ce7ff',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
+        -->
+        <p style="color: #444; font-size: 12px; text-align: center; margin: 0;">Bottom Banner Ad Slot</p>
     </div>
-    <p class="ad-note">*We are not responsible for any ads shown here</p>
 </div>
 
 <footer>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-    <p>Powered by <b>Waqar Ahmed</b> | © 2026</p>
+    <a href="privacy.html">Privacy Policy</a> | 
+    <a href="terms.html">Terms of Service</a> | 
+    <a href="index.html">Home</a>
+    <p style="margin-top: 15px;">Powered by <b>Waqar Ahmed</b> | © 2026</p>
 </footer>
 
 </body>
