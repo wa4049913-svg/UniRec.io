@@ -3,38 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | Universal Screen Recorder Pro</title>
+<title>Terms of Service | Universal Screen Recorder Pro</title>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    body{background:linear-gradient(135deg, #0f2027, #203a43);color:#ddd;font-family:'Poppins',Arial;margin:0;padding:0;}
     
-    header{background:rgba(0,0,0,0.5);padding:20px;text-align:center;border-bottom:2px solid #00ff88;}
-    header h1{color:#00ff88;margin:0;font-weight:700;}
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43);
+        color: #ddddddab;
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background: rgba(26, 25, 25, 0.5);
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #000000;
+    }
+    header h1 {
+        color: #ffffffcc;
+        margin: 0;
+        font-weight: 700;
+    }
 
-    .container{display:flex;gap:20px;max-width:1400px;margin:20px auto;padding:0 20px;}
-    .left-ad, .right-ad{width:300px;flex-shrink:0;}
-    .main-content{flex:1;background:#1a2e35;padding:40px;border-radius:15px;border:2px solid #00ff88;box-shadow:0 8px 30px rgba(0,0,0,0.4);}
+    /* Isolated Container to prevent style conflicts */
+    .terms-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 1400px;
+        margin: 20px auto;
+        padding: 0 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-    h1{color:#00ff88;text-align:center;margin-bottom:10px;}
-    h3{color:#00ff88;margin-top:25px;font-weight:600;}
-    p{line-height:1.8;font-size:15px;color:#ccc;}
-    a{color:#00ffff;text-decoration:none;}
-    a:hover{text-decoration:underline;}
+    .ad-sidebar-left, .ad-sidebar-right {
+        width: 300px;
+        min-width: 300px;
+        flex-shrink: 0;
+    }
 
-    /* AD BOX - AB YAHAN KOI BHI AD LAGAO */
-    .ad-box{background:rgba(255,255,255,0.04);padding:10px;border-radius:10px;border:2px dashed #00ff88;min-height:600px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#888;font-weight:600;font-size:14px;text-align:center;transition:0.3s;}
-    .ad-box:hover{border-color:#00ff88;background:rgba(0,255,136,0.05);color:#00ff88;}
-    .ad-bottom{text-align:center;margin:20px auto;max-width:900px;}
+    .main-terms-content {
+        flex: 1;
+        background: #1a2e35;
+        padding: 40px;
+        border-radius: 15px;
+        border: 2px solid #00ff88;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        box-sizing: border-box;
+    }
 
-    .ad-note{font-size:12px;color:#ffaa00;text-align:center;margin-top:8px;}
+    h1 {
+        color: #ffffffd3;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    h3 {
+        color: #00ff88;
+        margin-top: 25px;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 5px;
+    }
+    p {
+        line-height: 1.8;
+        font-size: 15px;
+        color: #ccc;
+    }
+    a {
+        color: #00ffff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 
-    /* DISCLAIMER BOX */
-    .ad-disclaimer{background:rgba(255,170,0,0.1);border:1px solid #ffaa00;padding:15px;border-radius:10px;margin-bottom:20px;font-size:13px;color:#ffdd88;}
+    /* Standard Ad Boxes */
+    .terms-ad-box {
+        background: #1c1e22;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #2f3136;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    .ad-bottom-wrapper {
+        text-align: center;
+        margin: 30px auto 10px auto;
+        max-width: 728px;
+        min-height: 90px;
+        width: 100%;
+    }
 
-    footer{background:rgba(0,0,0,0.6);padding:20px;text-align:center;margin-top:30px;border-top:2px solid #00ff88;}
+    .ad-note-text {
+        font-size: 11px;
+        color: #72767d;
+        text-align: center;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
 
-    @media (max-width:1200px){.left-ad, .right-ad{display:none;}}
+    footer {
+        background: rgba(0,0,0,0.6);
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+        border-top: 2px solid #00ff88;
+    }
+
+    footer a {
+        margin: 0 10px;
+    }
+
+    /* Responsive Design for Tablets and Mobiles */
+    @media (max-width: 1200px) {
+        .terms-container {
+            flex-direction: column;
+        }
+        .ad-sidebar-left, .ad-sidebar-right {
+            width: 100%;
+            min-width: 100%;
+        }
+        .terms-ad-box {
+            min-height: auto;
+            padding: 20px;
+        }
+    }
 </style>
 </head>
 <body>
@@ -43,142 +145,106 @@
     <h1>🎥 UNIVERSAL SCREEN RECORDER PRO</h1>
 </header>
 
-<div class="container">
-    <!-- LEFT AD 300x600 -->
-    <div class="left-ad">
-        <div class="ad-box">
-         <script>
-  atOptions = {
-    'key' : '39669d5b2153d57ec9782b10688ce7ff',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
-  <br>
-            
+<div class="terms-container">
+    <!-- LEFT AD -->
+    <div class="ad-sidebar-left">
+        <div class="terms-ad-box">
+            <p class="ad-note-text">Advertisement</p>
+            <!-- APNA LEFT AD CODE YAHAN PASTE KAREIN -->
+            <script>
+              atOptions = {
+                'key' : '875b3d035716220ffba121a20c313621',
+                'format' : 'iframe',
+                'height' : 600,
+                'width' : 160,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/875b3d035716220ffba121a20c313621/invoke.js"></script>
         </div>
-        <p class="ad-note">*We are not responsible for any ads shown here</p>
     </div>
 
-    <!-- MAIN PRIVACY CONTENT -->
-    <div class="main-content">
-        <h1>Privacy Policy</h1>
-        <p style="text-align:center;color:#aaa;">Last Updated: April 2026</p>
+    <!-- MAIN TERMS CONTENT -->
+    <div class="main-terms-content">
+        <h1>Terms of Service</h1>
+        <p style="text-align:center; color:#ffffff67;">Last Updated: July 2026</p>
 
-        <!-- AD DISCLAIMER -->
-        <div class="ad-disclaimer">
-            <b>⚠️ Advertisement Disclaimer:</b> This website may display third-party advertisements. We do not control, endorse, or take responsibility for the content, accuracy, or legality of any ads. Clicking on ads is at your own risk.
-        </div>
+        <h3>1. Acceptance of Terms</h3>
+        <p>By accessing and using Universal Screen Recorder Pro (UniRec.io), you agree to comply with and be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or tools.</p>
 
-        <h3>1. Information We Collect</h3>
-        <p>We do not collect any personal information. All recording happens locally in your browser.</p>
+        <h3>2. Description of Service</h3>
+        <p>We provide a web-based client-side screen recording utility. The tool runs locally in your browser to record your screen, window, browser tab, microphone, or system audio. No software installation is required on your local computer.</p>
 
-        <h3>2. Screen Recording Data</h3>
-        <p>Your screen, video and audio data is never uploaded to our servers. It stays only on your device.</p>
+        <h3>3. Fair & Legal Use</h3>
+        <p>You agree to use this tool strictly for lawful purposes. You must not use our tool to record copyright-protected material, private streams, or any content without the explicit consent of the owner. You are solely responsible for any content captured using our tool.</p>
 
-        <h3>3. Microphone Access</h3>
-        <p>We request microphone permission only to record your voice. We do not store or share it.</p>
+        <h3>4. No Guarantee of Service</h3>
+        <p>While we strive to provide a stable web tool, our services are provided on an "as-is" and "as-available" basis. We do not guarantee that the application will always function without interruptions, lags, or browser compatibility issues.</p>
 
-        <h3>4. Cookies</h3>
-        <p>We may use cookies for advertising to show relevant advertisements.</p>
+        <h3>5. Third-Party Ads & Links</h3>
+        <p>Our website displays advertisements from third-party networks to keep this service free of charge. Clicking on any ad banner or interacting with external links is done at your own discretion. We do not control or endorse the content, policies, or products offered by third-party advertisers.</p>
 
-        <h3>5. Third Party Ads</h3>
-        <p>We may use third-party ad networks to display ads. These networks may use cookies and tracking. We are not responsible for their privacy practices or any issues caused by them.</p>
+        <h3>6. Intellectual Property</h3>
+        <p>All design assets, code, trademarks, and content on this site (excluding user-recorded videos) are the property of Universal Screen Recorder Pro and its creator. You may not copy, replicate, or distribute our source code without prior written permission.</p>
 
-        <h3>6. Data Security</h3>
-        <p>Since we do not store your data, there is no risk of data breach from our side.</p>
+        <h3>7. Limitation of Liability</h3>
+        <p>To the maximum extent permitted by law, Waqar Ahmed and Universal Screen Recorder Pro shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our free service, including data loss or corrupted recording files.</p>
 
-        <h3>7. Children's Privacy</h3>
-        <p>This service is not intended for children under 13 years of age.</p>
+        <h3>8. Termination of Access</h3>
+        <p>We reserve the right to modify, suspend, or terminate access to our web utility or any part of the website at any time without prior notice or liability.</p>
 
-        <h3>8. Third Party Links</h3>
-        <p>Our website may contain links to other sites. We are not responsible for their privacy policies.</p>
-
-        <h3>9. Changes to Policy</h3>
-        <p>We may update this policy. Please check this page regularly for changes.</p>
+        <h3>9. Governing Law</h3>
+        <p>These Terms of Service are governed by and construed in accordance with the laws of your local jurisdiction, without regard to conflict of law principles.</p>
 
         <h3>10. Contact Us</h3>
-        <p>If you have questions, contact us at: support wa4049913@gmail.com</p>
+        <p>For any queries, feedback, or legal notices regarding these Terms, please feel free to reach out to us at: <strong>support@unirec.io</strong> or <strong>wa4049913@gmail.com</strong>.</p>
 
-        <h3>11. Local Processing</h3>
-        <p>All video processing and recording is done in your browser using MediaRecorder API.</p>
-
-        <h3>12. No Account Required</h3>
-        <p>You do not need to create an account to use our screen recorder.</p>
-
-        <h3>13. Browser Permissions</h3>
-        <p>We only ask for screen and microphone permission when you click record.</p>
-
-        <h3>14. Download Files</h3>
-        <p>Downloaded video files are saved directly to your device. We have no access to them.</p>
-
-        <h3>15. Ads and Analytics</h3>
-        <p>We use ads to support this free service. We are not liable for any ad content or errors from ad networks.</p>
-
-        <h3>16. Your Consent</h3>
-        <p>By using this website, you agree to this privacy policy.</p>
-
-        <h3>17. Data Retention</h3>
-        <p>We do not retain any of your recordings or personal data on our servers.</p>
-
-        <h3>18. Legal Compliance</h3>
-        <p>We comply with GDPR and other data protection regulations.</p>
-
-        <h3>19. No Watermark</h3>
-        <p>All recordings are free and do not contain any watermark.</p>
-
-        <h3>20. Limitation of Liability</h3>
-        <p>We are not liable for any damages caused by using this free tool or any third-party advertisements.</p>
-
-        <br><br><a href="index.html">← Back to Home</a>
+        <br><br>
+        <a href="index.html">← Back to Home</a>
     </div>
 
-    <!-- RIGHT AD 300x600 -->
-    <div class="right-ad">
-        <div class="ad-box">
-          <script>
-  atOptions = {
-    'key' : '39669d5b2153d57ec9782b10688ce7ff',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
- <br>
-           
+    <!-- RIGHT AD -->
+    <div class="ad-sidebar-right">
+        <div class="terms-ad-box">
+            <p class="ad-note-text">Advertisement</p>
+            <!-- APNA RIGHT AD CODE YAHAN PASTE KAREIN -->
+            <script>
+              atOptions = {
+                'key' : '875b3d035716220ffba121a20c313621',
+                'format' : 'iframe',
+                'height' : 600,
+                'width' : 160,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/875b3d035716220ffba121a20c313621/invoke.js"></script>
         </div>
-        <p class="ad-note">*We are not responsible for any ads shown here</p>
     </div>
 </div>
 
-<!-- BOTTOM AD 728x90 -->
-<div class="ad-bottom">
-    <div class="ad-box" style="min-height:90px;">
-       <script>
-  atOptions = {
-    'key' : '39669d5b2153d57ec9782b10688ce7ff',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
- <br>
-      
+<!-- BOTTOM BANNER AD -->
+<div class="ad-bottom-wrapper">
+    <p class="ad-note-text">Advertisement</p>
+    <div class="terms-ad-box" style="min-height:90px;">
+        <!-- APNA BOTTOM AD CODE YAHAN PASTE KAREIN -->
+        <script>
+          atOptions = {
+            'key' : '39669d5b2153d57ec9782b10688ce7ff',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
     </div>
-    <p class="ad-note">*We are not responsible for any ads shown here</p>
 </div>
 
 <footer>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-    <p>Powered by <b>Waqar Ahmed</b> | © 2026</p>
+    <a href="privacy.html">Privacy Policy</a> | 
+    <a href="terms.html">Terms of Service</a> | 
+    <a href="index.html">Home</a>
+    <p style="margin-top: 15px;">Powered by <b>Waqar Ahmed</b> | © 2026</p>
 </footer>
 
 </body>
