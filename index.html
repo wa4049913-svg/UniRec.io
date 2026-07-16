@@ -19,13 +19,14 @@
     <!-- UPDATED WITH NEW CUSTOM DOMAIN URL -->
     <meta property="og:url" content="https://unirecorder.online">
     <meta property="og:type" content="website">
-<!-- Google Search Logo (Favicon) -->
-<link rel="icon" href="logo.png" sizes="32x32">
-<link rel="icon" href="logo.png" sizes="192x192">
-<link rel="apple-touch-icon" href="logo.png"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+    
+    <!-- Google Search Logo (Favicon) -->
+    <link rel="icon" href="logo.png" sizes="32x32">
+    <link rel="icon" href="logo.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="logo.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="style2.css/style.css">
-    
 </head>
 <body>
 
@@ -40,7 +41,7 @@
     <button class="menu-btn" onclick="openNav()">⋮</button>
 </header>
 
-<!-- 5-SECOND TIMER POPUP (REMOVED FROM LOGIC, KEEPS ONLY THE HIDDEN ELEMENT IF NEEDED LATER) -->
+<!-- 5-SECOND TIMER POPUP -->
 <div id="adNotificationBanner" class="ad-notification-banner" style="display: none; justify-content: center; align-items: center; background: rgba(0,0,0,0.85); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; flex-direction: column;">
     <div class="ad-video-box" style="background: #202225; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); max-width: 90%; width: 340px;">
         <p style="color: #c5c6c7; font-size: 16px; margin-bottom: 15px;">Please wait while your high-quality download link is generating...</p>
@@ -110,49 +111,16 @@
             <video id="preview" controls controlsList="nodownload" oncontextmenu="return false;" style="display:none; max-width: 100%; margin-top: 20px;"></video>
         </div>
 
-        <!-- ==================================================== -->
-        <!-- MAIN BOTTOM AD SLOT (FUTURE GOOGLE ADSENSE PLACEHOLDER) -->
-        <!-- ==================================================== -->
+        <!-- MAIN BOTTOM AD SLOT -->
         <div class="ad-box" style="min-height:90px;margin-top:20px; display: flex; justify-content: center; align-items: center; border: 1px dashed #333;">
-            <!-- 
-            Aap baad mein Google AdSense ka code yahan paste kar sakte hain.
-            Abhi ke liye Adsterra ka code comment out kar diya gaya hai.
-            -->
-            <!--
-            <script>
-              atOptions = {
-                'key' : '39669d5b2153d57ec9782b10688ce7ff',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/39669d5b2153d57ec9782b10688ce7ff/invoke.js"></script>
-            -->
             <p style="color: #555; font-size: 12px; margin: 0;">Advertisement Slot (Bottom Banner)</p>
         </div>
     </div>
 
-    <!-- SIDEBAR AD (FUTURE GOOGLE ADSENSE PLACEHOLDER) -->
+    <!-- SIDEBAR AD -->
     <div class="sidebar">
         <div class="box">
-            <!-- ==================================================== -->
-            <!-- SIDEBAR AD SLOT (FUTURE GOOGLE ADSENSE PLACEHOLDER) -->
-            <!-- ==================================================== -->
             <div style="min-height:50px; display: flex; justify-content: center; align-items: center; border: 1px dashed #333; margin-bottom: 15px;">
-                <!--
-                <script>
-                  atOptions = {
-                    'key' : '875b3d035716220ffba121a20c313621',
-                    'format' : 'iframe',
-                    'height' : 50,
-                    'width' : 320,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://www.highperformanceformat.com/875b3d035716220ffba121a20c313621/invoke.js"></script>
-                -->
                 <p style="color: #555; font-size: 11px; margin: 0;">Advertisement Slot (Sidebar)</p>
             </div>
 
@@ -203,11 +171,6 @@
     </div>
 </div>
 
-<!-- ==================================================== -->
-<!-- THIRD AD CODE PLACEHOLDER (COMMENTED OUT) -->
-<!-- ==================================================== -->
-<!-- <script src="https://www.highperformanceformat.com/be62a4ec65714d8eb53ac0ced85baa6d/invoke.js"></script> -->
-
 <script>
 let mediaRecorder, recordedChunks = [], startTime, timerInterval, stream;
 let isPaused = false;
@@ -237,9 +200,7 @@ function updateTimer(){
     timer.innerText = `${h}:${m}:${s}`;
 }
 
-// MODIFIED TO BYPASS THE 5-SECOND POPUP TIMER
 function handleDownloadClick() {
-    // 5-second popup timer bypass ho chuka hai, direct download trigger hoga.
     triggerActualDownload();
 }
 
@@ -398,8 +359,10 @@ function openModal(id){document.getElementById(id).style.display="block";}
 function closeModal(id){document.getElementById(id).style.display="none";}
 window.onclick = function(e){if(e.target.className === "modal"){e.target.style.display="none";}}
 </script>
-    <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246763047.js"></script>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246763047.js"></script>
 <!-- End of HubSpot Embed Code -->
+
 </body>
 </html>
