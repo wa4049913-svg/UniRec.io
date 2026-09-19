@@ -84,5 +84,38 @@
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
+   <url>
+      <loc>https://unirecorder.online/blog-post-6.html</loc>
+      <lastmod>2026-09-19</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
 
+   <url>
+      <loc>https://unirecorder.online/blog-post-7.html</loc>
+      <lastmod>2026-09-19</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/blog-post-8.html</loc>
+      <lastmod>2026-09-19</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/blog-post-9.html</loc>
+      <lastmod>2026-09-19</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/blog-post-10.html</loc>
+      <lastmod>2026-09-19</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
 </urlset>
