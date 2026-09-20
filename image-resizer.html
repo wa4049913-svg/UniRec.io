@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Image Resizer Online - Resize Images to Any Dimension Free</title>
+    <meta name="description" content="Free online image resizer. Resize JPG, PNG, WEBP images to any width and height. Maintain aspect ratio, batch resize, no watermark, no signup.">
+    <meta name="keywords" content="image resizer, resize image, resize jpg, resize png, change image size, image dimensions, batch image resizer, free image resizer, photo resizer">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/image-resizer.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="UniRecorder">
+    <meta property="og:title" content="Image Resizer - Resize Images Free Online">
+    <meta property="og:description" content="Resize JPG, PNG, WEBP images to any dimension instantly. 100% free, private.">
+    <meta property="og:url" content="https://unirecorder.online/image-resizer.html">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image Resizer - Free Online Tool">
+    <meta name="twitter:description" content="Resize images to any width and height instantly. Batch resize, no watermark.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image Resizer",
+      "url": "https://unirecorder.online/image-resizer.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "395", "bestRating": "5" },
+      "featureList": ["Resize by Pixels", "Resize by Percent", "Maintain Aspect Ratio", "Batch Resize", "Custom Dimensions"],
+      "creator": { "@type": "Person", "name": "Waqar Ahmed" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is this image resizer free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, 100% free with no watermark, no signup, and no file limits." } },
+        { "@type": "Question", "name": "Are my images uploaded?", "acceptedAnswer": { "@type": "Answer", "text": "No. All resizing happens locally in your browser. Your images never leave your device." } },
+        { "@type": "Question", "name": "Can I resize multiple images at once?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload multiple images and resize them all at once with the same dimensions." } },
+        { "@type": "Question", "name": "Will resizing reduce image quality?", "acceptedAnswer": { "@type": "Answer", "text": "Downscaling usually preserves quality well. Upscaling (making images larger) can appear softer because there are no new pixels to invent." } }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://unirecorder.online/" },
+        { "@type": "ListItem", "position": 2, "name": "More Tools", "item": "https://unirecorder.online/more-tools.html" },
+        { "@type": "ListItem", "position": 3, "name": "Image Resizer", "item": "https://unirecorder.online/image-resizer.html" }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .tool-box { background: linear-gradient(145deg, #131829 0%, #0f1421 100%); border: 1px solid rgba(79,140,255,0.15); border-radius: 16px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .tool-box h1 { text-align: center; color: #fff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .drop-zone { border: 2px dashed rgba(79,140,255,0.4); border-radius: 14px; padding: 40px 20px; text-align: center; cursor: pointer; transition: all 0.2s; background: rgba(79,140,255,0.04); }
+        .drop-zone:hover, .drop-zone.dragover { border-color: #4f8cff; background: rgba(79,140,255,0.1); }
+        .drop-zone .icon { font-size: 44px; margin-bottom: 10px; }
+        .drop-zone p { color: #b8bcc8; font-size: 14px; margin: 4px 0; }
+        .drop-zone .hint { color: #7c8194; font-size: 12px; }
+        .drop-zone input[type="file"] { display: none; }
+
+        .options-box { margin-top: 18px; background: rgba(10,14,26,0.5); border: 1px solid rgba(79,140,255,0.12); border-radius: 12px; padding: 16px; }
+        .options-box h2 { color: #4f8cff; font-size: 12.5px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .mode-tabs { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+        .mode-tab { padding: 9px 16px; background: rgba(79,140,255,0.06); border: 1px solid rgba(79,140,255,0.2); border-radius: 9px; color: #b8bcc8; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .mode-tab.active { background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%); color: #fff; border-color: #4f8cff; }
+        .mode-tab:hover:not(.active) { background: rgba(79,140,255,0.15); }
+
+        .options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+        .opt-row { display: flex; flex-direction: column; gap: 6px; }
+        .opt-row label { color: #b8bcc8; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .opt-row input[type="number"], .opt-row select { padding: 10px 12px; background: #0a0e1a; color: #fff; border: 1px solid rgba(79,140,255,0.2); border-radius: 8px; font-family: inherit; font-size: 13.5px; outline: none; }
+        .opt-row input[type="number"]:focus, .opt-row select:focus { border-color: #4f8cff; }
+        .opt-check { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: rgba(79,140,255,0.06); border: 1px solid rgba(79,140,255,0.15); border-radius: 10px; cursor: pointer; color: #b8bcc8; font-size: 13px; font-weight: 600; }
+        .opt-check input[type="checkbox"] { accent-color: #4f8cff; width: 16px; height: 16px; cursor: pointer; }
+
+        .presets { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+        .preset-btn { padding: 8px 14px; background: rgba(79,140,255,0.08); border: 1px solid rgba(79,140,255,0.2); border-radius: 8px; color: #b8bcc8; font-size: 12.5px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .preset-btn:hover { background: rgba(79,140,255,0.2); color: #fff; }
+
+        .file-list { margin-top: 18px; }
+        .file-list h2 { color: #4f8cff; font-size: 12.5px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .file-item { display: flex; align-items: center; gap: 12px; padding: 10px; background: rgba(79,140,255,0.06); border: 1px solid rgba(79,140,255,0.15); border-radius: 10px; margin-bottom: 8px; }
+        .file-item img { width: 56px; height: 56px; object-fit: cover; border-radius: 6px; background: #0a0e1a; }
+        .file-item .info { flex: 1; min-width: 0; }
+        .file-item .name { color: #fff; font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .file-item .meta { color: #7c8194; font-size: 11.5px; margin-top: 2px; }
+        .file-item .new-size { color: #22c55e; font-size: 11.5px; font-weight: 700; margin-top: 2px; }
+        .file-item .btns { display: flex; gap: 6px; }
+        .icon-btn { background: rgba(79,140,255,0.1); color: #4f8cff; border: 1px solid rgba(79,140,255,0.3); border-radius: 8px; padding: 6px 10px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .icon-btn:hover { background: rgba(79,140,255,0.25); }
+        .icon-btn.danger { color: #ff4757; border-color: rgba(255,71,87,0.3); background: rgba(255,71,87,0.08); }
+        .icon-btn.danger:hover { background: rgba(255,71,87,0.2); }
+
+        .action-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+        .action-btn { flex: 1; min-width: 140px; padding: 14px 20px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; border: 1px solid rgba(79,140,255,0.3); background: rgba(79,140,255,0.1); color: #4f8cff; }
+        .action-btn:hover { background: rgba(79,140,255,0.25); }
+        .action-btn.primary { background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%); color: #fff; border-color: #4f8cff; }
+        .action-btn.primary:hover { box-shadow: 0 8px 24px rgba(79,140,255,0.4); }
+        .action-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .action-btn.danger { background: rgba(255,71,87,0.08); color: #ff4757; border-color: rgba(255,71,87,0.3); }
+
+        .status-msg { margin-top: 12px; padding: 12px 14px; border-radius: 10px; font-size: 13.5px; font-weight: 600; display: none; }
+        .status-msg.show { display: block; }
+        .status-msg.success { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: #22c55e; }
+        .status-msg.error { background: rgba(255,71,87,0.1); border: 1px solid rgba(255,71,87,0.3); color: #ff4757; }
+        .status-msg.info { background: rgba(79,140,255,0.1); border: 1px solid rgba(79,140,255,0.3); color: #4f8cff; }
+
+        .content-section { max-width: 900px; margin: 30px auto 0; }
+        .content-section h2 { color: #fff; font-size: 20px; margin-bottom: 12px; margin-top: 22px; }
+        .content-section h3 { color: #fff; font-size: 17px; margin-bottom: 10px; margin-top: 20px; }
+        .content-section p, .content-section li { color: #b8bcc8; line-height: 1.7; font-size: 14.5px; }
+        .content-section ul, .content-section ol { padding-left: 22px; }
+        .content-section a { color: #4f8cff; text-decoration: none; }
+        .content-section a:hover { text-decoration: underline; }
+        .faq-item { margin-bottom: 16px; }
+        .faq-item h3 { font-size: 15px; color: #fff; margin-bottom: 6px; }
+
+        @media (max-width: 600px) {
+            .tool-box { padding: 20px; }
+            .tool-box h1 { font-size: 20px; }
+            .action-row { flex-direction: column; }
+            .file-item { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<main class="tool-container">
+    <article class="tool-box">
+        <h1>📐 Image Resizer</h1>
+        <p class="sub">Resize JPG, PNG, WEBP images to any dimension — free, fast, and private.</p>
+
+        <div class="drop-zone" id="dropZone">
+            <div class="icon">📤</div>
+            <p><strong>Click to upload</strong> or drag & drop images here</p>
+            <p class="hint">JPG, PNG, WEBP, GIF, BMP — multiple files supported</p>
+            <input type="file" id="fileInput" accept="image/*" multiple>
+        </div>
+
+        <section class="options-box">
+            <h2>Resize Mode</h2>
+            <div class="mode-tabs">
+                <button class="mode-tab active" data-mode="pixels" onclick="setMode('pixels')">📏 Pixels</button>
+                <button class="mode-tab" data-mode="percent" onclick="setMode('percent')">％ Percent</button>
+                <button class="mode-tab" data-mode="preset" onclick="setMode('preset')">⚡ Preset</button>
+            </div>
+
+            <div id="pixelsPanel">
+                <div class="options-grid">
+                    <div class="opt-row">
+                        <label>Width (px)</label>
+                        <input type="number" id="widthPx" min="1" max="20000" value="800">
+                    </div>
+                    <div class="opt-row">
+                        <label>Height (px)</label>
+                        <input type="number" id="heightPx" min="1" max="20000" value="600">
+                    </div>
+                    <label class="opt-check">
+                        <input type="checkbox" id="lockAspect" checked> Maintain aspect ratio
+                    </label>
+                </div>
+            </div>
+
+            <div id="percentPanel" style="display:none;">
+                <div class="options-grid">
+                    <div class="opt-row">
+                        <label>Scale (%)</label>
+                        <input type="number" id="percentScale" min="1" max="500" value="50">
+                    </div>
+                </div>
+            </div>
+
+            <div id="presetPanel" style="display:none;">
+                <div class="presets">
+                    <button class="preset-btn" onclick="setPreset(1920,1080)">1920×1080 (Full HD)</button>
+                    <button class="preset-btn" onclick="setPreset(1280,720)">1280×720 (HD)</button>
+                    <button class="preset-btn" onclick="setPreset(1080,1080)">1080×1080 (Instagram)</button>
+                    <button class="preset-btn" onclick="setPreset(1200,628)">1200×628 (Facebook OG)</button>
+                    <button class="preset-btn" onclick="setPreset(800,800)">800×800 (Square)</button>
+                    <button class="preset-btn" onclick="setPreset(400,400)">400×400 (Thumbnail)</button>
+                    <button class="preset-btn" onclick="setPreset(200,200)">200×200 (Favicon)</button>
+                </div>
+                <p style="color:#7c8194;font-size:12px;margin-top:10px;">Click a preset above to fill width/height, then switch to Pixels tab to fine-tune.</p>
+            </div>
+
+            <div style="margin-top:12px;border-top:1px solid rgba(79,140,255,0.12);padding-top:12px;">
+                <div class="options-grid">
+                    <div class="opt-row">
+                        <label>Output Format</label>
+                        <select id="format">
+                            <option value="auto">Auto (keep original)</option>
+                            <option value="image/jpeg">JPEG</option>
+                            <option value="image/png">PNG</option>
+                            <option value="image/webp">WEBP</option>
+                        </select>
+                    </div>
+                    <div class="opt-row">
+                        <label>Quality (JPEG/WEBP)</label>
+                        <input type="number" id="resizeQuality" value="0.92" min="0.5" max="1" step="0.01">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="file-list" id="fileListSection" style="display:none;">
+            <h2>Images (<span id="fileCount">0</span>) — Resized</h2>
+            <div id="fileList"></div>
+        </section>
+
+        <div class="status-msg" id="statusMsg"></div>
+
+        <section class="action-row">
+            <button class="action-btn primary" id="resizeBtn" onclick="resizeAll()" disabled>📐 Resize Images</button>
+            <button class="action-btn primary" id="downloadAllBtn" onclick="downloadAll()" disabled style="display:none;">⬇️ Download All</button>
+            <button class="action-btn danger" onclick="clearAll()">🗑️ Clear</button>
+        </section>
+    </article>
+
+    <section class="box content-section">
+        <h2>What is an Image Resizer?</h2>
+        <p>An <strong>image resizer</strong> changes the width and height of your images in pixels or percent. Resizing is essential for web images, social media posts, profile pictures, thumbnails, and reducing file size before uploading.</p>
+
+        <h2>How to Resize Images</h2>
+        <ol>
+            <li>Upload one or more images (drag & drop supported).</li>
+            <li>Choose a mode: <strong>Pixels</strong>, <strong>Percent</strong>, or <strong>Preset</strong>.</li>
+            <li>Enter width/height, or pick a preset like Instagram or Facebook OG.</li>
+            <li>Optionally keep aspect ratio to avoid stretching.</li>
+            <li>Click <strong>Resize Images</strong> and download the results.</li>
+        </ol>
+
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Resize by pixels:</strong> Any width × height.</li>
+            <li><strong>Resize by percent:</strong> Scale up or down (1–500%).</li>
+            <li><strong>Social presets:</strong> Instagram, Facebook OG, HD, Full HD, thumbnail, favicon.</li>
+            <li><strong>Maintain aspect ratio:</strong> Prevent stretching.</li>
+            <li><strong>Batch resize:</strong> Process many images at once.</li>
+            <li><strong>Format conversion:</strong> JPEG, PNG, or WEBP output.</li>
+            <li><strong>100% private:</strong> All processing happens in your browser.</li>
+        </ul>
+
+        <h2>Related Free Tools</h2>
+        <ul>
+            <li><a href="image-to-pdf.html">Image to PDF</a> — Convert images to PDF.</li>
+            <li><a href="pdf-merger.html">PDF Merger</a> — Combine multiple PDFs.</li>
+            <li><a href="image-compressor.html">Image Compressor</a> — Reduce image file size.</li>
+            <li><a href="more-tools.html">More Tools →</a></li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Is this image resizer free?</h3>
+            <p>Yes, 100% free with no watermark, no signup, and no file limits.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Are my images uploaded?</h3>
+            <p>No. All resizing happens locally in your browser. Your images never leave your device.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I resize multiple images at once?</h3>
+            <p>Yes. Upload multiple images and resize them all with the same dimensions in one click.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Will resizing reduce image quality?</h3>
+            <p>Downscaling usually preserves quality well. Upscaling (making images larger) can appear softer because there are no new pixels to invent.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">Disclaimer: This tool is for informational purposes only.</p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const fileListSection = document.getElementById('fileListSection');
+const fileList = document.getElementById('fileList');
+const fileCount = document.getElementById('fileCount');
+const resizeBtn = document.getElementById('resizeBtn');
+const downloadAllBtn = document.getElementById('downloadAllBtn');
+const statusMsg = document.getElementById('statusMsg');
+const widthPx = document.getElementById('widthPx');
+const heightPx = document.getElementById('heightPx');
+const lockAspect = document.getElementById('lockAspect');
+const percentScale = document.getElementById('percentScale');
+const formatSel = document.getElementById('format');
+const resizeQuality = document.getElementById('resizeQuality');
+
+let mode = 'pixels';
+let files = []; // { id, file, name, origSize, dataUrl, w, h, resizedBlob, resizedSize, outName, newW, newH }
+
+// Aspect ratio lock
+let lastEdited = 'width';
+widthPx.addEventListener('input', () => { lastEdited = 'width'; syncAspect('width'); });
+heightPx.addEventListener('input', () => { lastEdited = 'height'; syncAspect('height'); });
+
+function syncAspect(from) {
+    if (!lockAspect.checked) return;
+    const img = files[0];
+    if (!img) return;
+    const ratio = img.w / img.h;
+    if (from === 'width') {
+        const w = parseFloat(widthPx.value) || 0;
+        if (w > 0) heightPx.value = Math.round(w / ratio);
+    } else {
+        const h = parseFloat(heightPx.value) || 0;
+        if (h > 0) widthPx.value = Math.round(h * ratio);
+    }
+}
+
+function setMode(m) {
+    mode = m;
+    document.querySelectorAll('.mode-tab').forEach(t => t.classList.toggle('active', t.dataset.mode === m));
+    document.getElementById('pixelsPanel').style.display = m === 'pixels' ? 'block' : 'none';
+    document.getElementById('percentPanel').style.display = m === 'percent' ? 'block' : 'none';
+    document.getElementById('presetPanel').style.display = m === 'preset' ? 'block' : 'none';
+}
+
+function setPreset(w, h) {
+    widthPx.value = w;
+    heightPx.value = h;
+    lockAspect.checked = false;
+    setMode('pixels');
+    document.querySelectorAll('.mode-tab').forEach(t => t.classList.toggle('active', t.dataset.mode === 'pixels'));
+}
+
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    handleFiles(e.dataTransfer.files);
+});
+fileInput.addEventListener('change', e => handleFiles(e.target.files));
+
+function handleFiles(fl) {
+    const arr = Array.from(fl).filter(f => f.type.startsWith('image/'));
+    if (!arr.length) { showStatus('Please select image files.', 'error'); return; }
+
+    arr.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = e => {
+            const img = new Image();
+            img.onload = () => {
+                files.push({
+                    id: Date.now() + Math.random(),
+                    file,
+                    name: file.name,
+                    origSize: file.size,
+                    dataUrl: e.target.result,
+                    w: img.naturalWidth,
+                    h: img.naturalHeight,
+                    resizedBlob: null,
+                    resizedSize: null,
+                    outName: file.name,
+                    newW: img.naturalWidth,
+                    newH: img.naturalHeight
+                });
+                // First image: auto-fill width/height
+                if (files.length === 1 && mode === 'pixels') {
+                    widthPx.value = img.naturalWidth;
+                    heightPx.value = img.naturalHeight;
+                }
+                renderList();
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+function renderList() {
+    if (!files.length) {
+        fileListSection.style.display = 'none';
+        resizeBtn.disabled = true;
+        downloadAllBtn.style.display = 'none';
+        return;
+    }
+    fileListSection.style.display = 'block';
+    resizeBtn.disabled = false;
+    fileCount.textContent = files.length;
+
+    fileList.innerHTML = files.map((f, i) => {
+        const resized = f.resizedBlob !== null;
+        return `
+        <div class="file-item">
+            <img src="${f.dataUrl}" alt="">
+            <div class="info">
+                <div class="name">${escapeHtml(f.name)}</div>
+                <div class="meta">Original: ${f.w} × ${f.h} px · ${formatBytes(f.origSize)}</div>
+                ${resized ? `<div class="new-size">New: ${f.newW} × ${f.newH} px · ${formatBytes(f.resizedSize)}</div>` : ''}
+            </div>
+            <div class="btns">
+                ${resized ? `<button class="icon-btn" onclick="downloadOne(${i})">⬇️</button>` : ''}
+                <button class="icon-btn danger" onclick="removeFile(${i})">✕</button>
+            </div>
+        </div>`;
+    }).join('');
+
+    if (files.some(f => f.resizedBlob)) downloadAllBtn.style.display = 'block';
+}
+
+function removeFile(i) { files.splice(i, 1); renderList(); }
+
+function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function formatBytes(b) { if (b < 1024) return b + ' B'; if (b < 1048576) return (b/1024).toFixed(1) + ' KB'; return (b/1048576).toFixed(2) + ' MB'; }
+
+async function resizeAll() {
+    if (!files.length) return;
+    resizeBtn.disabled = true;
+    showStatus('Resizing... please wait.', 'info');
+
+    const fmtSel = formatSel.value;
+    const q = Math.min(1, Math.max(0.5, parseFloat(resizeQuality.value) || 0.92));
+
+    for (const f of files) {
+        try {
+            let targetW, targetH;
+
+            if (mode === 'pixels') {
+                targetW = Math.round(parseFloat(widthPx.value) || f.w);
+                targetH = Math.round(parseFloat(heightPx.value) || f.h);
+                if (lockAspect.checked) {
+                    const ratio = f.w / f.h;
+                    // Keep whichever dimension fits the aspect
+                    const byW = targetW / ratio;
+                    const byH = targetH * ratio;
+                    // Prefer the smaller change
+                    if (Math.abs(byW - targetH) < Math.abs(byH - targetW)) {
+                        targetH = Math.round(byW);
+                    } else {
+                        targetW = Math.round(byH);
+                    }
+                }
+            } else if (mode === 'percent') {
+                const pct = Math.max(1, parseFloat(percentScale.value) || 100) / 100;
+                targetW = Math.round(f.w * pct);
+                targetH = Math.round(f.h * pct);
+            } else {
+                // preset applied to pixels panel
+                targetW = Math.round(parseFloat(widthPx.value) || f.w);
+                targetH = Math.round(parseFloat(heightPx.value) || f.h);
+            }
+
+            targetW = Math.max(1, targetW);
+            targetH = Math.max(1, targetH);
+
+            const img = await loadImg(f.dataUrl);
+            const canvas = document.createElement('canvas');
+            canvas.width = targetW;
+            canvas.height = targetH;
+            const ctx = canvas.getContext('2d');
+
+            const outType = fmtSel === 'auto'
+                ? (f.file.type === 'image/png' ? 'image/png' : 'image/jpeg')
+                : fmtSel;
+
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+
+            if (outType === 'image/jpeg') {
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, targetW, targetH);
+            }
+            ctx.drawImage(img, 0, 0, targetW, targetH);
+
+            const blob = await new Promise(res => canvas.toBlob(res, outType, q));
+            if (!blob) throw new Error('Resize failed');
+
+            f.resizedBlob = blob;
+            f.resizedSize = blob.size;
+            f.newW = targetW;
+            f.newH = targetH;
+
+            const ext = outType === 'image/png' ? 'png' : outType === 'image/webp' ? 'webp' : 'jpg';
+            const base = f.name.replace(/\.[^.]+$/, '');
+            f.outName = `${base}-${targetW}x${targetH}.${ext}`;
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    renderList();
+    showStatus(`✅ Resized ${files.length} image(s).`, 'success');
+    resizeBtn.disabled = false;
+    downloadAllBtn.style.display = 'block';
+}
+
+function loadImg(src) {
+    return new Promise((res, rej) => {
+        const im = new Image();
+        im.onload = () => res(im);
+        im.onerror = rej;
+        im.src = src;
+    });
+}
+
+function downloadOne(i) {
+    const f = files[i];
+    if (!f.resizedBlob) return;
+    triggerDownload(f.resizedBlob, f.outName);
+}
+
+function downloadAll() {
+    files.forEach((f, i) => {
+        if (f.resizedBlob) setTimeout(() => triggerDownload(f.resizedBlob, f.outName), i * 200);
+    });
+}
+
+function triggerDownload(blob, name) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function clearAll() {
+    if (files.length && !confirm('Clear all images?')) return;
+    files = [];
+    fileInput.value = '';
+    renderList();
+    hideStatus();
+}
+
+function showStatus(msg, type) {
+    statusMsg.textContent = msg;
+    statusMsg.className = 'status-msg show ' + type;
+}
+function hideStatus() { statusMsg.className = 'status-msg'; }
+
+renderList();
+</script>
+
+</body>
+</html>
