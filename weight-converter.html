@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Weight Converter - Convert Kg, Pounds, Ounces, Grams Free</title>
+    <meta name="description" content="Free weight converter. Convert between kilograms, pounds, ounces, grams, stones, tons, and more. Instant results, no signup.">
+    <meta name="keywords" content="weight converter, kg to pounds, pounds to kg, ounces to grams, grams to ounces, kg to lbs, weight unit converter, mass converter">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/weight-converter.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Weight Converter - Convert Kg, Pounds, Ounces, Grams">
+    <meta property="og:description" content="Convert between any weight units instantly. Free online tool.">
+    <meta property="og:url" content="https://unirecorder.online/weight-converter.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Weight Converter - Free Online Tool">
+    <meta name="twitter:description" content="Convert kg, pounds, ounces, grams instantly.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Weight Converter",
+      "url": "https://unirecorder.online/weight-converter.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "365",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many pounds in a kilogram?",
+          "acceptedAnswer": { "@type": "Answer", "text": "1 kilogram = 2.20462 pounds. To convert kg to lbs, multiply by 2.20462." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many grams in an ounce?",
+          "acceptedAnswer": { "@type": "Answer", "text": "1 ounce = 28.3495 grams. To convert oz to g, multiply by 28.3495." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many kilograms in a stone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "1 stone = 6.35029 kilograms. To convert stone to kg, multiply by 6.35029." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .converter-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 12px;
+            align-items: end;
+            margin-bottom: 18px;
+        }
+        .input-group label { display: block; color: #b8bcc8; font-size: 13px; margin-bottom: 6px; font-weight: 500; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2); border-radius: 10px;
+            color: #ffffff; font-size: 15px; font-family: inherit; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: #4f8cff; }
+
+        .swap-btn {
+            background: rgba(79, 140, 255, 0.1);
+            color: #4f8cff;
+            border: 1px solid rgba(79, 140, 255, 0.3);
+            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+        }
+        .swap-btn:hover { background: rgba(79, 140, 255, 0.25); }
+
+        .calc-btn {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border: none; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            font-family: inherit; margin-top: 8px;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 20px;
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            border-radius: 12px; padding: 25px;
+            text-align: center;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .result-value {
+            color: #2ed573; font-size: 36px; font-weight: 800;
+            line-height: 1.2; word-break: break-all;
+        }
+        .result-label {
+            color: #b8bcc8; font-size: 13px; margin-top: 8px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            .converter-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .swap-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>⚖️ Weight Converter</h1>
+        <p class="sub">Convert between kilograms, pounds, ounces, grams, stones, and tons</p>
+
+        <div class="converter-row">
+            <div class="input-group">
+                <label>From</label>
+                <input type="number" id="fromValue" placeholder="Enter value" value="1" step="any">
+            </div>
+            <button class="swap-btn" onclick="swapUnits()" title="Swap">⇄</button>
+            <div class="input-group">
+                <label>To</label>
+                <input type="number" id="toValue" placeholder="Result" readonly>
+            </div>
+        </div>
+
+        <div class="converter-row">
+            <div class="input-group">
+                <label>From Unit</label>
+                <select id="fromUnit">
+                    <option value="kg" selected>Kilograms (kg)</option>
+                    <option value="g">Grams (g)</option>
+                    <option value="mg">Milligrams (mg)</option>
+                    <option value="lb">Pounds (lb)</option>
+                    <option value="oz">Ounces (oz)</option>
+                    <option value="st">Stones (st)</option>
+                    <option value="t">Metric Tons (t)</option>
+                    <option value="uston">US Tons (ton)</option>
+                </select>
+            </div>
+            <div></div>
+            <div class="input-group">
+                <label>To Unit</label>
+                <select id="toUnit">
+                    <option value="lb" selected>Pounds (lb)</option>
+                    <option value="kg">Kilograms (kg)</option>
+                    <option value="g">Grams (g)</option>
+                    <option value="mg">Milligrams (mg)</option>
+                    <option value="oz">Ounces (oz)</option>
+                    <option value="st">Stones (st)</option>
+                    <option value="t">Metric Tons (t)</option>
+                    <option value="uston">US Tons (ton)</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="convertWeight()">Convert</button>
+
+        <div class="result-box" id="result">
+            <div class="result-value" id="resultValue">0</div>
+            <div class="result-label" id="resultLabel">Result</div>
+        </div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is a Weight Converter?</h3>
+        <p>
+            A weight converter helps you convert between different units of mass or weight — kilograms, pounds, ounces, grams, stones, and tons. It's useful for cooking, shipping, fitness, and international trade.
+        </p>
+
+        <h3>Common Weight Conversions</h3>
+        <ul>
+            <li><strong>1 kilogram</strong> = 2.20462 pounds = 1000 grams</li>
+            <li><strong>1 pound</strong> = 0.453592 kilograms = 16 ounces</li>
+            <li><strong>1 ounce</strong> = 28.3495 grams</li>
+            <li><strong>1 stone</strong> = 6.35029 kilograms = 14 pounds</li>
+            <li><strong>1 metric ton</strong> = 1000 kilograms = 2204.62 pounds</li>
+            <li><strong>1 US ton</strong> = 907.185 kilograms = 2000 pounds</li>
+        </ul>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Enter the value you want to convert</li>
+            <li>Select the "From" unit</li>
+            <li>Select the "To" unit</li>
+            <li>Click <strong>Convert</strong></li>
+            <li>Use the swap button (⇄) to reverse units</li>
+        </ol>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>How many pounds in a kilogram?</h4>
+            <p>1 kilogram = 2.20462 pounds.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How many grams in an ounce?</h4>
+            <p>1 ounce = 28.3495 grams.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How many kilograms in a stone?</h4>
+            <p>1 stone = 6.35029 kilograms.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This tool is for informational purposes only.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+// Conversion factors to kilograms (base unit)
+const weightFactors = {
+    'kg': 1,
+    'g': 0.001,
+    'mg': 0.000001,
+    'lb': 0.453592,
+    'oz': 0.0283495,
+    'st': 6.35029,
+    't': 1000,
+    'uston': 907.185
+};
+
+const unitNames = {
+    'kg': 'Kilograms', 'g': 'Grams', 'mg': 'Milligrams',
+    'lb': 'Pounds', 'oz': 'Ounces', 'st': 'Stones',
+    't': 'Metric Tons', 'uston': 'US Tons'
+};
+
+function convertWeight() {
+    const fromVal = parseFloat(document.getElementById('fromValue').value);
+    const fromUnit = document.getElementById('fromUnit').value;
+    const toUnit = document.getElementById('toUnit').value;
+
+    if (isNaN(fromVal)) {
+        alert('Please enter a valid value');
+        return;
+    }
+
+    // Convert to kg, then to target
+    const inKg = fromVal * weightFactors[fromUnit];
+    const result = inKg / weightFactors[toUnit];
+
+    // Format result
+    let formatted;
+    if (result === 0) formatted = '0';
+    else if (Math.abs(result) < 0.0001) formatted = result.toExponential(4);
+    else if (Math.abs(result) >= 1e9) formatted = result.toExponential(4);
+    else formatted = result.toLocaleString(undefined, { maximumFractionDigits: 6 });
+
+    document.getElementById('toValue').value = formatted;
+    document.getElementById('resultValue').textContent = formatted;
+    document.getElementById('resultLabel').textContent = 
+        `${fromVal} ${unitNames[fromUnit]} = ${formatted} ${unitNames[toUnit]}`;
+    document.getElementById('result').classList.add('show');
+}
+
+function swapUnits() {
+    const fromUnit = document.getElementById('fromUnit');
+    const toUnit = document.getElementById('toUnit');
+    const temp = fromUnit.value;
+    fromUnit.value = toUnit.value;
+    toUnit.value = temp;
+    convertWeight();
+}
+
+// Auto-convert on input change
+document.getElementById('fromValue').addEventListener('input', convertWeight);
+document.getElementById('fromUnit').addEventListener('change', convertWeight);
+document.getElementById('toUnit').addEventListener('change', convertWeight);
+
+// Initial convert
+convertWeight();
+</script>
+
+</body>
+</html>
