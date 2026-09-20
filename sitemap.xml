@@ -65,7 +65,12 @@
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
-
+   <url>
+      <loc>https://unirecorder.online/cookie-policy.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+   </url>
    <url>
       <loc>https://unirecorder.online/waqar-games.html</loc>
       <lastmod>2026-09-20</lastmod>
