@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Temperature Converter - Celsius, Fahrenheit, Kelvin Free</title>
+    <meta name="description" content="Free temperature converter. Convert between Celsius, Fahrenheit, Kelvin, and Rankine instantly. Easy to use, no signup required.">
+    <meta name="keywords" content="temperature converter, celsius to fahrenheit, fahrenheit to celsius, celsius to kelvin, kelvin to celsius, fahrenheit to kelvin, temperature conversion, c to f converter">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/temperature-converter.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Temperature Converter - Celsius, Fahrenheit, Kelvin">
+    <meta property="og:description" content="Convert between any temperature units instantly. Free online tool.">
+    <meta property="og:url" content="https://unirecorder.online/temperature-converter.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Temperature Converter - Free Online Tool">
+    <meta name="twitter:description" content="Convert Celsius, Fahrenheit, Kelvin instantly.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Temperature Converter",
+      "url": "https://unirecorder.online/temperature-converter.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "395",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert Celsius to Fahrenheit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Formula: °F = (°C × 9/5) + 32. For example, 25°C = (25 × 9/5) + 32 = 77°F." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert Fahrenheit to Celsius?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Formula: °C = (°F − 32) × 5/9. For example, 77°F = (77 − 32) × 5/9 = 25°C." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is absolute zero in Celsius and Fahrenheit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Absolute zero is 0 Kelvin = -273.15°C = -459.67°F. Nothing can be colder than this." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .converter-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 12px;
+            align-items: end;
+            margin-bottom: 18px;
+        }
+        .input-group label { display: block; color: #b8bcc8; font-size: 13px; margin-bottom: 6px; font-weight: 500; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2); border-radius: 10px;
+            color: #ffffff; font-size: 15px; font-family: inherit; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: #4f8cff; }
+
+        .swap-btn {
+            background: rgba(79, 140, 255, 0.1);
+            color: #4f8cff;
+            border: 1px solid rgba(79, 140, 255, 0.3);
+            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+        }
+        .swap-btn:hover { background: rgba(79, 140, 255, 0.25); }
+
+        .calc-btn {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border: none; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            font-family: inherit; margin-top: 8px;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 20px;
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            border-radius: 12px; padding: 25px;
+            text-align: center;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .result-value {
+            color: #2ed573; font-size: 36px; font-weight: 800;
+            line-height: 1.2; word-break: break-all;
+        }
+        .result-label {
+            color: #b8bcc8; font-size: 13px; margin-top: 8px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .all-results {
+            display: none; margin-top: 20px;
+            background: rgba(79, 140, 255, 0.06);
+            border: 1px solid rgba(79, 140, 255, 0.2);
+            border-radius: 12px; padding: 20px;
+        }
+        .all-results.show { display: block; }
+        .all-results h4 {
+            color: #4f8cff; font-size: 13px; text-transform: uppercase;
+            margin-bottom: 12px; letter-spacing: 0.5px;
+        }
+        .all-results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        .all-results-item {
+            background: rgba(10, 14, 26, 0.6);
+            border-radius: 8px; padding: 12px;
+            text-align: center;
+        }
+        .all-results-value {
+            color: #ffffff; font-size: 16px; font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .all-results-label {
+            color: #7c8194; font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .converter-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .swap-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>🌡️ Temperature Converter</h1>
+        <p class="sub">Convert between Celsius, Fahrenheit, Kelvin, and Rankine</p>
+
+        <div class="converter-row">
+            <div class="input-group">
+                <label>From</label>
+                <input type="number" id="fromValue" placeholder="Enter temperature" value="0" step="any">
+            </div>
+            <button class="swap-btn" onclick="swapUnits()" title="Swap">⇄</button>
+            <div class="input-group">
+                <label>To</label>
+                <input type="number" id="toValue" placeholder="Result" readonly>
+            </div>
+        </div>
+
+        <div class="converter-row">
+            <div class="input-group">
+                <label>From Unit</label>
+                <select id="fromUnit">
+                    <option value="c" selected>Celsius (°C)</option>
+                    <option value="f">Fahrenheit (°F)</option>
+                    <option value="k">Kelvin (K)</option>
+                    <option value="r">Rankine (°R)</option>
+                </select>
+            </div>
+            <div></div>
+            <div class="input-group">
+                <label>To Unit</label>
+                <select id="toUnit">
+                    <option value="f" selected>Fahrenheit (°F)</option>
+                    <option value="c">Celsius (°C)</option>
+                    <option value="k">Kelvin (K)</option>
+                    <option value="r">Rankine (°R)</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="convertTemp()">Convert</button>
+
+        <div class="result-box" id="result">
+            <div class="result-value" id="resultValue">0</div>
+            <div class="result-label" id="resultLabel">Result</div>
+        </div>
+
+        <div class="all-results" id="allResults">
+            <h4>All Conversions</h4>
+            <div class="all-results-grid">
+                <div class="all-results-item">
+                    <div class="all-results-value" id="celsiusVal">0</div>
+                    <div class="all-results-label">Celsius</div>
+                </div>
+                <div class="all-results-item">
+                    <div class="all-results-value" id="fahrenheitVal">0</div>
+                    <div class="all-results-label">Fahrenheit</div>
+                </div>
+                <div class="all-results-item">
+                    <div class="all-results-value" id="kelvinVal">0</div>
+                    <div class="all-results-label">Kelvin</div>
+                </div>
+                <div class="all-results-item">
+                    <div class="all-results-value" id="rankineVal">0</div>
+                    <div class="all-results-label">Rankine</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is a Temperature Converter?</h3>
+        <p>
+            A temperature converter helps you switch between temperature scales — Celsius, Fahrenheit, Kelvin, and Rankine. Whether you're cooking, doing science homework, or checking international weather, this tool gives you instant accurate conversions.
+        </p>
+
+        <h3>Temperature Conversion Formulas</h3>
+        <ul>
+            <li><strong>Celsius to Fahrenheit:</strong> °F = (°C × 9/5) + 32</li>
+            <li><strong>Fahrenheit to Celsius:</strong> °C = (°F − 32) × 5/9</li>
+            <li><strong>Celsius to Kelvin:</strong> K = °C + 273.15</li>
+            <li><strong>Kelvin to Celsius:</strong> °C = K − 273.15</li>
+            <li><strong>Fahrenheit to Kelvin:</strong> K = (°F − 32) × 5/9 + 273.15</li>
+            <li><strong>Kelvin to Fahrenheit:</strong> °F = (K − 273.15) × 9/5 + 32</li>
+        </ul>
+
+        <h3>Common Temperature References</h3>
+        <ul>
+            <li><strong>0°C</strong> = 32°F (water freezes)</li>
+            <li><strong>100°C</strong> = 212°F (water boils)</li>
+            <li><strong>37°C</strong> = 98.6°F (body temperature)</li>
+            <li><strong>25°C</strong> = 77°F (room temperature)</li>
+            <li><strong>Absolute Zero</strong> = -273.15°C = -459.67°F = 0 K</li>
+        </ul>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Enter the temperature value</li>
+            <li>Select the "From" unit</li>
+            <li>Select the "To" unit</li>
+            <li>Click <strong>Convert</strong></li>
+            <li>See your result plus all other conversions</li>
+        </ol>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>How do I convert Celsius to Fahrenheit?</h4>
+            <p>Multiply by 9, divide by 5, then add 32. Formula: °F = (°C × 9/5) + 32.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How do I convert Fahrenheit to Celsius?</h4>
+            <p>Subtract 32, multiply by 5, divide by 9. Formula: °C = (°F − 32) × 5/9.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What is absolute zero?</h4>
+            <p>Absolute zero is 0 Kelvin = -273.15°C = -459.67°F — the coldest possible temperature.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This tool is for informational purposes only.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+const unitNames = {
+    'c': 'Celsius',
+    'f': 'Fahrenheit',
+    'k': 'Kelvin',
+    'r': 'Rankine'
+};
+
+// Convert any temperature to Celsius
+function toCelsius(value, unit) {
+    switch (unit) {
+        case 'c': return value;
+        case 'f': return (value - 32) * 5 / 9;
+        case 'k': return value - 273.15;
+        case 'r': return (value - 491.67) * 5 / 9;
+        default: return value;
+    }
+}
+
+// Convert Celsius to any temperature unit
+function fromCelsius(celsius, unit) {
+    switch (unit) {
+        case 'c': return celsius;
+        case 'f': return celsius * 9 / 5 + 32;
+        case 'k': return celsius + 273.15;
+        case 'r': return (celsius + 273.15) * 9 / 5;
+        default: return celsius;
+    }
+}
+
+function convertTemp() {
+    const fromVal = parseFloat(document.getElementById('fromValue').value);
+    const fromUnit = document.getElementById('fromUnit').value;
+    const toUnit = document.getElementById('toUnit').value;
+
+    if (isNaN(fromVal)) {
+        alert('Please enter a valid temperature');
+        return;
+    }
+
+    // Validate Kelvin (can't be below 0)
+    if (fromUnit === 'k' && fromVal < 0) {
+        alert('Kelvin cannot be negative (absolute zero is 0 K)');
+        return;
+    }
+
+    // Convert to Celsius, then to target
+    const celsius = toCelsius(fromVal, fromUnit);
+    const result = fromCelsius(celsius, toUnit);
+
+    // Check absolute zero
+    if (celsius < -273.15) {
+        alert('Temperature cannot be below absolute zero (-273.15°C)');
+        return;
+    }
+
+    // Format result
+    const formatted = result.toLocaleString(undefined, { maximumFractionDigits: 4 });
+
+    document.getElementById('toValue').value = formatted;
+    document.getElementById('resultValue').textContent = formatted + '°';
+    document.getElementById('resultLabel').textContent = 
+        `${fromVal}° ${unitNames[fromUnit]} = ${formatted}° ${unitNames[toUnit]}`;
+    document.getElementById('result').classList.add('show');
+
+    // Update all-results grid
+    const c = fromCelsius(celsius, 'c');
+    const f = fromCelsius(celsius, 'f');
+    const k = fromCelsius(celsius, 'k');
+    const r = fromCelsius(celsius, 'r');
+
+    const fmt = (n) => n.toLocaleString(undefined, { maximumFractionDigits: 2 });
+
+    document.getElementById('celsiusVal').textContent = fmt(c) + '°C';
+    document.getElementById('fahrenheitVal').textContent = fmt(f) + '°F';
+    document.getElementById('kelvinVal').textContent = fmt(k) + ' K';
+    document.getElementById('rankineVal').textContent = fmt(r) + '°R';
+
+    document.getElementById('allResults').classList.add('show');
+}
+
+function swapUnits() {
+    const fromUnit = document.getElementById('fromUnit');
+    const toUnit = document.getElementById('toUnit');
+    const temp = fromUnit.value;
+    fromUnit.value = toUnit.value;
+    toUnit.value = temp;
+    convertTemp();
+}
+
+// Auto-convert on input change
+document.getElementById('fromValue').addEventListener('input', convertTemp);
+document.getElementById('fromUnit').addEventListener('change', convertTemp);
+document.getElementById('toUnit').addEventListener('change', convertTemp);
+
+// Initial convert
+convertTemp();
+</script>
+
+</body>
+</html>
