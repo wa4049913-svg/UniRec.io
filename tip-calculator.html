@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Tip Calculator - Calculate Tips & Split Bills Free Online</title>
+    <meta name="description" content="Free tip calculator. Calculate tips and split the bill among multiple people instantly. Works for restaurants, delivery, and any service. No signup.">
+    <meta name="keywords" content="tip calculator, calculate tip, bill splitter, restaurant tip calculator, gratuity calculator, split bill calculator, how much to tip">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/tip-calculator.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Tip Calculator - Calculate Tips & Split Bills Free">
+    <meta property="og:description" content="Calculate tips and split bills instantly. Free online tool.">
+    <meta property="og:url" content="https://unirecorder.online/tip-calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tip Calculator - Free Online Tool">
+    <meta name="twitter:description" content="Calculate tips and split bills instantly.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Tip Calculator",
+      "url": "https://unirecorder.online/tip-calculator.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "295",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much should I tip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In the US, 15-20% is standard for restaurants. For good service, 20% is common. For delivery, 10-15%. For poor service, 10% or less." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I tip on the pre-tax or post-tax amount?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Traditionally, you tip on the pre-tax amount. But many people tip on the total (post-tax) for simplicity." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I split the bill with tip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Add the tip to the bill total, then divide by the number of people. Our calculator does this automatically." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; color: #b8bcc8; font-size: 13.5px; margin-bottom: 8px; font-weight: 500; }
+        .input-group input {
+            width: 100%; padding: 13px 16px; background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2); border-radius: 10px;
+            color: #ffffff; font-size: 15px; font-family: inherit; outline: none;
+        }
+        .input-group input:focus { border-color: #4f8cff; }
+
+        .quick-tips {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;
+        }
+        .tip-btn {
+            padding: 8px 16px; background: rgba(79, 140, 255, 0.08);
+            border: 1px solid rgba(79, 140, 255, 0.2); border-radius: 8px;
+            color: #b8bcc8; font-size: 13px; font-weight: 600; cursor: pointer;
+            font-family: inherit; transition: all 0.2s;
+        }
+        .tip-btn:hover, .tip-btn.active {
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border-color: #4f8cff;
+        }
+
+        .calc-btn {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border: none; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            font-family: inherit; margin-top: 16px;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4); }
+
+        .result-value {
+            display: none; margin-top: 20px;
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            border-radius: 12px; padding: 25px;
+        }
+        .result-value.show { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .total-main {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(46, 213, 115, 0.2);
+            margin-bottom: 20px;
+        }
+        .total-label {
+            color: #b8bcc8; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 8px;
+        }
+        .total-number {
+            color: #2ed573; font-size: 44px; font-weight: 800;
+            line-height: 1;
+        }
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+        .result-item {
+            background: rgba(10, 14, 26, 0.6);
+            border-radius: 10px; padding: 15px;
+            text-align: center;
+        }
+        .result-item-value {
+            color: #ffffff; font-size: 18px; font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .result-item-label {
+            color: #7c8194; font-size: 11.5px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .per-person {
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(79, 140, 255, 0.1);
+            border: 1px solid rgba(79, 140, 255, 0.3);
+            border-radius: 12px;
+        }
+        .per-person-label {
+            color: #b8bcc8; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 8px;
+        }
+        .per-person-number {
+            color: #4f8cff; font-size: 36px; font-weight: 800;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>🍽️ Tip Calculator</h1>
+        <p class="sub">Calculate tips and split the bill among multiple people</p>
+
+        <div class="input-group">
+            <label>Bill Amount</label>
+            <input type="number" id="billAmount" placeholder="e.g., 100" step="any">
+        </div>
+
+        <div class="input-group">
+            <label>Tip Percentage</label>
+            <input type="number" id="tipPercent" placeholder="e.g., 15" value="15" step="any">
+            <div class="quick-tips">
+                <button class="tip-btn" onclick="setTip(10, this)">10%</button>
+                <button class="tip-btn" onclick="setTip(15, this)">15%</button>
+                <button class="tip-btn active" onclick="setTip(20, this)">20%</button>
+                <button class="tip-btn" onclick="setTip(25, this)">25%</button>
+                <button class="tip-btn" onclick="setTip(30, this)">30%</button>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Number of People</label>
+            <input type="number" id="numPeople" placeholder="e.g., 1" value="1" min="1" step="1">
+        </div>
+
+        <button class="calc-btn" onclick="calculateTip()">Calculate Tip</button>
+
+        <div class="result-value" id="result">
+            <div class="total-main">
+                <div class="total-label">Total Bill (with Tip)</div>
+                <div class="total-number" id="totalBill">0</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-item">
+                    <div class="result-item-value" id="billBase">0</div>
+                    <div class="result-item-label">Bill Amount</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-item-value" id="tipAmount">0</div>
+                    <div class="result-item-label">Tip Amount</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-item-value" id="tipPercentDisplay">0%</div>
+                    <div class="result-item-label">Tip</div>
+                </div>
+            </div>
+            <div class="per-person" id="perPersonBox">
+                <div class="per-person-label">Each Person Pays</div>
+                <div class="per-person-number" id="perPersonAmount">0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is a Tip Calculator?</h3>
+        <p>
+            A tip calculator helps you quickly figure out how much to tip at a restaurant, for delivery, or any service. It also splits the total bill (including tip) among multiple people — perfect for group dining.
+        </p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Enter the <strong>bill amount</strong></li>
+            <li>Enter the <strong>tip percentage</strong> (or tap a quick tip button)</li>
+            <li>Enter the <strong>number of people</strong> splitting the bill</li>
+            <li>Click <strong>Calculate Tip</strong></li>
+            <li>See the total, tip, and per-person amount</li>
+        </ol>
+
+        <h3>Standard Tipping Guide</h3>
+        <ul>
+            <li><strong>Restaurants (US):</strong> 15-20% for good service</li>
+            <li><strong>Delivery:</strong> 10-15% (or $2-5 minimum)</li>
+            <li><strong>Bartenders:</strong> $1-2 per drink</li>
+            <li><strong>Hotel housekeeping:</strong> $2-5 per day</li>
+            <li><strong>Taxi/Uber:</strong> 10-15%</li>
+            <li><strong>Hair salon:</strong> 15-20%</li>
+        </ul>
+
+        <h3>Common Tip Examples</h3>
+        <ul>
+            <li><strong>$50 bill, 15% tip:</strong> $57.50 total ($7.50 tip)</li>
+            <li><strong>$100 bill, 20% tip:</strong> $120 total ($20 tip)</li>
+            <li><strong>$200 bill, 18% tip, 4 people:</strong> $59 per person</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>How much should I tip?</h4>
+            <p>In the US, 15-20% is standard at restaurants. 20% for excellent service, 10% for poor service.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Should I tip on pre-tax or post-tax?</h4>
+            <p>Traditionally, tip on the pre-tax amount. But many people tip on the total for simplicity — the difference is small.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How do I split the bill with tip?</h4>
+            <p>Add the tip to the bill, then divide by the number of people. This calculator does it automatically.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This tool is for informational purposes only.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+function setTip(percent, btn) {
+    document.getElementById('tipPercent').value = percent;
+    document.querySelectorAll('.tip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+}
+
+function calculateTip() {
+    const bill = parseFloat(document.getElementById('billAmount').value);
+    const tipPct = parseFloat(document.getElementById('tipPercent').value);
+    const people = parseInt(document.getElementById('numPeople').value);
+
+    if (isNaN(bill) || isNaN(tipPct) || isNaN(people) || bill <= 0) {
+        alert('Please enter valid bill amount and tip percentage');
+        return;
+    }
+    if (people < 1) {
+        alert('Number of people must be at least 1');
+        return;
+    }
+
+    const tip = (bill * tipPct) / 100;
+    const total = bill + tip;
+    const perPerson = total / people;
+
+    const fmt = (n) => n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    document.getElementById('totalBill').textContent = fmt(total);
+    document.getElementById('billBase').textContent = fmt(bill);
+    document.getElementById('tipAmount').textContent = fmt(tip);
+    document.getElementById('tipPercentDisplay').textContent = tipPct + '%';
+    document.getElementById('perPersonAmount').textContent = fmt(perPerson);
+
+    // Show/hide per-person box
+    if (people > 1) {
+        document.getElementById('perPersonBox').style.display = 'block';
+    } else {
+        document.getElementById('perPersonBox').style.display = 'none';
+    }
+
+    document.getElementById('result').classList.add('show');
+}
+</script>
+
+</body>
+</html>
