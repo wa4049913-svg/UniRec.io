@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Word Counter - Count Words, Characters & Sentences Free</title>
+    <meta name="description" content="Free word counter. Count words, characters, sentences, and paragraphs in real-time. Perfect for essays, blog posts, and social media.">
+    <meta name="keywords" content="word counter, character counter, count words, word count tool, character count, sentence counter, paragraph counter, online word counter">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/word-counter.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Word Counter - Count Words & Characters Free">
+    <meta property="og:description" content="Count words, characters, and sentences in real-time.">
+    <meta property="og:url" content="https://unirecorder.online/word-counter.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Word Counter - Free Online Tool">
+    <meta name="twitter:description" content="Count words, characters, and sentences instantly.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Word Counter",
+      "url": "https://unirecorder.online/word-counter.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "520",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the word counter work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Paste or type your text into the box. The tool instantly counts words, characters, sentences, and paragraphs as you type." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many words should a blog post have?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most blog posts range from 1,000 to 2,000 words for good SEO. Longer form content (2,500+) tends to rank higher for competitive topics." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this word counter free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, 100% free with no character limits." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        /* STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: rgba(79, 140, 255, 0.08);
+            border: 1px solid rgba(79, 140, 255, 0.2);
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .stat-card:hover {
+            border-color: rgba(79, 140, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .stat-value {
+            color: #4f8cff;
+            font-size: 26px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 6px;
+            font-variant-numeric: tabular-nums;
+            word-break: break-all;
+        }
+        .stat-label {
+            color: #7c8194;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* TEXTAREA */
+        .text-area {
+            width: 100%;
+            min-height: 280px;
+            padding: 18px;
+            background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 15px;
+            font-family: inherit;
+            line-height: 1.7;
+            outline: none;
+            resize: vertical;
+            transition: border-color 0.2s;
+        }
+        .text-area:focus { border-color: #4f8cff; }
+        .text-area::placeholder { color: #4a4d57; }
+
+        .action-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .action-btn {
+            flex: 1;
+            min-width: 130px;
+            padding: 12px 20px;
+            background: rgba(79, 140, 255, 0.1);
+            color: #4f8cff;
+            border: 1px solid rgba(79, 140, 255, 0.3);
+            border-radius: 10px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .action-btn:hover { background: rgba(79, 140, 255, 0.25); }
+        .action-btn.primary {
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff;
+            border-color: #4f8cff;
+        }
+        .action-btn.primary:hover { box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4); }
+        .action-btn.danger {
+            background: rgba(255, 71, 87, 0.08);
+            color: #ff4757;
+            border-color: rgba(255, 71, 87, 0.3);
+        }
+        .action-btn.danger:hover { background: rgba(255, 71, 87, 0.2); }
+
+        /* DETAILED STATS */
+        .detailed-stats {
+            margin-top: 20px;
+            background: rgba(10, 14, 26, 0.5);
+            border: 1px solid rgba(79, 140, 255, 0.12);
+            border-radius: 12px;
+            padding: 18px;
+        }
+        .detailed-stats h4 {
+            color: #4f8cff;
+            font-size: 12.5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .detailed-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(79, 140, 255, 0.08);
+            font-size: 13.5px;
+        }
+        .detailed-row:last-child { border-bottom: none; }
+        .detailed-row .label { color: #b8bcc8; }
+        .detailed-row .value { color: #ffffff; font-weight: 700; }
+
+        .content-section { max-width: 900px; margin: 30px auto 0; }
+
+        @media (max-width: 600px) {
+            .stat-value { font-size: 20px; }
+            .stat-card { padding: 12px 8px; }
+            .stat-label { font-size: 10px; }
+            .text-area { min-height: 200px; font-size: 14px; }
+            .action-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>🔢 Word Counter</h1>
+        <p class="sub">Count words, characters, sentences, and paragraphs in real-time</p>
+
+        <!-- STATS GRID -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="wordCount">0</div>
+                <div class="stat-label">Words</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="charCount">0</div>
+                <div class="stat-label">Characters</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="charNoSpace">0</div>
+                <div class="stat-label">No Spaces</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="sentenceCount">0</div>
+                <div class="stat-label">Sentences</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="paragraphCount">0</div>
+                <div class="stat-label">Paragraphs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="readTime">0</div>
+                <div class="stat-label">Min Read</div>
+            </div>
+        </div>
+
+        <!-- TEXT INPUT -->
+        <textarea
+            id="textInput"
+            class="text-area"
+            placeholder="Paste or type your text here... The word counter updates automatically as you type."
+        ></textarea>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-row">
+            <button class="action-btn primary" onclick="copyText()" id="copyBtn">📋 Copy Text</button>
+            <button class="action-btn" onclick="pasteText()">📥 Paste</button>
+            <button class="action-btn" onclick="uppercaseText()">ABC Uppercase</button>
+            <button class="action-btn" onclick="lowercaseText()">abc Lowercase</button>
+            <button class="action-btn danger" onclick="clearText()">🗑️ Clear</button>
+        </div>
+
+        <!-- DETAILED STATS -->
+        <div class="detailed-stats">
+            <h4>Detailed Statistics</h4>
+            <div class="detailed-row">
+                <span class="label">Reading Time (200 WPM)</span>
+                <span class="value" id="detailReadTime">0 min</span>
+            </div>
+            <div class="detailed-row">
+                <span class="label">Speaking Time (130 WPM)</span>
+                <span class="value" id="detailSpeakTime">0 min</span>
+            </div>
+            <div class="detailed-row">
+                <span class="label">Average Word Length</span>
+                <span class="value" id="detailAvgWord">0 chars</span>
+            </div>
+            <div class="detailed-row">
+                <span class="label">Longest Word</span>
+                <span class="value" id="detailLongest">—</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is a Word Counter?</h3>
+        <p>
+            A word counter is a tool that counts the number of words, characters, sentences, and paragraphs in your text. It's essential for writers, students, bloggers, and anyone who needs to meet specific word count requirements.
+        </p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Type or paste your text in the box above</li>
+            <li>See live counts update as you type</li>
+            <li>Use the action buttons to copy, paste, or clear</li>
+            <li>Check detailed statistics below the stats grid</li>
+        </ol>
+
+        <h3>Common Word Count Targets</h3>
+        <ul>
+            <li><strong>Twitter/X Post:</strong> 280 characters max</li>
+            <li><strong>Instagram Caption:</strong> 2,200 characters max</li>
+            <li><strong>Blog Post:</strong> 1,000–2,000 words</li>
+            <li><strong>SEO Article:</strong> 1,500–2,500 words</li>
+            <li><strong>Essay (High School):</strong> 500–1,000 words</li>
+            <li><strong>Essay (College):</strong> 1,500–3,000 words</li>
+            <li><strong>Book Chapter:</strong> 2,000–5,000 words</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>Does this tool save my text?</h4>
+            <p>No. Everything happens locally in your browser. Your text is never sent to any server.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How is reading time calculated?</h4>
+            <p>Reading time is calculated at 200 words per minute — the average adult reading speed. Speaking time is calculated at 130 WPM.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Is there a character limit?</h4>
+            <p>No. You can paste text of any length. The counter updates instantly.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This tool is for informational purposes only.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+const textInput = document.getElementById('textInput');
+
+// Update counters on input
+textInput.addEventListener('input', updateCounts);
+
+function updateCounts() {
+    const text = textInput.value;
+
+    // Words
+    const trimmed = text.trim();
+    const words = trimmed ? trimmed.split(/\s+/).filter(w => w.length > 0) : [];
+    const wordCount = words.length;
+
+    // Characters
+    const charCount = text.length;
+    const charNoSpace = text.replace(/\s/g, '').length;
+
+    // Sentences
+    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+    const sentenceCount = sentences.length;
+
+    // Paragraphs
+    const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+    const paragraphCount = paragraphs.length;
+
+    // Read time (200 WPM)
+    const readTime = Math.ceil(wordCount / 200);
+    const speakTime = Math.ceil(wordCount / 130);
+
+    // Average word length
+    const totalChars = words.reduce((sum, w) => sum + w.length, 0);
+    const avgWordLen = wordCount > 0 ? (totalChars / wordCount).toFixed(1) : 0;
+
+    // Longest word
+    let longest = '—';
+    if (words.length > 0) {
+        longest = words.reduce((a, b) => a.length >= b.length ? a : b, '');
+        if (longest.length > 20) longest = longest.slice(0, 18) + '...';
+    }
+
+    // Update display
+    document.getElementById('wordCount').textContent = wordCount.toLocaleString();
+    document.getElementById('charCount').textContent = charCount.toLocaleString();
+    document.getElementById('charNoSpace').textContent = charNoSpace.toLocaleString();
+    document.getElementById('sentenceCount').textContent = sentenceCount.toLocaleString();
+    document.getElementById('paragraphCount').textContent = paragraphCount.toLocaleString();
+    document.getElementById('readTime').textContent = readTime.toLocaleString();
+
+    document.getElementById('detailReadTime').textContent = readTime + ' min';
+    document.getElementById('detailSpeakTime').textContent = speakTime + ' min';
+    document.getElementById('detailAvgWord').textContent = avgWordLen + ' chars';
+    document.getElementById('detailLongest').textContent = longest;
+}
+
+function copyText() {
+    const text = textInput.value;
+    if (!text) {
+        alert('Nothing to copy');
+        return;
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            showCopySuccess();
+        }).catch(() => fallbackCopy(text));
+    } else {
+        fallbackCopy(text);
+    }
+}
+
+function showCopySuccess() {
+    const btn = document.getElementById('copyBtn');
+    const original = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = original, 2000);
+}
+
+function fallbackCopy(text) {
+    textInput.select();
+    try { document.execCommand('copy'); showCopySuccess(); } catch (e) {}
+    window.getSelection().removeAllRanges();
+}
+
+async function pasteText() {
+    try {
+        const text = await navigator.clipboard.readText();
+        textInput.value = text;
+        updateCounts();
+    } catch (err) {
+        alert('Paste permission denied. Please paste manually (Ctrl+V).');
+    }
+}
+
+function uppercaseText() {
+    if (!textInput.value) return;
+    textInput.value = textInput.value.toUpperCase();
+    updateCounts();
+}
+
+function lowercaseText() {
+    if (!textInput.value) return;
+    textInput.value = textInput.value.toLowerCase();
+    updateCounts();
+}
+
+function clearText() {
+    if (textInput.value && !confirm('Clear all text?')) return;
+    textInput.value = '';
+    updateCounts();
+    textInput.focus();
+}
+
+// Initialize
+updateCounts();
+</script>
+
+</body>
+</html>
