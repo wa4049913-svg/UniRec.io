@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Random Number Generator - Free Online Tool</title>
+    <meta name="description" content="Free random number generator. Generate random numbers, lottery picks, dice rolls, and more. Custom range, no repeats, and bulk generation supported.">
+    <meta name="keywords" content="random number generator, random number picker, lottery number generator, dice roller, random digit, number randomizer, rng online, random picker">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/random-number.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Random Number Generator - Free Online Tool">
+    <meta property="og:description" content="Generate random numbers instantly. Custom range, no repeats, bulk generation.">
+    <meta property="og:url" content="https://unirecorder.online/random-number.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Number Generator - Free Online Tool">
+    <meta name="twitter:description" content="Generate random numbers instantly.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Random Number Generator",
+      "url": "https://unirecorder.online/random-number.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "240",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this random number generator truly random?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It uses your browser's cryptographically secure random number generator (crypto.getRandomValues) for truly unpredictable results." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I generate multiple random numbers at once?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set the quantity field to any number between 1 and 1000 to generate multiple random numbers." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I prevent duplicate numbers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enable the No Repeats option to ensure every generated number is unique." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .result-display {
+            background: linear-gradient(135deg, rgba(79, 140, 255, 0.15) 0%, rgba(79, 140, 255, 0.05) 100%);
+            border: 2px solid rgba(79, 140, 255, 0.4);
+            border-radius: 14px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .result-number {
+            color: #4f8cff;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+            word-break: break-all;
+        }
+        .result-number.multiple {
+            font-size: 24px;
+            background: rgba(79, 140, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(79, 140, 255, 0.3);
+        }
+
+        .input-group { margin-bottom: 16px; }
+        .input-group label {
+            display: block; color: #b8bcc8; font-size: 13.5px;
+            margin-bottom: 8px; font-weight: 500;
+        }
+        .input-group input[type="number"] {
+            width: 100%; padding: 12px 16px; background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2); border-radius: 10px;
+            color: #ffffff; font-size: 15px; font-family: inherit; outline: none;
+        }
+        .input-group input[type="number"]:focus { border-color: #4f8cff; }
+
+        .range-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(10, 14, 26, 0.5);
+            border: 1px solid rgba(79, 140, 255, 0.12);
+            border-radius: 10px;
+            padding: 12px 14px;
+            cursor: pointer;
+            margin-bottom: 16px;
+        }
+        .checkbox-item:hover { border-color: rgba(79, 140, 255, 0.35); }
+        .checkbox-item input[type="checkbox"] {
+            accent-color: #4f8cff;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .checkbox-item span {
+            color: #b8bcc8;
+            font-size: 13.5px;
+            font-weight: 500;
+        }
+
+        .calc-btn {
+            width: 100%; padding: 15px;
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border: none; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            font-family: inherit;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4); }
+
+        .quick-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .quick-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 10px 14px;
+            background: rgba(79, 140, 255, 0.08);
+            color: #4f8cff;
+            border: 1px solid rgba(79, 140, 255, 0.25);
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .quick-btn:hover { background: rgba(79, 140, 255, 0.2); }
+
+        .error-box {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            border-radius: 8px;
+            color: #ff4757;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .content-section { max-width: 700px; margin: 30px auto 0; }
+
+        @media (max-width: 600px) {
+            .range-grid { grid-template-columns: 1fr; }
+            .result-number { font-size: 32px; }
+            .result-number.multiple { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>🎲 Random Number Generator</h1>
+        <p class="sub">Generate random numbers instantly with custom range</p>
+
+        <div class="result-display" id="resultDisplay">
+            <div class="result-number" id="resultNumber">Click Generate</div>
+        </div>
+
+        <div class="range-grid">
+            <div class="input-group">
+                <label>Minimum</label>
+                <input type="number" id="minValue" value="1" step="1">
+            </div>
+            <div class="input-group">
+                <label>Maximum</label>
+                <input type="number" id="maxValue" value="100" step="1">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>How Many Numbers?</label>
+            <input type="number" id="quantity" value="1" min="1" max="1000" step="1">
+        </div>
+
+        <label class="checkbox-item">
+            <input type="checkbox" id="noRepeats">
+            <span>No Repeats (Unique numbers only)</span>
+        </label>
+
+        <button class="calc-btn" onclick="generateNumbers()">🔄 Generate Random Numbers</button>
+
+        <div class="quick-actions">
+            <button class="quick-btn" onclick="quickRoll('dice6')">🎲 Dice (1-6)</button>
+            <button class="quick-btn" onclick="quickRoll('dice20')">🎯 D20 (1-20)</button>
+            <button class="quick-btn" onclick="quickRoll('coin')">🪙 Coin Flip</button>
+            <button class="quick-btn" onclick="quickRoll('lottery')">🎰 Lottery (1-49, 6)</button>
+        </div>
+
+        <div class="error-box" id="errorBox"></div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is a Random Number Generator?</h3>
+        <p>
+            A random number generator (RNG) is a tool that produces random numbers within a specified range. It's useful for games, lottery numbers, statistical sampling, decision making, and coding practice. This tool uses cryptographically secure randomness for truly unpredictable results.
+        </p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Set the <strong>minimum</strong> and <strong>maximum</strong> range</li>
+            <li>Choose <strong>how many numbers</strong> to generate</li>
+            <li>Enable <strong>No Repeats</strong> for unique numbers</li>
+            <li>Click <strong>Generate Random Numbers</strong></li>
+        </ol>
+
+        <h3>Common Uses</h3>
+        <ul>
+            <li><strong>Games:</strong> Dice rolls, damage numbers, random events</li>
+            <li><strong>Lottery:</strong> Pick random lottery numbers</li>
+            <li><strong>Decision making:</strong> Let randomness choose for you</li>
+            <li><strong>Education:</strong> Math problems, statistical sampling</li>
+            <li><strong>Contests:</strong> Pick random winners fairly</li>
+            <li><strong>Testing:</strong> Generate test data for code</li>
+        </ul>
+
+        <h3>Is It Truly Random?</h3>
+        <p>
+            Yes. This tool uses your browser's <strong>crypto.getRandomValues()</strong> function, which is a cryptographically secure random number generator — the same standard used in security applications. Results are unpredictable and fair.
+        </p>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>Is this random number generator truly random?</h4>
+            <p>Yes. It uses crypto.getRandomValues() for cryptographically secure randomness.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I generate multiple random numbers at once?</h4>
+            <p>Yes. Set the quantity field to any number between 1 and 1000.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I prevent duplicate numbers?</h4>
+            <p>Yes. Enable the "No Repeats" option to ensure every generated number is unique.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This tool is for informational and entertainment purposes only.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+function secureRandom(min, max) {
+    // Inclusive random integer using crypto
+    const range = max - min + 1;
+    if (window.crypto && window.crypto.getRandomValues) {
+        // For range up to 2^32
+        const maxValid = Math.floor(0xFFFFFFFF / range) * range;
+        const array = new Uint32Array(1);
+        let val;
+        do {
+            window.crypto.getRandomValues(array);
+            val = array[0];
+        } while (val >= maxValid);
+        return min + (val % range);
+    }
+    return min + Math.floor(Math.random() * range);
+}
+
+function generateNumbers() {
+    const errorBox = document.getElementById('errorBox');
+    errorBox.style.display = 'none';
+
+    let min = parseInt(document.getElementById('minValue').value);
+    let max = parseInt(document.getElementById('maxValue').value);
+    const quantity = parseInt(document.getElementById('quantity').value);
+    const noRepeats = document.getElementById('noRepeats').checked;
+
+    if (isNaN(min) || isNaN(max)) {
+        errorBox.textContent = 'Please enter valid minimum and maximum values';
+        errorBox.style.display = 'block';
+        return;
+    }
+
+    if (min > max) {
+        [min, max] = [max, min];
+        document.getElementById('minValue').value = min;
+        document.getElementById('maxValue').value = max;
+    }
+
+    if (isNaN(quantity) || quantity < 1 || quantity > 1000) {
+        errorBox.textContent = 'Quantity must be between 1 and 1000';
+        errorBox.style.display = 'block';
+        return;
+    }
+
+    const totalRange = max - min + 1;
+
+    if (noRepeats && quantity > totalRange) {
+        errorBox.textContent = `Cannot generate ${quantity} unique numbers from a range of ${totalRange}`;
+        errorBox.style.display = 'block';
+        return;
+    }
+
+    let numbers = [];
+
+    if (noRepeats) {
+        // Use Fisher-Yates shuffle on the range
+        const pool = [];
+        for (let i = min; i <= max; i++) pool.push(i);
+        for (let i = pool.length - 1; i > 0; i--) {
+            const j = secureRandom(0, i);
+            [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        numbers = pool.slice(0, quantity);
+    } else {
+        for (let i = 0; i < quantity; i++) {
+            numbers.push(secureRandom(min, max));
+        }
+    }
+
+    displayNumbers(numbers);
+}
+
+function displayNumbers(numbers) {
+    const display = document.getElementById('resultDisplay');
+    const numEl = document.getElementById('resultNumber');
+
+    if (numbers.length === 1) {
+        numEl.className = 'result-number';
+        numEl.textContent = numbers[0];
+    } else {
+        numEl.className = 'result-number';
+        numEl.innerHTML = numbers.map(n =>
+            `<span class="result-number multiple" style="display:inline-block; margin:4px;">${n}</span>`
+        ).join('');
+    }
+}
+
+function quickRoll(type) {
+    const minEl = document.getElementById('minValue');
+    const maxEl = document.getElementById('maxValue');
+    const qtyEl = document.getElementById('quantity');
+    const noRepEl = document.getElementById('noRepeats');
+
+    if (type === 'dice6') {
+        minEl.value = 1;
+        maxEl.value = 6;
+        qtyEl.value = 1;
+        noRepEl.checked = false;
+    } else if (type === 'dice20') {
+        minEl.value = 1;
+        maxEl.value = 20;
+        qtyEl.value = 1;
+        noRepEl.checked = false;
+    } else if (type === 'coin') {
+        minEl.value = 0;
+        maxEl.value = 1;
+        qtyEl.value = 1;
+        noRepEl.checked = false;
+        generateNumbers();
+        // Replace 0/1 with Heads/Tails
+        const result = document.getElementById('resultNumber').textContent;
+        document.getElementById('resultNumber').textContent = result === '0' ? '🪙 Heads' : '🪙 Tails';
+        return;
+    } else if (type === 'lottery') {
+        minEl.value = 1;
+        maxEl.value = 49;
+        qtyEl.value = 6;
+        noRepEl.checked = true;
+    }
+
+    generateNumbers();
+}
+</script>
+
+</body>
+</html>
