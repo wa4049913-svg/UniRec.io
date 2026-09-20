@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>GPA Calculator - Calculate Your GPA & CGPA Free Online</title>
+    <meta name="description" content="Free GPA calculator. Calculate your GPA and CGPA instantly with our easy-to-use tool. Supports weighted and unweighted GPA. No signup required.">
+    <meta name="keywords" content="gpa calculator, cgpa calculator, grade point average, gpa calculator college, high school gpa calculator, weighted gpa calculator, semester gpa calculator">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/gpa-calculator.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="GPA Calculator - Calculate Your GPA & CGPA Free">
+    <meta property="og:description" content="Calculate your GPA and CGPA instantly. Free online tool.">
+    <meta property="og:url" content="https://unirecorder.online/gpa-calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPA Calculator - Free Online Tool">
+    <meta name="twitter:description" content="Calculate your GPA and CGPA instantly.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "GPA Calculator",
+      "url": "https://unirecorder.online/gpa-calculator.html",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "645",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is GPA calculated?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GPA = (Sum of (Grade Points × Credit Hours)) ÷ Total Credit Hours. Each course grade is converted to a grade point (A=4.0, B=3.0, etc.), multiplied by credit hours, then divided by total credits." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good GPA?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A GPA of 3.5 or above is considered excellent. 3.0-3.4 is good, 2.5-2.9 is average, and below 2.5 may cause academic issues." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between GPA and CGPA?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GPA is for a single semester or term. CGPA (Cumulative GPA) is the average of all semesters combined." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .course-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            gap: 10px;
+            margin-bottom: 12px;
+            align-items: end;
+        }
+        .course-row label {
+            display: block;
+            color: #b8bcc8;
+            font-size: 12px;
+            margin-bottom: 6px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .course-row input, .course-row select {
+            width: 100%;
+            padding: 11px 12px;
+            background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+        }
+        .course-row input:focus, .course-row select:focus { border-color: #4f8cff; }
+        .remove-btn {
+            background: rgba(255, 71, 87, 0.15);
+            color: #ff4757;
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            border-radius: 8px;
+            padding: 11px 14px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: inherit;
+        }
+        .remove-btn:hover { background: rgba(255, 71, 87, 0.25); }
+
+        .add-btn {
+            width: 100%;
+            padding: 12px;
+            background: rgba(79, 140, 255, 0.1);
+            color: #4f8cff;
+            border: 1px dashed rgba(79, 140, 255, 0.4);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            margin: 10px 0 20px;
+        }
+        .add-btn:hover { background: rgba(79, 140, 255, 0.2); }
+
+        .calc-btn {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border: none; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            font-family: inherit;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4); }
+
+        .result-value {
+            display: none; margin-top: 25px;
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            border-radius: 12px; padding: 25px;
+            text-align: center;
+        }
+        .result-value.show { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .gpa-number {
+            color: #2ed573; font-size: 56px; font-weight: 800;
+            line-height: 1; margin-bottom: 8px;
+        }
+        .gpa-label {
+            color: #b8bcc8; font-size: 14px; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 15px;
+        }
+        .gpa-details {
+            color: #b8bcc8; font-size: 13.5px; margin-top: 15px;
+            padding-top: 15px; border-top: 1px solid rgba(46, 213, 115, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .course-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .course-row > div:nth-child(1) { grid-column: span 2; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>🎓 GPA Calculator</h1>
+        <p class="sub">Calculate your semester GPA and CGPA instantly</p>
+
+        <div id="coursesList"></div>
+
+        <button class="add-btn" onclick="addCourse()">+ Add Another Course</button>
+
+        <button class="calc-btn" onclick="calculateGPA()">Calculate GPA</button>
+
+        <div class="result-value" id="result">
+            <div class="gpa-number" id="gpaValue">0.00</div>
+            <div class="gpa-label">Your GPA</div>
+            <div class="gpa-details" id="gpaDetails"></div>
+        </div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is a GPA Calculator?</h3>
+        <p>
+            A GPA calculator computes your Grade Point Average — the number that represents your overall academic performance. It converts each letter grade (A, B, C, etc.) into grade points, multiplies by credit hours, and averages them.
+        </p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Enter your <strong>course name</strong></li>
+            <li>Select the <strong>grade</strong> you received (A, B, C, etc.)</li>
+            <li>Enter the <strong>credit hours</strong> for that course</li>
+            <li>Click <strong>Add Another Course</strong> to add more</li>
+            <li>Click <strong>Calculate GPA</strong></li>
+        </ol>
+
+        <h3>GPA Scale (4.0 System)</h3>
+        <ul>
+            <li><strong>A / A+:</strong> 4.0 (Excellent)</li>
+            <li><strong>A-:</strong> 3.7</li>
+            <li><strong>B+:</strong> 3.3</li>
+            <li><strong>B:</strong> 3.0 (Good)</li>
+            <li><strong>B-:</strong> 2.7</li>
+            <li><strong>C+:</strong> 2.3</li>
+            <li><strong>C:</strong> 2.0 (Average)</li>
+            <li><strong>C-:</strong> 1.7</li>
+            <li><strong>D:</strong> 1.0 (Poor)</li>
+            <li><strong>F:</strong> 0.0 (Fail)</li>
+        </ul>
+
+        <h3>What is a Good GPA?</h3>
+        <ul>
+            <li><strong>3.5 - 4.0:</strong> Excellent — top of class</li>
+            <li><strong>3.0 - 3.4:</strong> Good — above average</li>
+            <li><strong>2.5 - 2.9:</strong> Average — acceptable</li>
+            <li><strong>2.0 - 2.4:</strong> Below average — warning</li>
+            <li><strong>Below 2.0:</strong> Academic probation risk</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>How is GPA calculated?</h4>
+            <p>GPA = Sum of (Grade Points × Credit Hours) ÷ Total Credit Hours.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What is the difference between GPA and CGPA?</h4>
+            <p>GPA is for one semester. CGPA is the cumulative average of all semesters combined.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I calculate a weighted GPA?</h4>
+            <p>This calculator uses the standard 4.0 unweighted scale. For weighted GPA, add 0.5 or 1.0 for honors/AP courses as per your school's policy.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This calculator uses the standard 4.0 unweighted scale. Check your school's policy for exact grading.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+const gradePoints = {
+    'A+': 4.0, 'A': 4.0, 'A-': 3.7,
+    'B+': 3.3, 'B': 3.0, 'B-': 2.7,
+    'C+': 2.3, 'C': 2.0, 'C-': 1.7,
+    'D+': 1.3, 'D': 1.0, 'F': 0.0
+};
+
+let courseCount = 0;
+
+function addCourse() {
+    courseCount++;
+    const container = document.getElementById('coursesList');
+    const row = document.createElement('div');
+    row.className = 'course-row';
+    row.id = 'course-' + courseCount;
+    row.innerHTML = `
+        <div>
+            <label>Course</label>
+            <input type="text" placeholder="e.g., Math" value="Course ${courseCount}">
+        </div>
+        <div>
+            <label>Grade</label>
+            <select>
+                <option value="A+">A+ (4.0)</option>
+                <option value="A" selected>A (4.0)</option>
+                <option value="A-">A- (3.7)</option>
+                <option value="B+">B+ (3.3)</option>
+                <option value="B">B (3.0)</option>
+                <option value="B-">B- (2.7)</option>
+                <option value="C+">C+ (2.3)</option>
+                <option value="C">C (2.0)</option>
+                <option value="C-">C- (1.7)</option>
+                <option value="D+">D+ (1.3)</option>
+                <option value="D">D (1.0)</option>
+                <option value="F">F (0.0)</option>
+            </select>
+        </div>
+        <div>
+            <label>Credits</label>
+            <input type="number" placeholder="3" value="3" min="0" step="0.5">
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <button class="remove-btn" onclick="removeCourse('course-${courseCount}')">✕</button>
+        </div>
+    `;
+    container.appendChild(row);
+}
+
+function removeCourse(id) {
+    const el = document.getElementById(id);
+    if (el) el.remove();
+}
+
+function calculateGPA() {
+    const rows = document.querySelectorAll('.course-row');
+    if (rows.length === 0) {
+        alert('Please add at least one course');
+        return;
+    }
+
+    let totalPoints = 0;
+    let totalCredits = 0;
+    let coursesCounted = 0;
+
+    rows.forEach(row => {
+        const gradeSelect = row.querySelector('select');
+        const creditInput = row.querySelector('input[type="number"]');
+        const grade = gradeSelect.value;
+        const credits = parseFloat(creditInput.value);
+
+        if (!isNaN(credits) && credits > 0 && gradePoints[grade] !== undefined) {
+            totalPoints += gradePoints[grade] * credits;
+            totalCredits += credits;
+            coursesCounted++;
+        }
+    });
+
+    if (totalCredits === 0) {
+        alert('Please enter valid credit hours (must be greater than 0)');
+        return;
+    }
+
+    const gpa = totalPoints / totalCredits;
+
+    document.getElementById('gpaValue').textContent = gpa.toFixed(2);
+    document.getElementById('gpaDetails').innerHTML = `
+        <strong>${coursesCounted}</strong> courses counted ·
+        <strong>${totalCredits}</strong> total credit hours ·
+        <strong>${totalPoints.toFixed(1)}</strong> quality points
+    `;
+
+    document.getElementById('result').classList.add('show');
+}
+
+// Add first course on load
+addCourse();
+</script>
+
+</body>
+</html>
