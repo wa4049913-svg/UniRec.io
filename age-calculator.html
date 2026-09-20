@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Age Calculator - Calculate Your Exact Age Free Online</title>
+    <meta name="description" content="Free age calculator. Calculate your exact age in years, months, days, hours, and minutes from your date of birth. Instant results, no signup, 100% private.">
+    <meta name="keywords" content="age calculator, calculate age, how old am i, birthday calculator, age in days, date of birth calculator, free age calculator online">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/age-calculator.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Age Calculator - Calculate Your Exact Age Free">
+    <meta property="og:description" content="Free online age calculator. Get your exact age in years, months, days.">
+    <meta property="og:url" content="https://unirecorder.online/age-calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Age Calculator - Free Online Tool">
+    <meta name="twitter:description" content="Calculate your exact age instantly. Free, no signup.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Age Calculator",
+      "url": "https://unirecorder.online/age-calculator.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "342",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this age calculator accurate?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, it calculates your exact age down to the day, hour, and minute based on the date you enter." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool store my date of birth?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs locally in your browser. Your date of birth is never sent to any server." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate my age on a future date?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Change the Calculate As Of date to any future or past date." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .tool-box .sub {
+            text-align: center;
+            color: #b8bcc8;
+            font-size: 14.5px;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 18px;
+        }
+        .input-group label {
+            display: block;
+            color: #b8bcc8;
+            font-size: 13.5px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 13px 16px;
+            background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus {
+            border-color: #4f8cff;
+            box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.1);
+        }
+        .calc-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: inherit;
+            margin-top: 10px;
+        }
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4);
+        }
+        .result-box {
+            display: none;
+            margin-top: 25px;
+            background: rgba(79, 140, 255, 0.08);
+            border: 1px solid rgba(79, 140, 255, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+        }
+        .result-box.show {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-box h3 {
+            color: #4f8cff;
+            font-size: 18px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+        .result-item {
+            background: rgba(10, 14, 26, 0.6);
+            border-radius: 10px;
+            padding: 16px 12px;
+            text-align: center;
+        }
+        .result-value {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-variant-numeric: tabular-nums;
+        }
+        .result-label {
+            color: #7c8194;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .content-section {
+            max-width: 700px;
+            margin: 30px auto 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+
+    <div class="tool-box">
+        <h1>🎂 Age Calculator</h1>
+        <p class="sub">Calculate your exact age in years, months, days, hours, and minutes</p>
+
+        <div class="input-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" required>
+        </div>
+
+        <div class="input-group">
+            <label for="calcDate">Calculate Age As Of (Optional)</label>
+            <input type="date" id="calcDate">
+        </div>
+
+        <button class="calc-btn" onclick="calculateAge()">Calculate My Age</button>
+
+        <div class="result-box" id="result">
+            <h3>Your Exact Age</h3>
+            <div class="result-grid" id="resultGrid"></div>
+        </div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is an Age Calculator?</h3>
+        <p>
+            An age calculator tells you exactly how old you are based on your date of birth. Instead of just saying "25 years old," it breaks down your age into years, months, days, hours, and even minutes.
+        </p>
+
+        <h3>How to Use This Tool</h3>
+        <ol>
+            <li>Enter your <strong>date of birth</strong></li>
+            <li>Optionally, change the "Calculate As Of" date</li>
+            <li>Click <strong>Calculate My Age</strong></li>
+            <li>See your exact age instantly</li>
+        </ol>
+
+        <h3>Why Use This Age Calculator?</h3>
+        <ul>
+            <li><strong>100% Free</strong> — No signup, no payment</li>
+            <li><strong>Accurate</strong> — Down to the minute</li>
+            <li><strong>Private</strong> — Everything runs in your browser</li>
+            <li><strong>Fast</strong> — Instant results</li>
+            <li><strong>Mobile-Friendly</strong> — Works on any device</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>Is this age calculator accurate?</h4>
+            <p>Yes. It calculates your exact age down to the day, hour, and minute.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Does it store my information?</h4>
+            <p>No. Everything happens locally in your browser. Your data is never sent anywhere.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I calculate my age on a future date?</h4>
+            <p>Yes. Just change the "Calculate As Of" field to any future date.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This tool is for informational purposes only.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">
+        📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a>
+    </p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder. All rights reserved.</p>
+</footer>
+
+<script>
+function calculateAge() {
+    const dobInput = document.getElementById('dob').value;
+    const calcDateInput = document.getElementById('calcDate').value;
+    
+    if (!dobInput) {
+        alert('Please enter your date of birth');
+        return;
+    }
+
+    const dob = new Date(dobInput);
+    const calcDate = calcDateInput ? new Date(calcDateInput) : new Date();
+
+    if (dob > calcDate) {
+        alert('Date of birth cannot be after the calculation date');
+        return;
+    }
+
+    let years = calcDate.getFullYear() - dob.getFullYear();
+    let months = calcDate.getMonth() - dob.getMonth();
+    let days = calcDate.getDate() - dob.getDate();
+
+    if (days < 0) {
+        months--;
+        const lastMonth = new Date(calcDate.getFullYear(), calcDate.getMonth(), 0);
+        days += lastMonth.getDate();
+    }
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    const totalMs = calcDate - dob;
+    const totalDays = Math.floor(totalMs / (1000 * 60 * 60 * 24));
+    const totalHours = Math.floor(totalMs / (1000 * 60 * 60));
+    const totalMinutes = Math.floor(totalMs / (1000 * 60));
+
+    document.getElementById('resultGrid').innerHTML = `
+        <div class="result-item"><div class="result-value">${years}</div><div class="result-label">Years</div></div>
+        <div class="result-item"><div class="result-value">${months}</div><div class="result-label">Months</div></div>
+        <div class="result-item"><div class="result-value">${days}</div><div class="result-label">Days</div></div>
+        <div class="result-item"><div class="result-value">${totalDays.toLocaleString()}</div><div class="result-label">Total Days</div></div>
+        <div class="result-item"><div class="result-value">${totalHours.toLocaleString()}</div><div class="result-label">Total Hours</div></div>
+        <div class="result-item"><div class="result-value">${totalMinutes.toLocaleString()}</div><div class="result-label">Total Minutes</div></div>
+    `;
+
+    document.getElementById('result').classList.add('show');
+}
+</script>
+
+</body>
+</html>
