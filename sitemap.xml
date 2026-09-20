@@ -1,134 +1,340 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+   <!-- ===== HOMEPAGE ===== -->
    <url>
       <loc>https://unirecorder.online/</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
 
+   <!-- ===== MAIN PAGES ===== -->
+   <url>
+      <loc>https://unirecorder.online/more-tools.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
    <url>
       <loc>https://unirecorder.online/blog.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/how.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/about.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
 
    <url>
+      <loc>https://unirecorder.online/about-waqar.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
+   <url>
       <loc>https://unirecorder.online/contact.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/privacy.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/terms.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
 
    <url>
+      <loc>https://unirecorder.online/waqar-games.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- ===== TEXT & UTILITY TOOLS ===== -->
+   <url>
+      <loc>https://unirecorder.online/word-counter.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/case-converter.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/text-reverser.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/remove-duplicates.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/base64-encoder.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/lorem-ipsum.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/password-generator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/random-number.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/color-picker.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- ===== CALCULATORS ===== -->
+   <url>
+      <loc>https://unirecorder.online/age-calculator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/bmi-calculator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/gpa-calculator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/percentage-calculator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/loan-calculator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/date-calculator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/discount-calculator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/tip-calculator.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- ===== UNIT CONVERTERS ===== -->
+   <url>
+      <loc>https://unirecorder.online/currency-converter.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/length-converter.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/weight-converter.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/temperature-converter.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/time-converter.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/data-converter.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- ===== PDF & IMAGE TOOLS ===== -->
+   <url>
+      <loc>https://unirecorder.online/image-to-pdf.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/pdf-merger.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/image-compressor.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <url>
+      <loc>https://unirecorder.online/image-resizer.html</loc>
+      <lastmod>2026-09-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- ===== BLOG POSTS ===== -->
+   <url>
       <loc>https://unirecorder.online/blog-post-1.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/blog-post-2.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/blog-post-3.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/blog-post-4.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/blog-post-5.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
+
    <url>
       <loc>https://unirecorder.online/blog-post-6.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/blog-post-7.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/blog-post-8.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/blog-post-9.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
    <url>
       <loc>https://unirecorder.online/blog-post-10.html</loc>
-      <lastmod>2026-09-19</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-   </url>
-      <url>
-      <loc>https://unirecorder.online/about-waqar.html</loc>
-      <lastmod>2026-09-19</lastmod>
+      <lastmod>2026-09-20</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
 
-   <url>
-      <loc>https://unirecorder.online/waqar-games.html</loc>
-      <lastmod>2026-09-19</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.8</priority>
-   </url>
 </urlset>
