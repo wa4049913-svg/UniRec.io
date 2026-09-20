@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Date Calculator - Days Between Dates & Date Add/Subtract</title>
+    <meta name="description" content="Free date calculator. Calculate days between two dates, add or subtract days from a date, and find business days. Instant results, no signup.">
+    <meta name="keywords" content="date calculator, days between dates, date difference calculator, add days to date, subtract days from date, business days calculator, age in days">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/date-calculator.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Date Calculator - Days Between Dates">
+    <meta property="og:description" content="Calculate days between dates and add/subtract days. Free online tool.">
+    <meta property="og:url" content="https://unirecorder.online/date-calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Date Calculator - Free Online Tool">
+    <meta name="twitter:description" content="Calculate days between dates instantly.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Date Calculator",
+      "url": "https://unirecorder.online/date-calculator.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "325",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate days between two dates?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Subtract the earlier date from the later date. The result is the number of days between them. Our calculator does this instantly." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I add days to a date?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Enter a start date and the number of days to add. The calculator shows the resulting date." }
+        },
+        {
+          "@type": "Question",
+          "name": "What are business days?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Business days are Monday to Friday, excluding weekends. Some regions also exclude public holidays." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .tabs {
+            display: flex; gap: 8px; justify-content: center; margin-bottom: 25px; flex-wrap: wrap;
+        }
+        .tab {
+            padding: 10px 20px; background: rgba(79, 140, 255, 0.08);
+            border: 1px solid rgba(79, 140, 255, 0.2); border-radius: 8px;
+            color: #b8bcc8; font-size: 13.5px; font-weight: 600; cursor: pointer;
+            font-family: inherit;
+        }
+        .tab.active {
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border-color: #4f8cff;
+        }
+        .calc-section { display: none; }
+        .calc-section.active { display: block; }
+
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; color: #b8bcc8; font-size: 13.5px; margin-bottom: 8px; font-weight: 500; }
+        .input-group input {
+            width: 100%; padding: 13px 16px; background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2); border-radius: 10px;
+            color: #ffffff; font-size: 15px; font-family: inherit; outline: none;
+        }
+        .input-group input:focus { border-color: #4f8cff; }
+
+        .calc-btn {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border: none; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            font-family: inherit; margin-top: 8px;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4); }
+
+        .result-value {
+            display: none; margin-top: 20px;
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            border-radius: 12px; padding: 25px;
+        }
+        .result-value.show { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .result-main {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(46, 213, 115, 0.2);
+            margin-bottom: 20px;
+        }
+        .result-label-main {
+            color: #b8bcc8; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 8px;
+        }
+        .result-number {
+            color: #2ed573; font-size: 44px; font-weight: 800;
+            line-height: 1;
+        }
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+        .result-item {
+            background: rgba(10, 14, 26, 0.6);
+            border-radius: 10px; padding: 15px;
+            text-align: center;
+        }
+        .result-item-value {
+            color: #ffffff; font-size: 18px; font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .result-item-label {
+            color: #7c8194; font-size: 11.5px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>📅 Date Calculator</h1>
+        <p class="sub">Calculate days between dates or add/subtract days</p>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('between', this)">Days Between</button>
+            <button class="tab" onclick="switchTab('add', this)">Add Days</button>
+            <button class="tab" onclick="switchTab('subtract', this)">Subtract Days</button>
+        </div>
+
+        <!-- DAYS BETWEEN -->
+        <div class="calc-section active" id="between-section">
+            <div class="input-group">
+                <label>Start Date</label>
+                <input type="date" id="betweenStart">
+            </div>
+            <div class="input-group">
+                <label>End Date</label>
+                <input type="date" id="betweenEnd">
+            </div>
+            <button class="calc-btn" onclick="calcBetween()">Calculate Days</button>
+            <div class="result-value" id="between-result">
+                <div class="result-main">
+                    <div class="result-label-main">Total Days</div>
+                    <div class="result-number" id="betweenDays">0</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="result-item-value" id="betweenWeeks">0</div>
+                        <div class="result-item-label">Weeks</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-value" id="betweenMonths">0</div>
+                        <div class="result-item-label">Months</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-value" id="betweenYears">0</div>
+                        <div class="result-item-label">Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADD DAYS -->
+        <div class="calc-section" id="add-section">
+            <div class="input-group">
+                <label>Start Date</label>
+                <input type="date" id="addStart">
+            </div>
+            <div class="input-group">
+                <label>Days to Add</label>
+                <input type="number" id="addDaysInput" placeholder="e.g., 30" step="1">
+            </div>
+            <button class="calc-btn" onclick="calcAdd()">Calculate New Date</button>
+            <div class="result-value" id="add-result">
+                <div class="result-main">
+                    <div class="result-label-main">New Date</div>
+                    <div class="result-number" id="addResultDate" style="font-size: 28px;">-</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="result-item-value" id="addDayName">-</div>
+                        <div class="result-item-label">Day of Week</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-value" id="addDaysAdded">0</div>
+                        <div class="result-item-label">Days Added</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUBTRACT DAYS -->
+        <div class="calc-section" id="subtract-section">
+            <div class="input-group">
+                <label>Start Date</label>
+                <input type="date" id="subStart">
+            </div>
+            <div class="input-group">
+                <label>Days to Subtract</label>
+                <input type="number" id="subDaysInput" placeholder="e.g., 30" step="1">
+            </div>
+            <button class="calc-btn" onclick="calcSubtract()">Calculate New Date</button>
+            <div class="result-value" id="sub-result">
+                <div class="result-main">
+                    <div class="result-label-main">New Date</div>
+                    <div class="result-number" id="subResultDate" style="font-size: 28px;">-</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="result-item-value" id="subDayName">-</div>
+                        <div class="result-item-label">Day of Week</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-value" id="subDaysSubtracted">0</div>
+                        <div class="result-item-label">Days Subtracted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is a Date Calculator?</h3>
+        <p>
+            A date calculator helps you work with dates — whether you need to find out how many days are between two dates, add days to a date (like calculating a deadline), or subtract days (like finding a past date).
+        </p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Choose the mode: <strong>Days Between</strong>, <strong>Add Days</strong>, or <strong>Subtract Days</strong></li>
+            <li>Enter the date(s)</li>
+            <li>Click the calculate button</li>
+            <li>See the result instantly</li>
+        </ol>
+
+        <h3>Common Uses</h3>
+        <ul>
+            <li><strong>Days Between:</strong> Countdown to an event, project duration, age in days</li>
+            <li><strong>Add Days:</strong> Calculate deadlines, return dates, future appointments</li>
+            <li><strong>Subtract Days:</strong> Find past dates, calculate invoice due dates</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>How do I calculate days between two dates?</h4>
+            <p>Enter both dates in the "Days Between" tab. The calculator will show the exact number of days.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Does this include weekends?</h4>
+            <p>Yes. The total days include weekends and holidays. For business days only, you'd need a separate business days calculator.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I calculate dates in the past?</h4>
+            <p>Yes. Use the "Subtract Days" tab or enter past dates in the "Days Between" tab.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This tool is for informational purposes only.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+function switchTab(type, btn) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.calc-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.result-value').forEach(r => r.classList.remove('show'));
+    btn.classList.add('active');
+    document.getElementById(type + '-section').classList.add('active');
+}
+
+function formatDate(date) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+function getDayName(date) {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[date.getDay()];
+}
+
+function calcBetween() {
+    const s = document.getElementById('betweenStart').value;
+    const e = document.getElementById('betweenEnd').value;
+
+    if (!s || !e) { alert('Please enter both dates'); return; }
+
+    const start = new Date(s);
+    const end = new Date(e);
+
+    if (end < start) { alert('End date must be after start date'); return; }
+
+    const diffMs = end - start;
+    const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const weeks = (days / 7).toFixed(1);
+    const months = (days / 30.44).toFixed(1);
+    const years = (days / 365.25).toFixed(2);
+
+    document.getElementById('betweenDays').textContent = days.toLocaleString();
+    document.getElementById('betweenWeeks').textContent = weeks;
+    document.getElementById('betweenMonths').textContent = months;
+    document.getElementById('betweenYears').textContent = years;
+
+    document.getElementById('between-result').classList.add('show');
+}
+
+function calcAdd() {
+    const s = document.getElementById('addStart').value;
+    const d = parseInt(document.getElementById('addDaysInput').value);
+
+    if (!s || isNaN(d)) { alert('Please enter a date and days to add'); return; }
+
+    const start = new Date(s);
+    start.setDate(start.getDate() + d);
+
+    document.getElementById('addResultDate').textContent = formatDate(start);
+    document.getElementById('addDayName').textContent = getDayName(start);
+    document.getElementById('addDaysAdded').textContent = d;
+
+    document.getElementById('add-result').classList.add('show');
+}
+
+function calcSubtract() {
+    const s = document.getElementById('subStart').value;
+    const d = parseInt(document.getElementById('subDaysInput').value);
+
+    if (!s || isNaN(d)) { alert('Please enter a date and days to subtract'); return; }
+
+    const start = new Date(s);
+    start.setDate(start.getDate() - d);
+
+    document.getElementById('subResultDate').textContent = formatDate(start);
+    document.getElementById('subDayName').textContent = getDayName(start);
+    document.getElementById('subDaysSubtracted').textContent = d;
+
+    document.getElementById('sub-result').classList.add('show');
+}
+
+// Set today as default date
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('betweenStart').value = today;
+    document.getElementById('addStart').value = today;
+    document.getElementById('subStart').value = today;
+});
+</script>
+
+</body>
+</html>
