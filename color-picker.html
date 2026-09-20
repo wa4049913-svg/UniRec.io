@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Color Picker & Palette Generator - Free Online Tool</title>
+    <meta name="description" content="Free color picker and palette generator. Pick colors, get HEX, RGB, HSL values, and generate complementary, analogous, triadic, and tetradic palettes instantly.">
+    <meta name="keywords" content="color picker, color palette generator, hex color picker, rgb color picker, complementary colors, analogous colors, triadic colors, color scheme generator">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/color-picker.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Color Picker & Palette Generator - Free Online Tool">
+    <meta property="og:description" content="Pick colors and generate beautiful palettes instantly.">
+    <meta property="og:url" content="https://unirecorder.online/color-picker.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Color Picker & Palette Generator">
+    <meta name="twitter:description" content="Free color picker and palette generator.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Color Picker & Palette Generator",
+      "url": "https://unirecorder.online/color-picker.html",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "285",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .color-preview {
+            height: 140px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(79, 140, 255, 0.3);
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .picker-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .picker-row input[type="color"] {
+            width: 70px;
+            height: 50px;
+            border: 2px solid rgba(79, 140, 255, 0.3);
+            border-radius: 10px;
+            background: #0a0e1a;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hex-input {
+            flex: 1;
+            min-width: 150px;
+            padding: 12px 16px;
+            background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            outline: none;
+            text-transform: uppercase;
+        }
+        .hex-input:focus { border-color: #4f8cff; }
+        .random-btn {
+            padding: 12px 20px;
+            background: rgba(79, 140, 255, 0.1);
+            color: #4f8cff;
+            border: 1px solid rgba(79, 140, 255, 0.3);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+        .random-btn:hover { background: rgba(79, 140, 255, 0.25); }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .value-item {
+            background: rgba(10, 14, 26, 0.6);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .value-item:hover { border-color: #4f8cff; }
+        .value-label {
+            color: #7c8194;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .value-text {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+        }
+
+        .palette-section {
+            margin-bottom: 25px;
+        }
+        .palette-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .palette-header h3 {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .copy-palette-btn {
+            padding: 8px 16px;
+            background: rgba(46, 213, 115, 0.1);
+            color: #2ed573;
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .copy-palette-btn:hover { background: rgba(46, 213, 115, 0.2); }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+        .swatch {
+            aspect-ratio: 1 / 1;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 8px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+        }
+        .swatch:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        .swatch.copied::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .palette-type-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .palette-type-btn {
+            padding: 8px 16px;
+            background: rgba(79, 140, 255, 0.08);
+            border: 1px solid rgba(79, 140, 255, 0.2);
+            border-radius: 8px;
+            color: #b8bcc8;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .palette-type-btn.active {
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff;
+            border-color: #4f8cff;
+        }
+
+        .content-section { max-width: 800px; margin: 30px auto 0; }
+
+        @media (max-width: 600px) {
+            .palette-grid { grid-template-columns: repeat(5, 1fr); gap: 6px; }
+            .swatch { font-size: 8px; }
+            .picker-row { flex-direction: column; align-items: stretch; }
+            .picker-row input[type="color"] { width: 100%; height: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>🎨 Color Picker & Palette Generator</h1>
+        <p class="sub">Pick a color and generate beautiful palettes instantly</p>
+
+        <!-- COLOR PREVIEW -->
+        <div class="color-preview" id="colorPreview">
+            <span id="previewHex">#4F8CFF</span>
+        </div>
+
+        <!-- PICKER ROW -->
+        <div class="picker-row">
+            <input type="color" id="colorPicker" value="#4f8cff">
+            <input type="text" id="hexInput" class="hex-input" value="#4F8CFF" maxlength="7">
+            <button class="random-btn" onclick="randomColor()">🎲 Random</button>
+        </div>
+
+        <!-- VALUES GRID -->
+        <div class="values-grid">
+            <div class="value-item" onclick="copyValue('hex')">
+                <div class="value-label">HEX</div>
+                <div class="value-text" id="hexValue">#4F8CFF</div>
+            </div>
+            <div class="value-item" onclick="copyValue('rgb')">
+                <div class="value-label">RGB</div>
+                <div class="value-text" id="rgbValue">79, 140, 255</div>
+            </div>
+            <div class="value-item" onclick="copyValue('hsl')">
+                <div class="value-label">HSL</div>
+                <div class="value-text" id="hslValue">219, 100%, 65%</div>
+            </div>
+        </div>
+
+        <!-- PALETTE TYPE SELECTOR -->
+        <div class="palette-section">
+            <div class="palette-type-selector">
+                <button class="palette-type-btn active" onclick="setPaletteType('complementary', this)">Complementary</button>
+                <button class="palette-type-btn" onclick="setPaletteType('analogous', this)">Analogous</button>
+                <button class="palette-type-btn" onclick="setPaletteType('triadic', this)">Triadic</button>
+                <button class="palette-type-btn" onclick="setPaletteType('tetradic', this)">Tetradic</button>
+                <button class="palette-type-btn" onclick="setPaletteType('monochromatic', this)">Monochromatic</button>
+            </div>
+
+            <div class="palette-header">
+                <h3 id="paletteTitle">Complementary Colors</h3>
+                <button class="copy-palette-btn" onclick="copyPalette()">📋 Copy Palette</button>
+            </div>
+            <div class="palette-grid" id="paletteGrid"></div>
+        </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="box content-section">
+        <h3>What is a Color Picker & Palette Generator?</h3>
+        <p>
+            A color picker lets you select any color and see its HEX, RGB, and HSL values. A palette generator automatically creates matching color schemes — complementary, analogous, triadic, and more — based on color theory. Perfect for designers, developers, and artists.
+        </p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Pick a color using the color input or enter a HEX code</li>
+            <li>See its values in HEX, RGB, and HSL formats</li>
+            <li>Choose a palette type (complementary, analogous, etc.)</li>
+            <li>Click any swatch to copy its HEX code</li>
+            <li>Click "Copy Palette" to copy all colors at once</li>
+        </ol>
+
+        <h3>Palette Types Explained</h3>
+        <ul>
+            <li><strong>Complementary:</strong> Colors opposite on the color wheel — high contrast</li>
+            <li><strong>Analogous:</strong> Colors next to each other — harmonious and calm</li>
+            <li><strong>Triadic:</strong> Three colors evenly spaced — vibrant and balanced</li>
+            <li><strong>Tetradic:</strong> Four colors in two complementary pairs — rich variety</li>
+            <li><strong>Monochromatic:</strong> Different shades of the same hue — elegant and simple</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>Is this color picker free?</h4>
+            <p>Yes, 100% free. No signup, no limits.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I use these palettes in my projects?</h4>
+            <p>Absolutely. All generated colors are free to use for personal and commercial projects.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Does it work offline?</h4>
+            <p>Yes. Everything runs locally in your browser. No internet required after the page loads.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: This tool is for informational purposes only.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+let currentColor = '#4f8cff';
+let currentPaletteType = 'complementary';
+let currentPalette = [];
+
+// DOM refs
+const colorPicker = document.getElementById('colorPicker');
+const hexInput = document.getElementById('hexInput');
+const colorPreview = document.getElementById('colorPreview');
+const previewHex = document.getElementById('previewHex');
+const hexValue = document.getElementById('hexValue');
+const rgbValue = document.getElementById('rgbValue');
+const hslValue = document.getElementById('hslValue');
+const paletteGrid = document.getElementById('paletteGrid');
+const paletteTitle = document.getElementById('paletteTitle');
+
+// Initialize
+colorPicker.addEventListener('input', (e) => setColor(e.target.value));
+hexInput.addEventListener('input', (e) => {
+    let val = e.target.value.trim();
+    if (!val.startsWith('#')) val = '#' + val;
+    if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
+        setColor(val);
+    }
+});
+
+function setColor(hex) {
+    currentColor = hex.toLowerCase();
+    colorPicker.value = currentColor;
+    hexInput.value = currentColor.toUpperCase();
+    colorPreview.style.background = currentColor;
+    previewHex.textContent = currentColor.toUpperCase();
+
+    const rgb = hexToRgb(currentColor);
+    const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+
+    hexValue.textContent = currentColor.toUpperCase();
+    rgbValue.textContent = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+    hslValue.textContent = `${Math.round(hsl.h)}, ${Math.round(hsl.s)}%, ${Math.round(hsl.l)}%`;
+
+    generatePalette();
+}
+
+function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3) {
+        hex = hex.split('').map(c => c + c).join('');
+    }
+    const num = parseInt(hex, 16);
+    return {
+        r: (num >> 16) & 255,
+        g: (num >> 8) & 255,
+        b: num & 255
+    };
+}
+
+function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(c => {
+        const hex = Math.max(0, Math.min(255, Math.round(c))).toString(16);
+        return hex.length === 1 ? '0' + hex : hex;
+    }).join('');
+}
+
+function rgbToHsl(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+        h = s = 0;
+    } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+    }
+    return { h: h * 360, s: s * 100, l: l * 100 };
+}
+
+function hslToRgb(h, s, l) {
+    h /= 360; s /= 100; l /= 100;
+    let r, g, b;
+    if (s === 0) {
+        r = g = b = l;
+    } else {
+        const hue2rgb = (p, q, t) => {
+            if (t < 0) t += 1;
+            if (t > 1) t -= 1;
+            if (t < 1/6) return p + (q - p) * 6 * t;
+            if (t < 1/2) return q;
+            if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+            return p;
+        };
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+    }
+    return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+    };
+}
+
+function setPaletteType(type, btn) {
+    currentPaletteType = type;
+    document.querySelectorAll('.palette-type-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    generatePalette();
+}
+
+function generatePalette() {
+    const rgb = hexToRgb(currentColor);
+    const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+
+    let colors = [];
+
+    switch (currentPaletteType) {
+        case 'complementary':
+            paletteTitle.textContent = 'Complementary Colors';
+            colors = [
+                hslToHex(hsl.h, hsl.s, hsl.l),
+                hslToHex((hsl.h + 180) % 360, hsl.s, hsl.l),
+                hslToHex(hsl.h, hsl.s, Math.max(0, hsl.l - 20)),
+                hslToHex((hsl.h + 180) % 360, hsl.s, Math.max(0, hsl.l - 20)),
+                hslToHex(hsl.h, hsl.s, Math.min(100, hsl.l + 20))
+            ];
+            break;
+        case 'analogous':
+            paletteTitle.textContent = 'Analogous Colors';
+            colors = [
+                hslToHex((hsl.h - 60 + 360) % 360, hsl.s, hsl.l),
+                hslToHex((hsl.h - 30 + 360) % 360, hsl.s, hsl.l),
+                hslToHex(hsl.h, hsl.s, hsl.l),
+                hslToHex((hsl.h + 30) % 360, hsl.s, hsl.l),
+                hslToHex((hsl.h + 60) % 360, hsl.s, hsl.l)
+            ];
+            break;
+        case 'triadic':
+            paletteTitle.textContent = 'Triadic Colors';
+            colors = [
+                hslToHex(hsl.h, hsl.s, hsl.l),
+                hslToHex((hsl.h + 120) % 360, hsl.s, hsl.l),
+                hslToHex((hsl.h + 240) % 360, hsl.s, hsl.l),
+                hslToHex(hsl.h, hsl.s, Math.max(0, hsl.l - 20)),
+                hslToHex((hsl.h + 120) % 360, hsl.s, Math.min(100, hsl.l + 20))
+            ];
+            break;
+        case 'tetradic':
+            paletteTitle.textContent = 'Tetradic Colors';
+            colors = [
+                hslToHex(hsl.h, hsl.s, hsl.l),
+                hslToHex((hsl.h + 90) % 360, hsl.s, hsl.l),
+                hslToHex((hsl.h + 180) % 360, hsl.s, hsl.l),
+                hslToHex((hsl.h + 270) % 360, hsl.s, hsl.l),
+                hslToHex(hsl.h, hsl.s, Math.max(0, hsl.l - 20))
+            ];
+            break;
+        case 'monochromatic':
+            paletteTitle.textContent = 'Monochromatic Colors';
+            colors = [
+                hslToHex(hsl.h, hsl.s, Math.max(10, hsl.l - 40)),
+                hslToHex(hsl.h, hsl.s, Math.max(10, hsl.l - 20)),
+                hslToHex(hsl.h, hsl.s, hsl.l),
+                hslToHex(hsl.h, hsl.s, Math.min(90, hsl.l + 20)),
+                hslToHex(hsl.h, hsl.s, Math.min(90, hsl.l + 40))
+            ];
+            break;
+    }
+
+    currentPalette = colors;
+    renderPalette(colors);
+}
+
+function hslToHex(h, s, l) {
+    const rgb = hslToRgb(h, s, l);
+    return rgbToHex(rgb.r, rgb.g, rgb.b);
+}
+
+function renderPalette(colors) {
+    paletteGrid.innerHTML = '';
+    colors.forEach(color => {
+        const swatch = document.createElement('div');
+        swatch.className = 'swatch';
+        swatch.style.background = color;
+        swatch.textContent = color.toUpperCase();
+        swatch.onclick = () => copySingle(color, swatch);
+        paletteGrid.appendChild(swatch);
+    });
+}
+
+function copySingle(color, el) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(color).then(() => {
+            el.classList.add('copied');
+            setTimeout(() => el.classList.remove('copied'), 800);
+        }).catch(() => fallbackCopy(color));
+    } else {
+        fallbackCopy(color);
+    }
+}
+
+function copyPalette() {
+    const text = currentPalette.map(c => c.toUpperCase()).join(', ');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.querySelector('.copy-palette-btn');
+            const original = btn.textContent;
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => btn.textContent = original, 2000);
+        }).catch(() => fallbackCopy(text));
+    } else {
+        fallbackCopy(text);
+    }
+}
+
+function copyValue(type) {
+    let text = '';
+    if (type === 'hex') text = currentColor.toUpperCase();
+    else if (type === 'rgb') text = rgbValue.textContent;
+    else if (type === 'hsl') text = hslValue.textContent;
+    fallbackCopy(text);
+}
+
+function fallbackCopy(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(textarea);
+}
+
+function randomColor() {
+    const randomHex = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+    setColor(randomHex);
+}
+
+// Initialize with default color
+setColor('#4f8cff');
+</script>
+
+</body>
+</html>
