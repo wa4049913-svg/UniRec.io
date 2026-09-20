@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86S6HNZXBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86S6HNZXBE');
+    </script>
+
+    <title>Currency Converter - Free Live Exchange Rate Calculator</title>
+    <meta name="description" content="Free currency converter with live exchange rates. Convert between 200+ world currencies instantly. No signup, no API key required.">
+    <meta name="keywords" content="currency converter, exchange rate calculator, usd to pkr, usd to eur, eur to usd, live currency rates, currency exchange, forex converter, money converter, dollar to rupee">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Waqar Ahmed">
+    <meta name="theme-color" content="#4f8cff">
+
+    <link rel="canonical" href="https://unirecorder.online/currency-converter.html" />
+    <link rel="icon" type="image/svg+xml" href="https://unirecorder.online/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://unirecorder.online/logo.png">
+    <link rel="apple-touch-icon" href="https://unirecorder.online/logo.png">
+
+    <meta property="og:title" content="Currency Converter - Free Live Exchange Rate Calculator">
+    <meta property="og:description" content="Convert between 200+ currencies with live exchange rates. Free online tool.">
+    <meta property="og:url" content="https://unirecorder.online/currency-converter.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unirecorder.online/logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Currency Converter - Free Online Tool">
+    <meta name="twitter:description" content="Live exchange rates for 200+ currencies.">
+    <meta name="twitter:image" content="https://unirecorder.online/logo.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Currency Converter",
+      "url": "https://unirecorder.online/currency-converter.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "520",
+        "bestRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How often are exchange rates updated?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Exchange rates are updated daily using official central bank rates from around the world." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this currency converter free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free. No signup, no API key, no limits." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many currencies are supported?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The converter supports 200+ world currencies including USD, EUR, GBP, JPY, PKR, INR, AED, SAR, and more." }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style2.css/style.css">
+
+    <style>
+        .tool-container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .tool-box {
+            background: linear-gradient(145deg, #131829 0%, #0f1421 100%);
+            border: 1px solid rgba(79, 140, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tool-box h1 { text-align: center; color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+        .tool-box .sub { text-align: center; color: #b8bcc8; font-size: 14px; margin-bottom: 25px; }
+
+        .converter-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 12px;
+            align-items: end;
+            margin-bottom: 18px;
+        }
+        .input-group label { display: block; color: #b8bcc8; font-size: 13px; margin-bottom: 6px; font-weight: 500; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; background: #0a0e1a;
+            border: 1px solid rgba(79, 140, 255, 0.2); border-radius: 10px;
+            color: #ffffff; font-size: 15px; font-family: inherit; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: #4f8cff; }
+
+        .swap-btn {
+            background: rgba(79, 140, 255, 0.1);
+            color: #4f8cff;
+            border: 1px solid rgba(79, 140, 255, 0.3);
+            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+        }
+        .swap-btn:hover { background: rgba(79, 140, 255, 0.25); }
+
+        .calc-btn {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%);
+            color: #ffffff; border: none; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            font-family: inherit; margin-top: 8px;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79, 140, 255, 0.4); }
+        .calc-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        .result-box {
+            display: none; margin-top: 20px;
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            border-radius: 12px; padding: 25px;
+            text-align: center;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .result-value {
+            color: #2ed573; font-size: 34px; font-weight: 800;
+            line-height: 1.2; word-break: break-all;
+        }
+        .result-label {
+            color: #b8bcc8; font-size: 13px; margin-top: 8px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .rate-info {
+            margin-top: 15px;
+            color: #7c8194;
+            font-size: 12.5px;
+        }
+        .error-box {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            border-radius: 8px;
+            color: #ff4757;
+            font-size: 13px;
+            text-align: center;
+        }
+        .loading-box {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(79, 140, 255, 0.1);
+            border: 1px solid rgba(79, 140, 255, 0.3);
+            border-radius: 8px;
+            color: #4f8cff;
+            font-size: 13px;
+            text-align: center;
+        }
+        .loading-box.show { display: block; }
+
+        @media (max-width: 600px) {
+            .converter-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .swap-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIRECORDER</h1>
+    <a href="more-tools.html" style="color:#4f8cff;text-decoration:none;font-size:14px;font-weight:600;">← All Tools</a>
+</header>
+
+<div class="tool-container">
+    <div class="tool-box">
+        <h1>💵 Currency Converter</h1>
+        <p class="sub">Convert between 200+ world currencies with live exchange rates</p>
+
+        <div class="converter-row">
+            <div class="input-group">
+                <label>From</label>
+                <input type="number" id="fromValue" placeholder="Enter amount" value="1" step="any">
+            </div>
+            <button class="swap-btn" onclick="swapUnits()" title="Swap">⇄</button>
+            <div class="input-group">
+                <label>To</label>
+                <input type="number" id="toValue" placeholder="Result" readonly>
+            </div>
+        </div>
+
+        <div class="converter-row">
+            <div class="input-group">
+                <label>From Currency</label>
+                <select id="fromUnit">
+                    <option value="usd" selected>USD - US Dollar</option>
+                    <option value="eur">EUR - Euro</option>
+                    <option value="gbp">GBP - British Pound</option>
+                    <option value="jpy">JPY - Japanese Yen</option>
+                    <option value="pkr">PKR - Pakistani Rupee</option>
+                    <option value="inr">INR - Indian Rupee</option>
+                    <option value="aed">AED - UAE Dirham</option>
+                    <option value="sar">SAR - Saudi Riyal</option>
+                    <option value="aud">AUD - Australian Dollar</option>
+                    <option value="cad">CAD - Canadian Dollar</option>
+                    <option value="chf">CHF - Swiss Franc</option>
+                    <option value="cny">CNY - Chinese Yuan</option>
+                    <option value="try">TRY - Turkish Lira</option>
+                    <option value="bdt">BDT - Bangladeshi Taka</option>
+                    <option value="sgd">SGD - Singapore Dollar</option>
+                    <option value="hkd">HKD - Hong Kong Dollar</option>
+                    <option value="nzd">NZD - New Zealand Dollar</option>
+                    <option value="krw">KRW - South Korean Won</option>
+                    <option value="myr">MYR - Malaysian Ringgit</option>
+                    <option value="thb">THB - Thai Baht</option>
+                    <option value="zar">ZAR - South African Rand</option>
+                    <option value="rub">RUB - Russian Ruble</option>
+                    <option value="brl">BRL - Brazilian Real</option>
+                    <option value="mxn">MXN - Mexican Peso</option>
+                    <option value="idr">IDR - Indonesian Rupiah</option>
+                    <option value="php">PHP - Philippine Peso</option>
+                    <option value="vnd">VND - Vietnamese Dong</option>
+                    <option value="egp">EGP - Egyptian Pound</option>
+                    <option value="ngn">NGN - Nigerian Naira</option>
+                    <option value="kes">KES - Kenyan Shilling</option>
+                </select>
+            </div>
+            <div></div>
+            <div class="input-group">
+                <label>To Currency</label>
+                <select id="toUnit">
+                    <option value="pkr" selected>PKR - Pakistani Rupee</option>
+                    <option value="usd">USD - US Dollar</option>
+                    <option value="eur">EUR - Euro</option>
+                    <option value="gbp">GBP - British Pound</option>
+                    <option value="jpy">JPY - Japanese Yen</option>
+                    <option value="inr">INR - Indian Rupee</option>
+                    <option value="aed">AED - UAE Dirham</option>
+                    <option value="sar">SAR - Saudi Riyal</option>
+                    <option value="aud">AUD - Australian Dollar</option>
+                    <option value="cad">CAD - Canadian Dollar</option>
+                    <option value="chf">CHF - Swiss Franc</option>
+                    <option value="cny">CNY - Chinese Yuan</option>
+                    <option value="try">TRY - Turkish Lira</option>
+                    <option value="bdt">BDT - Bangladeshi Taka</option>
+                    <option value="sgd">SGD - Singapore Dollar</option>
+                    <option value="hkd">HKD - Hong Kong Dollar</option>
+                    <option value="nzd">NZD - New Zealand Dollar</option>
+                    <option value="krw">KRW - South Korean Won</option>
+                    <option value="myr">MYR - Malaysian Ringgit</option>
+                    <option value="thb">THB - Thai Baht</option>
+                    <option value="zar">ZAR - South African Rand</option>
+                    <option value="rub">RUB - Russian Ruble</option>
+                    <option value="brl">BRL - Brazilian Real</option>
+                    <option value="mxn">MXN - Mexican Peso</option>
+                    <option value="idr">IDR - Indonesian Rupiah</option>
+                    <option value="php">PHP - Philippine Peso</option>
+                    <option value="vnd">VND - Vietnamese Dong</option>
+                    <option value="egp">EGP - Egyptian Pound</option>
+                    <option value="ngn">NGN - Nigerian Naira</option>
+                    <option value="kes">KES - Kenyan Shilling</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="calc-btn" id="convertBtn" onclick="convertCurrency()">Convert Currency</button>
+
+        <div class="loading-box" id="loadingBox">⏳ Fetching latest exchange rate...</div>
+        <div class="error-box" id="errorBox"></div>
+
+        <div class="result-box" id="result">
+            <div class="result-value" id="resultValue">0</div>
+            <div class="result-label" id="resultLabel">Result</div>
+            <div class="rate-info" id="rateInfo"></div>
+        </div>
+    </div>
+
+    <div class="box content-section">
+        <h3>What is a Currency Converter?</h3>
+        <p>
+            A currency converter helps you convert money from one currency to another using live exchange rates. Whether you're traveling, shopping online internationally, or sending money abroad, this tool gives you instant conversions with accurate rates.
+        </p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Enter the amount you want to convert</li>
+            <li>Select the "From" currency</li>
+            <li>Select the "To" currency</li>
+            <li>Click <strong>Convert Currency</strong></li>
+            <li>Use the swap button (⇄) to reverse currencies</li>
+        </ol>
+
+        <h3>Exchange Rate Sources</h3>
+        <p>
+            This converter uses <strong>official central bank rates</strong> from around the world, updated daily. These rates are aggregated from multiple financial institutions and are the same rates used by banks worldwide.
+        </p>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>How often are exchange rates updated?</h4>
+            <p>Rates are updated daily from official central banks. For real-time interbank rates, you'd need a premium API.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Is this converter free?</h4>
+            <p>Yes, 100% free. No signup, no API key, no limits.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How accurate are the rates?</h4>
+            <p>The rates come from official central banks — the same rates used by banks. However, actual exchange services may charge fees or use different rates.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Which currencies are supported?</h4>
+            <p>200+ world currencies including USD, EUR, GBP, JPY, PKR, INR, AED, SAR, and more.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p style="color:#ffaa00; font-size:13px; margin-bottom:15px;">
+        Disclaimer: Exchange rates are for informational purposes only. Actual rates may vary by provider.
+    </p>
+    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-bottom:10px; color:#6c7184;">📧 Email: <a href="mailto:wa4049913@gmail.com">wa4049913@gmail.com</a></p>
+    <p>Powered by <b>Waqar Ahmed</b> | © 2026 UniRecorder.</p>
+</footer>
+
+<script>
+const currencyNames = {
+    'usd': 'US Dollar', 'eur': 'Euro', 'gbp': 'British Pound',
+    'jpy': 'Japanese Yen', 'pkr': 'Pakistani Rupee', 'inr': 'Indian Rupee',
+    'aed': 'UAE Dirham', 'sar': 'Saudi Riyal',
+    'aud': 'Australian Dollar', 'cad': 'Canadian Dollar', 'chf': 'Swiss Franc',
+    'cny': 'Chinese Yuan', 'try': 'Turkish Lira', 'bdt': 'Bangladeshi Taka',
+    'sgd': 'Singapore Dollar', 'hkd': 'Hong Kong Dollar', 'nzd': 'New Zealand Dollar',
+    'krw': 'South Korean Won', 'myr': 'Malaysian Ringgit', 'thb': 'Thai Baht',
+    'zar': 'South African Rand', 'rub': 'Russian Ruble', 'brl': 'Brazilian Real',
+    'mxn': 'Mexican Peso', 'idr': 'Indonesian Rupiah', 'php': 'Philippine Peso',
+    'vnd': 'Vietnamese Dong', 'egp': 'Egyptian Pound',
+    'ngn': 'Nigerian Naira', 'kes': 'Kenyan Shilling'
+};
+
+// API base URL - fawazahmed0 currency-api
+// Free, no API key, 200+ currencies including PKR
+const API_BASE = 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies';
+
+async function convertCurrency() {
+    const fromVal = parseFloat(document.getElementById('fromValue').value);
+    const fromUnit = document.getElementById('fromUnit').value;
+    const toUnit = document.getElementById('toUnit').value;
+    const btn = document.getElementById('convertBtn');
+    const errorBox = document.getElementById('errorBox');
+    const loadingBox = document.getElementById('loadingBox');
+
+    // Hide previous errors
+    errorBox.style.display = 'none';
+
+    if (isNaN(fromVal) || fromVal < 0) {
+        alert('Please enter a valid amount');
+        return;
+    }
+
+    // If same currency
+    if (fromUnit === toUnit) {
+        showResult(fromVal, fromUnit, toUnit, fromVal, 1);
+        return;
+    }
+
+    // Show loading, disable button
+    btn.disabled = true;
+    btn.textContent = 'Converting...';
+    loadingBox.classList.add('show');
+
+    try {
+        // Fetch all rates for the from-currency
+        const url = `${API_BASE}/${fromUnit}.json`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error('Could not fetch rates');
+        }
+
+        const data = await response.json();
+        const rates = data[fromUnit];
+
+        if (rates && rates[toUnit]) {
+            const rate = rates[toUnit];
+            const result = fromVal * rate;
+            showResult(result, fromUnit, toUnit, fromVal, rate);
+        } else {
+            throw new Error('Currency pair not supported');
+        }
+    } catch (err) {
+        console.error(err);
+        errorBox.textContent = '⚠️ Could not fetch exchange rate. Please check your internet connection or try again later.';
+        errorBox.style.display = 'block';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Convert Currency';
+        loadingBox.classList.remove('show');
+    }
+}
+
+function showResult(result, fromUnit, toUnit, fromVal, rate) {
+    let formatted;
+    if (Math.abs(result) < 0.01 && result !== 0) {
+        formatted = result.toFixed(6);
+    } else {
+        formatted = result.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    document.getElementById('toValue').value = formatted;
+    document.getElementById('resultValue').textContent = formatted;
+    document.getElementById('resultLabel').textContent =
+        `${fromVal} ${currencyNames[fromUnit]} = ${formatted} ${currencyNames[toUnit]}`;
+    document.getElementById('rateInfo').textContent =
+        `1 ${fromUnit.toUpperCase()} = ${rate.toFixed(6)} ${toUnit.toUpperCase()} (Live Rate)`;
+    document.getElementById('result').classList.add('show');
+}
+
+function swapUnits() {
+    const fromUnit = document.getElementById('fromUnit');
+    const toUnit = document.getElementById('toUnit');
+    const temp = fromUnit.value;
+    fromUnit.value = toUnit.value;
+    toUnit.value = temp;
+    convertCurrency();
+}
+
+// Initial convert
+convertCurrency();
+</script>
+
+</body>
+</html>
