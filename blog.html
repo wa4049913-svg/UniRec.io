@@ -16,7 +16,7 @@
     <title>Blog - Screen Recording Tips, Guides & Tutorials | Universal Screen Recorder Pro</title>
     <meta name="description" content="Read expert tips, guides, and tutorials on screen recording. Learn how to record gameplay, tutorials, meetings, and more with our free online screen recorder.">
     <meta name="keywords" content="screen recording blog, screen recorder tips, how to record screen, screen recording guide, gameplay recording tutorial">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="Waqar Ahmed">
     <meta name="theme-color" content="#4f8cff">
 
@@ -127,7 +127,7 @@
 
         .blog-header {
             text-align: center;
-            padding: 30px 0;
+            padding: 30px 0 20px;
             border-bottom: 1px solid rgba(79, 140, 255, 0.1);
             margin-bottom: 10px;
         }
@@ -144,12 +144,60 @@
             color: #7c8194;
             font-size: 15px;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 20px;
         }
+
+        /* ===== SEARCH BAR ===== */
+        .blog-search {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .blog-search input {
+            width: 100%;
+            padding: 14px 50px 14px 20px;
+            background: rgba(10, 14, 26, 0.6);
+            border: 1px solid rgba(79, 140, 255, 0.25);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 14.5px;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .blog-search input:focus {
+            border-color: #4f8cff;
+            box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.15);
+            background: rgba(10, 14, 26, 0.9);
+        }
+        .blog-search input::placeholder {
+            color: #6c7184;
+        }
+        .blog-search .search-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4f8cff;
+            font-size: 18px;
+            pointer-events: none;
+        }
+
+        /* No results message */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            color: #7c8194;
+            font-size: 15px;
+        }
+        .no-results.show { display: block; }
+        .no-results .icon { font-size: 48px; margin-bottom: 12px; display: block; }
 
         @media (max-width: 600px) {
             .blog-header h1 { font-size: 24px; }
             .blog-grid { grid-template-columns: 1fr; }
+            .blog-search input { font-size: 13.5px; padding: 12px 45px 12px 16px; }
         }
     </style>
 </head>
@@ -167,13 +215,19 @@
     <div class="blog-header">
         <h1>📝 Screen Recording Blog</h1>
         <p>Expert tips, tutorials, and guides to help you create professional-quality screen recordings.</p>
+
+        <!-- SEARCH BAR -->
+        <div class="blog-search">
+            <input type="text" id="blogSearch" placeholder="Search articles..." oninput="searchBlog()">
+            <span class="search-icon">🔍</span>
+        </div>
     </div>
 
     <!-- BLOG GRID -->
-    <div class="blog-grid">
+    <div class="blog-grid" id="blogGrid">
 
         <!-- ARTICLE 1 -->
-        <article class="blog-card">
+        <article class="blog-card" data-title="How to Record Gameplay in 2K 60FPS Without Lag (2026 Guide)">
             <div class="blog-thumb">🎮</div>
             <div class="blog-content">
                 <span class="blog-tag">Gaming</span>
@@ -188,7 +242,7 @@
         </article>
 
         <!-- ARTICLE 2 -->
-        <article class="blog-card">
+        <article class="blog-card" data-title="Best Screen Recorder Settings for Zoom & Google Meet">
             <div class="blog-thumb">💼</div>
             <div class="blog-content">
                 <span class="blog-tag">Meetings</span>
@@ -203,7 +257,7 @@
         </article>
 
         <!-- ARTICLE 3 -->
-        <article class="blog-card">
+        <article class="blog-card" data-title="How to Record YouTube Videos for Free (No Watermark)">
             <div class="blog-thumb">📹</div>
             <div class="blog-content">
                 <span class="blog-tag">YouTube</span>
@@ -218,7 +272,7 @@
         </article>
 
         <!-- ARTICLE 4 -->
-        <article class="blog-card">
+        <article class="blog-card" data-title="System Audio vs Microphone: Complete Recording Guide">
             <div class="blog-thumb">🎧</div>
             <div class="blog-content">
                 <span class="blog-tag">Audio</span>
@@ -233,7 +287,7 @@
         </article>
 
         <!-- ARTICLE 5 -->
-        <article class="blog-card">
+        <article class="blog-card" data-title="10 Tips for Professional Screen Recording Quality">
             <div class="blog-thumb">✨</div>
             <div class="blog-content">
                 <span class="blog-tag">Tips</span>
@@ -246,94 +300,103 @@
                 <a href="blog-post-5.html" class="blog-read-btn">Read More →</a>
             </div>
         </article>
-<!-- ARTICLE 6 -->
-<article class="blog-card">
-    <div class="blog-thumb">🎮</div>
-    <div class="blog-content">
-        <span class="blog-tag">Gaming</span>
-        <h3>Best Screen Recorder Settings for YouTube Gaming (2026 Guide)</h3>
-        <p>Learn the best settings for recording YouTube gaming videos. Optimize resolution, FPS, bitrate, and audio for professional results.</p>
-        <div class="blog-meta">
-            <span>📅 Sept 2026</span>
-            <span>⏱️ 8 min read</span>
-        </div>
-        <a href="blog-post-6.html" class="blog-read-btn">Read More →</a>
-    </div>
-</article>
 
-<!-- ARTICLE 7 -->
-<article class="blog-card">
-    <div class="blog-thumb">🎓</div>
-    <div class="blog-content">
-        <span class="blog-tag">Education</span>
-        <h3>How to Record Online Classes for Free (Complete 2026 Guide)</h3>
-        <p>Learn how to record Zoom, Google Meet, and Teams classes for free with HD quality and no time limits.</p>
-        <div class="blog-meta">
-            <span>📅 Sept 2026</span>
-            <span>⏱️ 7 min read</span>
-        </div>
-        <a href="blog-post-7.html" class="blog-read-btn">Read More →</a>
-    </div>
-</article>
+        <!-- ARTICLE 6 -->
+        <article class="blog-card" data-title="Best Screen Recorder Settings for YouTube Gaming (2026 Guide)">
+            <div class="blog-thumb">🎮</div>
+            <div class="blog-content">
+                <span class="blog-tag">Gaming</span>
+                <h3>Best Screen Recorder Settings for YouTube Gaming (2026 Guide)</h3>
+                <p>Learn the best settings for recording YouTube gaming videos. Optimize resolution, FPS, bitrate, and audio for professional results.</p>
+                <div class="blog-meta">
+                    <span>📅 Sept 2026</span>
+                    <span>⏱️ 8 min read</span>
+                </div>
+                <a href="blog-post-6.html" class="blog-read-btn">Read More →</a>
+            </div>
+        </article>
 
-<!-- ARTICLE 8 -->
-<article class="blog-card">
-    <div class="blog-thumb">💼</div>
-    <div class="blog-content">
-        <span class="blog-tag">Remote Work</span>
-        <h3>Screen Recording for Remote Work: Complete 2026 Guide</h3>
-        <p>Master screen recording for remote work. Document processes, send async updates, and collaborate better.</p>
-        <div class="blog-meta">
-            <span>📅 Sept 2026</span>
-            <span>⏱️ 7 min read</span>
-        </div>
-        <a href="blog-post-8.html" class="blog-read-btn">Read More →</a>
-    </div>
-</article>
+        <!-- ARTICLE 7 -->
+        <article class="blog-card" data-title="How to Record Online Classes for Free (Complete 2026 Guide)">
+            <div class="blog-thumb">🎓</div>
+            <div class="blog-content">
+                <span class="blog-tag">Education</span>
+                <h3>How to Record Online Classes for Free (Complete 2026 Guide)</h3>
+                <p>Learn how to record Zoom, Google Meet, and Teams classes for free with HD quality and no time limits.</p>
+                <div class="blog-meta">
+                    <span>📅 Sept 2026</span>
+                    <span>⏱️ 7 min read</span>
+                </div>
+                <a href="blog-post-7.html" class="blog-read-btn">Read More →</a>
+            </div>
+        </article>
 
-<!-- ARTICLE 9 -->
-<article class="blog-card">
-    <div class="blog-thumb">🌐</div>
-    <div class="blog-content">
-        <span class="blog-tag">Tutorials</span>
-        <h3>How to Record Browser Activity for Tutorials (2026 Guide)</h3>
-        <p>Learn how to record browser activity for web tutorials, software demos, and online walkthroughs.</p>
-        <div class="blog-meta">
-            <span>📅 Sept 2026</span>
-            <span>⏱️ 6 min read</span>
-        </div>
-        <a href="blog-post-9.html" class="blog-read-btn">Read More →</a>
-    </div>
-</article>
+        <!-- ARTICLE 8 -->
+        <article class="blog-card" data-title="Screen Recording for Remote Work: Complete 2026 Guide">
+            <div class="blog-thumb">💼</div>
+            <div class="blog-content">
+                <span class="blog-tag">Remote Work</span>
+                <h3>Screen Recording for Remote Work: Complete 2026 Guide</h3>
+                <p>Master screen recording for remote work. Document processes, send async updates, and collaborate better.</p>
+                <div class="blog-meta">
+                    <span>📅 Sept 2026</span>
+                    <span>⏱️ 7 min read</span>
+                </div>
+                <a href="blog-post-8.html" class="blog-read-btn">Read More →</a>
+            </div>
+        </article>
 
-<!-- ARTICLE 10 -->
-<article class="blog-card">
-    <div class="blog-thumb">⚖️</div>
-    <div class="blog-content">
-        <span class="blog-tag">Legal</span>
-        <h3>Screen Recording Legal Guide: What You Can and Can't Record</h3>
-        <p>Understand the legal boundaries of screen recording. Learn about copyright, consent, fair use, and more.</p>
-        <div class="blog-meta">
-            <span>📅 Sept 2026</span>
-            <span>⏱️ 8 min read</span>
-        </div>
-        <a href="blog-post-10.html" class="blog-read-btn">Read More →</a>
+        <!-- ARTICLE 9 -->
+        <article class="blog-card" data-title="How to Record Browser Activity for Tutorials (2026 Guide)">
+            <div class="blog-thumb">🌐</div>
+            <div class="blog-content">
+                <span class="blog-tag">Tutorials</span>
+                <h3>How to Record Browser Activity for Tutorials (2026 Guide)</h3>
+                <p>Learn how to record browser activity for web tutorials, software demos, and online walkthroughs.</p>
+                <div class="blog-meta">
+                    <span>📅 Sept 2026</span>
+                    <span>⏱️ 6 min read</span>
+                </div>
+                <a href="blog-post-9.html" class="blog-read-btn">Read More →</a>
+            </div>
+        </article>
+
+        <!-- ARTICLE 10 -->
+        <article class="blog-card" data-title="Screen Recording Legal Guide: What You Can and Can't Record">
+            <div class="blog-thumb">⚖️</div>
+            <div class="blog-content">
+                <span class="blog-tag">Legal</span>
+                <h3>Screen Recording Legal Guide: What You Can and Can't Record</h3>
+                <p>Understand the legal boundaries of screen recording. Learn about copyright, consent, fair use, and more.</p>
+                <div class="blog-meta">
+                    <span>📅 Sept 2026</span>
+                    <span>⏱️ 8 min read</span>
+                </div>
+                <a href="blog-post-10.html" class="blog-read-btn">Read More →</a>
+            </div>
+        </article>
+
+        <!-- ARTICLE 11 -->
+        <article class="blog-card" data-title="System Requirements for UniRecorder — Best Settings for Low-End PC (2026 Guide)">
+            <div class="blog-thumb">⚙️</div>
+            <div class="blog-content">
+                <span class="blog-tag">Performance</span>
+                <h3>System Requirements for UniRecorder — Best Settings for Low-End PC (2026 Guide)</h3>
+                <p>Learn the right UniRecorder settings for your PC. Avoid 4K/2K recording on weak hardware — prevent lag, crashes, and broken recordings.</p>
+                <div class="blog-meta">
+                    <span>📅 Sept 2026</span>
+                    <span>⏱️ 8 min read</span>
+                </div>
+                <a href="blog-post-11.html" class="blog-read-btn">Read More →</a>
+            </div>
+        </article>
+
     </div>
-</article>
-  <!-- ARTICLE 11 -->
-<article class="blog-card">
-    <div class="blog-thumb">⚙️</div>
-    <div class="blog-content">
-        <span class="blog-tag">Performance</span>
-        <h3>System Requirements for UniRecorder — Best Settings for Low-End PC (2026 Guide)</h3>
-        <p>Learn the right UniRecorder settings for your PC. Avoid 4K/2K recording on weak hardware — prevent lag, crashes, and broken recordings.</p>
-        <div class="blog-meta">
-            <span>📅 Sept 2026</span>
-            <span>⏱️ 8 min read</span>
-        </div>
-        <a href="blog-post-11.html" class="blog-read-btn">Read More →</a>
-    </div>
-</article>
+
+    <!-- NO RESULTS MESSAGE -->
+    <div class="no-results" id="noResults">
+        <span class="icon">🔍</span>
+        <p>No articles found. Try a different search term.</p>
     </div>
 
     <!-- CTA SECTION -->
@@ -352,10 +415,13 @@
     </p>
     <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
         <a href="index.html">Home</a>
+        <a href="more-tools.html">More Tools</a>
         <a href="blog.html">Blog</a>
         <a href="how.html">How to Use</a>
         <a href="about.html">About</a>
+        <a href="about-waqar.html">Author</a>
         <a href="privacy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
         <a href="terms.html">Terms of Service</a>
         <a href="contact.html">Contact</a>
     </div>
@@ -365,6 +431,35 @@
     </p>
     <p>Powered by <b>Waqar Ahmed</b> | © 2026 Universal Screen Recorder Pro. All rights reserved.</p>
 </footer>
+
+<script>
+/* ============ BLOG SEARCH FUNCTION ============ */
+function searchBlog() {
+    var input = document.getElementById('blogSearch');
+    var query = input.value.toLowerCase().trim();
+    var cards = document.querySelectorAll('#blogGrid .blog-card');
+    var visibleCount = 0;
+
+    cards.forEach(function(card) {
+        var title = (card.getAttribute('data-title') || '').toLowerCase();
+        var text = card.textContent.toLowerCase();
+
+        if (query === '' || title.includes(query) || text.includes(query)) {
+            card.style.display = '';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    var noResults = document.getElementById('noResults');
+    if (visibleCount === 0 && query !== '') {
+        noResults.classList.add('show');
+    } else {
+        noResults.classList.remove('show');
+    }
+}
+</script>
 
 </body>
 </html>
