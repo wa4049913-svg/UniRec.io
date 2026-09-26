@@ -271,16 +271,17 @@
             <button class="action-btn" onclick="clearAll()">🗑️ Clear All</button>
         </section>
 
-        <!-- ===== NEW: NEXT STEP SUGGESTION ===== -->
-        <div class="next-step-box" id="nextStepBox">
-            <span class="ns-icon">✅</span>
-            <div class="ns-title">PDF Created Successfully!</div>
-            <div class="ns-desc">Want to merge this PDF with another file, or compress it to reduce size?</div>
-            <div class="ns-actions">
-                <a href="pdf-merger.html" class="ns-btn primary" onclick="trackNextStep('pdf-merger')">📑 Merge with Another PDF →</a>
-                <a href="image-compressor.html" class="ns-btn secondary" onclick="trackNextStep('image-compressor')">🗜️ Compress Images First</a>
-            </div>
-        </div>
+        <!-- NEXT STEP SUGGESTION -->
+<div class="next-step-box" id="nextStepBox">
+    <span class="ns-icon">✅</span>
+    <div class="ns-title">PDF Created Successfully!</div>
+    <div class="ns-desc">Want to merge this PDF with another file, or compress it to reduce size?</div>
+    <div class="ns-actions">
+        <a href="pdf-merger.html" class="ns-btn primary" onclick="trackNextStep('pdf-merger')">📑 Merge with Another PDF →</a>
+        <a href="pdf-compressor.html" class="ns-btn secondary" onclick="trackNextStep('pdf-compressor')">🗜️ Compress This PDF</a>
+    </div>
+</div>
+   
     </article>
 
     <section class="box content-section">
