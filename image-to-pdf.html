@@ -137,6 +137,50 @@
         .status-msg.success { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: #22c55e; }
         .status-msg.error { background: rgba(255,71,87,0.1); border: 1px solid rgba(255,71,87,0.3); color: #ff4757; }
 
+        /* ===== NEW: NEXT STEP SUGGESTION ===== */
+        .next-step-box {
+            display: none;
+            margin-top: 20px;
+            padding: 22px;
+            background: linear-gradient(135deg, rgba(79,140,255,0.1), rgba(79,140,255,0.03));
+            border: 1px solid rgba(79,140,255,0.3);
+            border-radius: 14px;
+            text-align: center;
+            animation: slideUp 0.4s ease;
+        }
+        .next-step-box.show { display: block; }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .next-step-box .ns-icon { font-size: 32px; margin-bottom: 10px; display: block; }
+        .next-step-box .ns-title { color: #22c55e; font-size: 17px; font-weight: 800; margin-bottom: 8px; }
+        .next-step-box .ns-desc { color: #b8bcc8; font-size: 14px; line-height: 1.6; margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .next-step-box .ns-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .next-step-box .ns-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .next-step-box .ns-btn.primary {
+            background: linear-gradient(135deg, #4f8cff, #3d6fd9);
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(79,140,255,0.35);
+        }
+        .next-step-box .ns-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(79,140,255,0.5); }
+        .next-step-box .ns-btn.secondary {
+            background: rgba(79,140,255,0.1);
+            color: #4f8cff;
+            border: 1px solid rgba(79,140,255,0.3);
+        }
+        .next-step-box .ns-btn.secondary:hover { background: rgba(79,140,255,0.2); }
+
         .content-section { max-width: 900px; margin: 30px auto 0; }
         .content-section h2 { color: #fff; font-size: 20px; margin-bottom: 12px; margin-top: 22px; }
         .content-section h3 { color: #fff; font-size: 17px; margin-bottom: 10px; margin-top: 20px; }
@@ -152,6 +196,8 @@
             .tool-box h1 { font-size: 20px; }
             .action-row { flex-direction: column; }
             .file-item { flex-wrap: wrap; }
+            .next-step-box .ns-actions { flex-direction: column; }
+            .next-step-box .ns-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -224,6 +270,17 @@
             <button class="action-btn primary" id="convertBtn" onclick="convertToPDF()" disabled>📄 Convert to PDF</button>
             <button class="action-btn" onclick="clearAll()">🗑️ Clear All</button>
         </section>
+
+        <!-- ===== NEW: NEXT STEP SUGGESTION ===== -->
+        <div class="next-step-box" id="nextStepBox">
+            <span class="ns-icon">✅</span>
+            <div class="ns-title">PDF Created Successfully!</div>
+            <div class="ns-desc">Want to merge this PDF with another file, or compress it to reduce size?</div>
+            <div class="ns-actions">
+                <a href="pdf-merger.html" class="ns-btn primary" onclick="trackNextStep('pdf-merger')">📑 Merge with Another PDF →</a>
+                <a href="image-compressor.html" class="ns-btn secondary" onclick="trackNextStep('image-compressor')">🗜️ Compress Images First</a>
+            </div>
+        </div>
     </article>
 
     <section class="box content-section">
@@ -302,8 +359,10 @@ const convertBtn = document.getElementById('convertBtn');
 const progress = document.getElementById('progress');
 const progressBar = document.getElementById('progressBar');
 const statusMsg = document.getElementById('statusMsg');
+const nextStepBox = document.getElementById('nextStepBox');
 
-let images = []; // { id, file, dataUrl, width, height }
+let images = [];
+let toolStartTime = Date.now();
 
 dropZone.addEventListener('click', () => fileInput.click());
 dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
@@ -380,6 +439,7 @@ async function convertToPDF() {
     progress.classList.add('show');
     progressBar.style.width = '0%';
     hideStatus();
+    nextStepBox.classList.remove('show');
 
     const pageSize = document.getElementById('pageSize').value;
     const orientOpt = document.getElementById('orientation').value;
@@ -398,7 +458,6 @@ async function convertToPDF() {
     for (let i = 0; i < images.length; i++) {
         const img = images[i];
 
-        // Process image via canvas for quality + background
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
 
@@ -406,7 +465,6 @@ async function convertToPDF() {
             canvas.width = img.width;
             canvas.height = img.height;
         } else {
-            // Render at image native resolution for quality; PDF will scale
             canvas.width = img.width;
             canvas.height = img.height;
         }
@@ -416,17 +474,13 @@ async function convertToPDF() {
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
 
-        // If quality < 1, we still draw full-res image; compression happens in toDataURL
         ctx.drawImage(imgElCache[img.id] || await loadImg(img.dataUrl), 0, 0);
         const dataUrl = canvas.toDataURL('image/jpeg', quality);
 
-        // Determine page dimensions in mm
         let pw, ph;
         if (pageSize === 'auto') {
-            // Use 96 DPI → mm conversion: mm = px * 25.4 / 96
             pw = (img.width * 25.4) / 96;
             ph = (img.height * 25.4) / 96;
-            // Cap to A4 width if huge
             if (pw > 500) { const s = 500 / pw; pw *= s; ph *= s; }
         } else {
             const [w, h] = PAGE_SIZES_MM[pageSize];
@@ -449,7 +503,6 @@ async function convertToPDF() {
             pdf.addPage([pw, ph], pw > ph ? 'landscape' : 'portrait');
         }
 
-        // Image placement
         const availW = pw - margin * 2;
         const availH = ph - margin * 2;
         const imgAspect = img.width / img.height;
@@ -457,7 +510,6 @@ async function convertToPDF() {
 
         let drawW, drawH;
         if (fit || pageSize !== 'auto') {
-            // Fit inside
             if (imgAspect > availAspect) { drawW = availW; drawH = availW / imgAspect; }
             else { drawH = availH; drawW = availH * imgAspect; }
         } else {
@@ -479,9 +531,34 @@ async function convertToPDF() {
     showStatus(`✅ PDF created with ${images.length} page(s).`, 'success');
     setTimeout(() => { progress.classList.remove('show'); progressBar.style.width = '0%'; }, 1500);
     convertBtn.disabled = false;
+
+    // ===== NEW: Track completion event =====
+    if (window.gtag) {
+        gtag('event', 'tool_completed', {
+            tool_name: 'image-to-pdf',
+            duration_seconds: Math.round((Date.now() - toolStartTime) / 1000),
+            pages_created: images.length,
+            page_size: pageSize
+        });
+    }
+
+    // ===== NEW: Show next step suggestion =====
+    setTimeout(() => {
+        nextStepBox.classList.add('show');
+        nextStepBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 1600);
 }
 
-// Cache decoded images for canvas drawing
+// ===== NEW: Track next step clicks =====
+function trackNextStep(toolName) {
+    if (window.gtag) {
+        gtag('event', 'next_step_clicked', {
+            from_tool: 'image-to-pdf',
+            to_tool: toolName
+        });
+    }
+}
+
 const imgElCache = {};
 function loadImg(src) {
     return new Promise(res => {
@@ -498,6 +575,7 @@ function clearAll() {
     renderList();
     hideStatus();
     progress.classList.remove('show');
+    nextStepBox.classList.remove('show');
 }
 
 function showStatus(msg, type) {
