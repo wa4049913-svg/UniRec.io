@@ -147,8 +147,6 @@
 
         .cs-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
         .cs-btn { display: inline-block; padding: 11px 22px; color: #fff; text-decoration: none; border-radius: 9px; font-weight: 700; font-size: 13.5px; transition: all 0.2s; border: none; cursor: pointer; font-family: inherit; }
-        .cs-btn.download { background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 6px 18px rgba(16,185,129,0.35); }
-        .cs-btn.download:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(16,185,129,0.5); }
         .cs-btn.compress { background: linear-gradient(135deg, #4f8cff, #3d6fd9); box-shadow: 0 6px 18px rgba(79,140,255,0.35); }
         .cs-btn.compress:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(79,140,255,0.5); }
 
@@ -168,8 +166,6 @@
             .action-row { flex-direction: column; }
             .uploaded-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
             .img-card img { height: 100px; }
-            .cs-actions { flex-direction: column; }
-            .cs-btn { width: 100%; }
         }
     </style>
 </head>
@@ -281,16 +277,15 @@
         <div class="status-msg" id="statusMsg"></div>
 
         <section class="action-row">
-            <button class="action-btn primary" id="resizeBtn" onclick="resizeAll()" disabled>📐 Resize Images</button>
+            <button class="action-btn primary" id="resizeBtn" onclick="resizeAll()" disabled>📐 Resize & Download</button>
             <button class="action-btn" onclick="clearAll()">🗑️ Clear All</button>
         </section>
 
-        <!-- ===== DOWNLOAD ALL + COMPRESS (NICHE) ===== -->
+        <!-- ===== COMPRESS SUGGESTION (1 button only) ===== -->
         <div class="compress-suggest" id="compressSuggest">
-            <div class="cs-title">✅ Images Resized Successfully!</div>
-            <div class="cs-desc">Download all resized images, or compress them to reduce size.</div>
+            <div class="cs-title">✅ Images Resized & Downloaded!</div>
+            <div class="cs-desc">Want to reduce the file size of these images too? Try our Image Compressor.</div>
             <div class="cs-actions">
-                <button class="cs-btn download" onclick="downloadAll()">⬇️ Download </button>
                 <a href="image-compressor.html" class="cs-btn compress" onclick="trackCompressClick()">🗜️ Compress Images →</a>
             </div>
         </div>
@@ -495,7 +490,7 @@ function formatBytes(b) { if (b < 1024) return b + ' B'; if (b < 1048576) return
 async function resizeAll() {
     if (!files.length) return;
     resizeBtn.disabled = true;
-    showStatus('Resizing... please wait.', 'info');
+    showStatus('Resizing & downloading... please wait.', 'info');
     compressSuggest.classList.remove('show');
 
     const fmtSel = formatSel.value;
@@ -542,8 +537,6 @@ async function resizeAll() {
     }
 
     renderGrid();
-    showStatus(`✅ Resized ${files.length} image(s). Download below.`, 'success');
-    resizeBtn.disabled = false;
 
     if (window.gtag) {
         gtag('event', 'tool_completed', {
@@ -553,10 +546,24 @@ async function resizeAll() {
         });
     }
 
+    // ===== AUTO-DOWNLOAD ALL IMAGES =====
+    const resizedFiles = files.filter(f => f.resizedBlob);
+    showStatus(`✅ Resized ${files.length} image(s). Downloading...`, 'success');
+
+    resizedFiles.forEach((f, i) => {
+        setTimeout(() => triggerDownload(f.resizedBlob, f.outName), i * 300);
+    });
+
+    setTimeout(() => {
+        showStatus(`⬇️ Downloaded ${resizedFiles.length} image(s).`, 'success');
+        resizeBtn.disabled = false;
+    }, resizedFiles.length * 300 + 200);
+
+    // ===== SHOW COMPRESS BUTTON ONLY =====
     setTimeout(() => {
         compressSuggest.classList.add('show');
         compressSuggest.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 1500);
+    }, resizedFiles.length * 300 + 800);
 }
 
 function trackCompressClick() {
@@ -575,27 +582,6 @@ function loadImg(src) {
         im.onerror = rej;
         im.src = src;
     });
-}
-
-function downloadAll() {
-    const resizedFiles = files.filter(f => f.resizedBlob);
-    if (!resizedFiles.length) {
-        showStatus('No resized images to download.', 'error');
-        return;
-    }
-
-    if (window.gtag) {
-        gtag('event', 'download_all_clicked', {
-            tool_name: 'image-resizer',
-            count: resizedFiles.length
-        });
-    }
-
-    resizedFiles.forEach((f, i) => {
-        setTimeout(() => triggerDownload(f.resizedBlob, f.outName), i * 250);
-    });
-
-    showStatus(`⬇️ Downloading ${resizedFiles.length} image(s)...`, 'info');
 }
 
 function triggerDownload(blob, name) {
