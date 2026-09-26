@@ -12,9 +12,9 @@
       gtag('config', 'G-86S6HNZXBE');
     </script>
 
-    <title>Image Resizer Online - Resize Images to Any Dimension Free</title>
-    <meta name="description" content="Free online image resizer. Resize JPG, PNG, WEBP images to any width and height. Maintain aspect ratio, batch resize, no watermark, no signup.">
-    <meta name="keywords" content="image resizer, resize image, resize jpg, resize png, change image size, image dimensions, batch image resizer, free image resizer, photo resizer">
+    <title>Image Resizer Online - Resize Images for YouTube, Instagram, X Free</title>
+    <meta name="description" content="Free online image resizer. Resize JPG, PNG, WEBP images for YouTube thumbnails, Instagram posts, X (Twitter), Facebook OG, LinkedIn banners. Custom dimensions, no watermark, no signup.">
+    <meta name="keywords" content="image resizer, resize image, youtube thumbnail resizer, instagram image resizer, x twitter image resizer, facebook image resizer, resize jpg, resize png, change image size, batch image resizer, free image resizer, photo resizer">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="author" content="Waqar Ahmed">
     <meta name="theme-color" content="#4f8cff">
@@ -25,14 +25,14 @@
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="UniRecorder">
-    <meta property="og:title" content="Image Resizer - Resize Images Free Online">
-    <meta property="og:description" content="Resize JPG, PNG, WEBP images to any dimension instantly. 100% free, private.">
+    <meta property="og:title" content="Image Resizer - Resize for YouTube, Instagram, X Free">
+    <meta property="og:description" content="Resize images for YouTube thumbnails, Instagram posts, X (Twitter), Facebook OG. 100% free, private.">
     <meta property="og:url" content="https://unirecorder.online/image-resizer.html">
     <meta property="og:image" content="https://unirecorder.online/logo.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Image Resizer - Free Online Tool">
-    <meta name="twitter:description" content="Resize images to any width and height instantly. Batch resize, no watermark.">
+    <meta name="twitter:description" content="Resize images for YouTube, Instagram, X, Facebook. Batch resize, no watermark.">
     <meta name="twitter:image" content="https://unirecorder.online/logo.png">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6508336342227122" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
       "operatingSystem": "All",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "395", "bestRating": "5" },
-      "featureList": ["Resize by Pixels", "Resize by Percent", "Maintain Aspect Ratio", "Batch Resize", "Custom Dimensions"],
+      "featureList": ["Resize by Pixels", "YouTube Thumbnail", "Instagram Post", "X (Twitter) Post", "Facebook OG", "LinkedIn Banner", "Batch Resize"],
       "creator": { "@type": "Person", "name": "Waqar Ahmed" }
     }
     </script>
@@ -60,7 +60,8 @@
         { "@type": "Question", "name": "Is this image resizer free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, 100% free with no watermark, no signup, and no file limits." } },
         { "@type": "Question", "name": "Are my images uploaded?", "acceptedAnswer": { "@type": "Answer", "text": "No. All resizing happens locally in your browser. Your images never leave your device." } },
         { "@type": "Question", "name": "Can I resize multiple images at once?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload multiple images and resize them all at once with the same dimensions." } },
-        { "@type": "Question", "name": "Will resizing reduce image quality?", "acceptedAnswer": { "@type": "Answer", "text": "Downscaling usually preserves quality well. Upscaling (making images larger) can appear softer because there are no new pixels to invent." } }
+        { "@type": "Question", "name": "What size is a YouTube thumbnail?", "acceptedAnswer": { "@type": "Answer", "text": "YouTube thumbnails should be 1280 × 720 pixels (16:9 aspect ratio)." } },
+        { "@type": "Question", "name": "What size is an Instagram post?", "acceptedAnswer": { "@type": "Answer", "text": "Instagram square posts are 1080 × 1080 pixels. Stories are 1080 × 1920 pixels." } }
       ]
     }
     </script>
@@ -91,13 +92,23 @@
         .drop-zone p { color: #b8bcc8; font-size: 14px; margin: 4px 0; }
         .drop-zone .hint { color: #7c8194; font-size: 12px; }
         .drop-zone input[type="file"] { display: none; }
+        .drop-zone.hidden { display: none; }
+
+        .uploaded-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; margin-top: 18px; padding: 16px; background: rgba(79,140,255,0.04); border: 1px solid rgba(79,140,255,0.15); border-radius: 12px; }
+        .uploaded-grid.show { display: grid; }
+
+        .img-card { position: relative; background: rgba(10,14,26,0.6); border: 1px solid rgba(79,140,255,0.2); border-radius: 10px; overflow: hidden; transition: all 0.2s; }
+        .img-card:hover { border-color: rgba(79,140,255,0.5); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+        .img-card img { width: 100%; height: 120px; object-fit: cover; display: block; background: #0a0e1a; }
+        .img-card .img-info { padding: 10px; }
+        .img-card .img-name { color: #fff; font-size: 12px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-bottom: 4px; }
+        .img-card .img-meta { color: #7c8194; font-size: 10.5px; margin-bottom: 2px; }
+        .img-card .img-new { color: #22c55e; font-size: 10.5px; font-weight: 700; }
+        .img-card .img-remove { position: absolute; top: 6px; right: 6px; background: rgba(255,71,87,0.9); color: #fff; border: none; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; font-size: 14px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .img-card .img-remove:hover { background: #ff4757; transform: scale(1.1); }
 
         .options-box { margin-top: 18px; background: rgba(10,14,26,0.5); border: 1px solid rgba(79,140,255,0.12); border-radius: 12px; padding: 16px; }
         .options-box h2 { color: #4f8cff; font-size: 12.5px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-        .mode-tabs { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
-        .mode-tab { padding: 9px 16px; background: rgba(79,140,255,0.06); border: 1px solid rgba(79,140,255,0.2); border-radius: 9px; color: #b8bcc8; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
-        .mode-tab.active { background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%); color: #fff; border-color: #4f8cff; }
-        .mode-tab:hover:not(.active) { background: rgba(79,140,255,0.15); }
 
         .options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
         .opt-row { display: flex; flex-direction: column; gap: 6px; }
@@ -107,23 +118,12 @@
         .opt-check { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: rgba(79,140,255,0.06); border: 1px solid rgba(79,140,255,0.15); border-radius: 10px; cursor: pointer; color: #b8bcc8; font-size: 13px; font-weight: 600; }
         .opt-check input[type="checkbox"] { accent-color: #4f8cff; width: 16px; height: 16px; cursor: pointer; }
 
-        .presets { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
-        .preset-btn { padding: 8px 14px; background: rgba(79,140,255,0.08); border: 1px solid rgba(79,140,255,0.2); border-radius: 8px; color: #b8bcc8; font-size: 12.5px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
-        .preset-btn:hover { background: rgba(79,140,255,0.2); color: #fff; }
-
-        .file-list { margin-top: 18px; }
-        .file-list h2 { color: #4f8cff; font-size: 12.5px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .file-item { display: flex; align-items: center; gap: 12px; padding: 10px; background: rgba(79,140,255,0.06); border: 1px solid rgba(79,140,255,0.15); border-radius: 10px; margin-bottom: 8px; }
-        .file-item img { width: 56px; height: 56px; object-fit: cover; border-radius: 6px; background: #0a0e1a; }
-        .file-item .info { flex: 1; min-width: 0; }
-        .file-item .name { color: #fff; font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .file-item .meta { color: #7c8194; font-size: 11.5px; margin-top: 2px; }
-        .file-item .new-size { color: #22c55e; font-size: 11.5px; font-weight: 700; margin-top: 2px; }
-        .file-item .btns { display: flex; gap: 6px; }
-        .icon-btn { background: rgba(79,140,255,0.1); color: #4f8cff; border: 1px solid rgba(79,140,255,0.3); border-radius: 8px; padding: 6px 10px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
-        .icon-btn:hover { background: rgba(79,140,255,0.25); }
-        .icon-btn.danger { color: #ff4757; border-color: rgba(255,71,87,0.3); background: rgba(255,71,87,0.08); }
-        .icon-btn.danger:hover { background: rgba(255,71,87,0.2); }
+        .preset-group { margin-bottom: 14px; }
+        .preset-group-title { color: #7c8194; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .presets { display: flex; gap: 8px; flex-wrap: wrap; }
+        .preset-btn { padding: 9px 14px; background: rgba(79,140,255,0.08); border: 1px solid rgba(79,140,255,0.2); border-radius: 8px; color: #b8bcc8; font-size: 12.5px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .preset-btn:hover { background: rgba(79,140,255,0.2); color: #fff; transform: translateY(-1px); }
+        .preset-btn.active { background: linear-gradient(135deg, #4f8cff 0%, #3d6fd9 100%); color: #fff; border-color: #4f8cff; }
 
         .action-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
         .action-btn { flex: 1; min-width: 140px; padding: 14px 20px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; border: 1px solid rgba(79,140,255,0.3); background: rgba(79,140,255,0.1); color: #4f8cff; }
@@ -139,6 +139,19 @@
         .status-msg.error { background: rgba(255,71,87,0.1); border: 1px solid rgba(255,71,87,0.3); color: #ff4757; }
         .status-msg.info { background: rgba(79,140,255,0.1); border: 1px solid rgba(79,140,255,0.3); color: #4f8cff; }
 
+        .compress-suggest { display: none; margin-top: 16px; padding: 20px 18px; background: linear-gradient(135deg, rgba(79,140,255,0.08), rgba(79,140,255,0.02)); border: 1px solid rgba(79,140,255,0.25); border-radius: 12px; text-align: center; animation: slideUp 0.35s ease; }
+        .compress-suggest.show { display: block; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .compress-suggest .cs-title { color: #22c55e; font-size: 15px; font-weight: 800; margin-bottom: 6px; }
+        .compress-suggest .cs-desc { color: #b8bcc8; font-size: 13.5px; margin-bottom: 16px; line-height: 1.5; }
+
+        .cs-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .cs-btn { display: inline-block; padding: 11px 22px; color: #fff; text-decoration: none; border-radius: 9px; font-weight: 700; font-size: 13.5px; transition: all 0.2s; border: none; cursor: pointer; font-family: inherit; }
+        .cs-btn.download { background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 6px 18px rgba(16,185,129,0.35); }
+        .cs-btn.download:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(16,185,129,0.5); }
+        .cs-btn.compress { background: linear-gradient(135deg, #4f8cff, #3d6fd9); box-shadow: 0 6px 18px rgba(79,140,255,0.35); }
+        .cs-btn.compress:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(79,140,255,0.5); }
+
         .content-section { max-width: 900px; margin: 30px auto 0; }
         .content-section h2 { color: #fff; font-size: 20px; margin-bottom: 12px; margin-top: 22px; }
         .content-section h3 { color: #fff; font-size: 17px; margin-bottom: 10px; margin-top: 20px; }
@@ -153,7 +166,10 @@
             .tool-box { padding: 20px; }
             .tool-box h1 { font-size: 20px; }
             .action-row { flex-direction: column; }
-            .file-item { flex-wrap: wrap; }
+            .uploaded-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+            .img-card img { height: 100px; }
+            .cs-actions { flex-direction: column; }
+            .cs-btn { width: 100%; }
         }
     </style>
 </head>
@@ -167,7 +183,7 @@
 <main class="tool-container">
     <article class="tool-box">
         <h1>📐 Image Resizer</h1>
-        <p class="sub">Resize JPG, PNG, WEBP images to any dimension — free, fast, and private.</p>
+        <p class="sub">Resize images for YouTube, Instagram, X, Facebook, LinkedIn — free, fast, private.</p>
 
         <div class="drop-zone" id="dropZone">
             <div class="icon">📤</div>
@@ -176,15 +192,58 @@
             <input type="file" id="fileInput" accept="image/*" multiple>
         </div>
 
+        <div class="uploaded-grid" id="uploadedGrid"></div>
+
+        <div id="addMoreWrap" style="display:none; margin-top:14px; text-align:center;">
+            <button class="action-btn" onclick="showDropZone()" style="display:inline-block; padding:10px 24px; font-size:13.5px;">➕ Add More Images</button>
+        </div>
+
         <section class="options-box">
-            <h2>Resize Mode</h2>
-            <div class="mode-tabs">
-                <button class="mode-tab active" data-mode="pixels" onclick="setMode('pixels')">📏 Pixels</button>
-                <button class="mode-tab" data-mode="percent" onclick="setMode('percent')">％ Percent</button>
-                <button class="mode-tab" data-mode="preset" onclick="setMode('preset')">⚡ Preset</button>
+            <h2>Resize Options</h2>
+
+            <div class="preset-group">
+                <div class="preset-group-title">📺 YouTube</div>
+                <div class="presets">
+                    <button class="preset-btn" onclick="setPreset(1280,720, this)">▶️ Thumbnail (1280×720)</button>
+                    <button class="preset-btn" onclick="setPreset(2560,1440, this)">▶️ Banner (2560×1440)</button>
+                </div>
             </div>
 
-            <div id="pixelsPanel">
+            <div class="preset-group">
+                <div class="preset-group-title">🐦 X (Twitter)</div>
+                <div class="presets">
+                    <button class="preset-btn" onclick="setPreset(1600,900, this)">🖼️ Post (1600×900)</button>
+                    <button class="preset-btn" onclick="setPreset(1500,500, this)">🎨 Banner (1500×500)</button>
+                </div>
+            </div>
+
+            <div class="preset-group">
+                <div class="preset-group-title">📸 Instagram</div>
+                <div class="presets">
+                    <button class="preset-btn" onclick="setPreset(1080,1080, this)">⬜ Square (1080×1080)</button>
+                    <button class="preset-btn" onclick="setPreset(1080,1350, this)">🖼️ Portrait (1080×1350)</button>
+                    <button class="preset-btn" onclick="setPreset(1080,1920, this)">📱 Story (1080×1920)</button>
+                </div>
+            </div>
+
+            <div class="preset-group">
+                <div class="preset-group-title">📘 Facebook</div>
+                <div class="presets">
+                    <button class="preset-btn" onclick="setPreset(1200,630, this)">🔗 OG (1200×630)</button>
+                    <button class="preset-btn" onclick="setPreset(1200,1200, this)">⬜ Post (1200×1200)</button>
+                </div>
+            </div>
+
+            <div class="preset-group">
+                <div class="preset-group-title">💼 LinkedIn & 📌 Pinterest</div>
+                <div class="presets">
+                    <button class="preset-btn" onclick="setPreset(1200,627, this)">💼 Post (1200×627)</button>
+                    <button class="preset-btn" onclick="setPreset(1000,1500, this)">📌 Pin (1000×1500)</button>
+                </div>
+            </div>
+
+            <div class="preset-group">
+                <div class="preset-group-title">⚙️ Custom</div>
                 <div class="options-grid">
                     <div class="opt-row">
                         <label>Width (px)</label>
@@ -198,28 +257,6 @@
                         <input type="checkbox" id="lockAspect" checked> Maintain aspect ratio
                     </label>
                 </div>
-            </div>
-
-            <div id="percentPanel" style="display:none;">
-                <div class="options-grid">
-                    <div class="opt-row">
-                        <label>Scale (%)</label>
-                        <input type="number" id="percentScale" min="1" max="500" value="50">
-                    </div>
-                </div>
-            </div>
-
-            <div id="presetPanel" style="display:none;">
-                <div class="presets">
-                    <button class="preset-btn" onclick="setPreset(1920,1080)">1920×1080 (Full HD)</button>
-                    <button class="preset-btn" onclick="setPreset(1280,720)">1280×720 (HD)</button>
-                    <button class="preset-btn" onclick="setPreset(1080,1080)">1080×1080 (Instagram)</button>
-                    <button class="preset-btn" onclick="setPreset(1200,628)">1200×628 (Facebook OG)</button>
-                    <button class="preset-btn" onclick="setPreset(800,800)">800×800 (Square)</button>
-                    <button class="preset-btn" onclick="setPreset(400,400)">400×400 (Thumbnail)</button>
-                    <button class="preset-btn" onclick="setPreset(200,200)">200×200 (Favicon)</button>
-                </div>
-                <p style="color:#7c8194;font-size:12px;margin-top:10px;">Click a preset above to fill width/height, then switch to Pixels tab to fine-tune.</p>
             </div>
 
             <div style="margin-top:12px;border-top:1px solid rgba(79,140,255,0.12);padding-top:12px;">
@@ -241,49 +278,45 @@
             </div>
         </section>
 
-        <section class="file-list" id="fileListSection" style="display:none;">
-            <h2>Images (<span id="fileCount">0</span>) — Resized</h2>
-            <div id="fileList"></div>
-        </section>
-
         <div class="status-msg" id="statusMsg"></div>
 
         <section class="action-row">
             <button class="action-btn primary" id="resizeBtn" onclick="resizeAll()" disabled>📐 Resize Images</button>
-            <button class="action-btn primary" id="downloadAllBtn" onclick="downloadAll()" disabled style="display:none;">⬇️ Download All</button>
-            <button class="action-btn danger" onclick="clearAll()">🗑️ Clear</button>
+            <button class="action-btn" onclick="clearAll()">🗑️ Clear All</button>
         </section>
+
+        <!-- ===== DOWNLOAD ALL + COMPRESS (NICHE) ===== -->
+        <div class="compress-suggest" id="compressSuggest">
+            <div class="cs-title">✅ Images Resized Successfully!</div>
+            <div class="cs-desc">Download all resized images, or compress them to reduce size.</div>
+            <div class="cs-actions">
+                <button class="cs-btn download" onclick="downloadAll()">⬇️ Download </button>
+                <a href="image-compressor.html" class="cs-btn compress" onclick="trackCompressClick()">🗜️ Compress Images →</a>
+            </div>
+        </div>
     </article>
 
     <section class="box content-section">
         <h2>What is an Image Resizer?</h2>
-        <p>An <strong>image resizer</strong> changes the width and height of your images in pixels or percent. Resizing is essential for web images, social media posts, profile pictures, thumbnails, and reducing file size before uploading.</p>
+        <p>An <strong>image resizer</strong> changes the width and height of your images. Resizing is essential for web images, social media posts, profile pictures, thumbnails, and reducing file size before uploading.</p>
 
-        <h2>How to Resize Images</h2>
-        <ol>
-            <li>Upload one or more images (drag & drop supported).</li>
-            <li>Choose a mode: <strong>Pixels</strong>, <strong>Percent</strong>, or <strong>Preset</strong>.</li>
-            <li>Enter width/height, or pick a preset like Instagram or Facebook OG.</li>
-            <li>Optionally keep aspect ratio to avoid stretching.</li>
-            <li>Click <strong>Resize Images</strong> and download the results.</li>
-        </ol>
-
-        <h2>Features</h2>
+        <h2>Common Social Media Image Sizes (2026)</h2>
         <ul>
-            <li><strong>Resize by pixels:</strong> Any width × height.</li>
-            <li><strong>Resize by percent:</strong> Scale up or down (1–500%).</li>
-            <li><strong>Social presets:</strong> Instagram, Facebook OG, HD, Full HD, thumbnail, favicon.</li>
-            <li><strong>Maintain aspect ratio:</strong> Prevent stretching.</li>
-            <li><strong>Batch resize:</strong> Process many images at once.</li>
-            <li><strong>Format conversion:</strong> JPEG, PNG, or WEBP output.</li>
-            <li><strong>100% private:</strong> All processing happens in your browser.</li>
+            <li><strong>YouTube Thumbnail:</strong> 1280 × 720 px</li>
+            <li><strong>YouTube Banner:</strong> 2560 × 1440 px</li>
+            <li><strong>X (Twitter) Post:</strong> 1600 × 900 px</li>
+            <li><strong>Instagram Square:</strong> 1080 × 1080 px</li>
+            <li><strong>Instagram Story:</strong> 1080 × 1920 px</li>
+            <li><strong>Facebook OG:</strong> 1200 × 630 px</li>
+            <li><strong>LinkedIn Post:</strong> 1200 × 627 px</li>
+            <li><strong>Pinterest Pin:</strong> 1000 × 1500 px</li>
         </ul>
 
         <h2>Related Free Tools</h2>
         <ul>
+            <li><a href="image-compressor.html">Image Compressor</a> — Reduce image file size.</li>
             <li><a href="image-to-pdf.html">Image to PDF</a> — Convert images to PDF.</li>
             <li><a href="pdf-merger.html">PDF Merger</a> — Combine multiple PDFs.</li>
-            <li><a href="image-compressor.html">Image Compressor</a> — Reduce image file size.</li>
             <li><a href="more-tools.html">More Tools →</a></li>
         </ul>
 
@@ -298,11 +331,15 @@
         </div>
         <div class="faq-item">
             <h3>Can I resize multiple images at once?</h3>
-            <p>Yes. Upload multiple images and resize them all with the same dimensions in one click.</p>
+            <p>Yes. Upload multiple images and resize them all with the same dimensions.</p>
         </div>
         <div class="faq-item">
-            <h3>Will resizing reduce image quality?</h3>
-            <p>Downscaling usually preserves quality well. Upscaling (making images larger) can appear softer because there are no new pixels to invent.</p>
+            <h3>What size is a YouTube thumbnail?</h3>
+            <p>YouTube thumbnails should be 1280 × 720 pixels (16:9 aspect ratio).</p>
+        </div>
+        <div class="faq-item">
+            <h3>What size is an Instagram post?</h3>
+            <p>Instagram square posts are 1080 × 1080 pixels. Stories are 1080 × 1920 pixels.</p>
         </div>
     </section>
 </main>
@@ -315,6 +352,7 @@
         <a href="blog.html">Blog</a>
         <a href="about.html">About</a>
         <a href="privacy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
         <a href="terms.html">Terms of Service</a>
         <a href="contact.html">Contact</a>
     </div>
@@ -325,26 +363,22 @@
 <script>
 const dropZone = document.getElementById('dropZone');
 const fileInput = document.getElementById('fileInput');
-const fileListSection = document.getElementById('fileListSection');
-const fileList = document.getElementById('fileList');
-const fileCount = document.getElementById('fileCount');
+const uploadedGrid = document.getElementById('uploadedGrid');
+const addMoreWrap = document.getElementById('addMoreWrap');
 const resizeBtn = document.getElementById('resizeBtn');
-const downloadAllBtn = document.getElementById('downloadAllBtn');
 const statusMsg = document.getElementById('statusMsg');
 const widthPx = document.getElementById('widthPx');
 const heightPx = document.getElementById('heightPx');
 const lockAspect = document.getElementById('lockAspect');
-const percentScale = document.getElementById('percentScale');
 const formatSel = document.getElementById('format');
 const resizeQuality = document.getElementById('resizeQuality');
+const compressSuggest = document.getElementById('compressSuggest');
 
-let mode = 'pixels';
-let files = []; // { id, file, name, origSize, dataUrl, w, h, resizedBlob, resizedSize, outName, newW, newH }
+let files = [];
+let toolStartTime = Date.now();
 
-// Aspect ratio lock
-let lastEdited = 'width';
-widthPx.addEventListener('input', () => { lastEdited = 'width'; syncAspect('width'); });
-heightPx.addEventListener('input', () => { lastEdited = 'height'; syncAspect('height'); });
+widthPx.addEventListener('input', () => syncAspect('width'));
+heightPx.addEventListener('input', () => syncAspect('height'));
 
 function syncAspect(from) {
     if (!lockAspect.checked) return;
@@ -360,20 +394,12 @@ function syncAspect(from) {
     }
 }
 
-function setMode(m) {
-    mode = m;
-    document.querySelectorAll('.mode-tab').forEach(t => t.classList.toggle('active', t.dataset.mode === m));
-    document.getElementById('pixelsPanel').style.display = m === 'pixels' ? 'block' : 'none';
-    document.getElementById('percentPanel').style.display = m === 'percent' ? 'block' : 'none';
-    document.getElementById('presetPanel').style.display = m === 'preset' ? 'block' : 'none';
-}
-
-function setPreset(w, h) {
+function setPreset(w, h, btn) {
     widthPx.value = w;
     heightPx.value = h;
     lockAspect.checked = false;
-    setMode('pixels');
-    document.querySelectorAll('.mode-tab').forEach(t => t.classList.toggle('active', t.dataset.mode === 'pixels'));
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
 }
 
 dropZone.addEventListener('click', () => fileInput.click());
@@ -385,6 +411,17 @@ dropZone.addEventListener('drop', e => {
     handleFiles(e.dataTransfer.files);
 });
 fileInput.addEventListener('change', e => handleFiles(e.target.files));
+
+function showDropZone() {
+    dropZone.classList.remove('hidden');
+    addMoreWrap.style.display = 'none';
+    dropZone.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function hideDropZone() {
+    dropZone.classList.add('hidden');
+    addMoreWrap.style.display = 'block';
+}
 
 function handleFiles(fl) {
     const arr = Array.from(fl).filter(f => f.type.startsWith('image/'));
@@ -409,12 +446,12 @@ function handleFiles(fl) {
                     newW: img.naturalWidth,
                     newH: img.naturalHeight
                 });
-                // First image: auto-fill width/height
-                if (files.length === 1 && mode === 'pixels') {
+                if (files.length === 1) {
                     widthPx.value = img.naturalWidth;
                     heightPx.value = img.naturalHeight;
                 }
-                renderList();
+                renderGrid();
+                hideDropZone();
             };
             img.src = e.target.result;
         };
@@ -422,38 +459,35 @@ function handleFiles(fl) {
     });
 }
 
-function renderList() {
+function renderGrid() {
     if (!files.length) {
-        fileListSection.style.display = 'none';
+        uploadedGrid.classList.remove('show');
         resizeBtn.disabled = true;
-        downloadAllBtn.style.display = 'none';
         return;
     }
-    fileListSection.style.display = 'block';
+    uploadedGrid.classList.add('show');
     resizeBtn.disabled = false;
-    fileCount.textContent = files.length;
 
-    fileList.innerHTML = files.map((f, i) => {
+    uploadedGrid.innerHTML = files.map((f, i) => {
         const resized = f.resizedBlob !== null;
         return `
-        <div class="file-item">
+        <div class="img-card ${resized ? 'resized' : ''}">
             <img src="${f.dataUrl}" alt="">
-            <div class="info">
-                <div class="name">${escapeHtml(f.name)}</div>
-                <div class="meta">Original: ${f.w} × ${f.h} px · ${formatBytes(f.origSize)}</div>
-                ${resized ? `<div class="new-size">New: ${f.newW} × ${f.newH} px · ${formatBytes(f.resizedSize)}</div>` : ''}
-            </div>
-            <div class="btns">
-                ${resized ? `<button class="icon-btn" onclick="downloadOne(${i})">⬇️</button>` : ''}
-                <button class="icon-btn danger" onclick="removeFile(${i})">✕</button>
+            <button class="img-remove" onclick="removeFile(${i})" title="Remove">✕</button>
+            <div class="img-info">
+                <div class="img-name" title="${escapeHtml(f.name)}">${escapeHtml(f.name)}</div>
+                <div class="img-meta">${f.w} × ${f.h} px · ${formatBytes(f.origSize)}</div>
+                ${resized ? `<div class="img-new">✅ New: ${f.newW} × ${f.newH} px</div>` : ''}
             </div>
         </div>`;
     }).join('');
-
-    if (files.some(f => f.resizedBlob)) downloadAllBtn.style.display = 'block';
 }
 
-function removeFile(i) { files.splice(i, 1); renderList(); }
+function removeFile(i) {
+    files.splice(i, 1);
+    renderGrid();
+    if (!files.length) showDropZone();
+}
 
 function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function formatBytes(b) { if (b < 1024) return b + ' B'; if (b < 1048576) return (b/1024).toFixed(1) + ' KB'; return (b/1048576).toFixed(2) + ' MB'; }
@@ -462,41 +496,15 @@ async function resizeAll() {
     if (!files.length) return;
     resizeBtn.disabled = true;
     showStatus('Resizing... please wait.', 'info');
+    compressSuggest.classList.remove('show');
 
     const fmtSel = formatSel.value;
     const q = Math.min(1, Math.max(0.5, parseFloat(resizeQuality.value) || 0.92));
 
     for (const f of files) {
         try {
-            let targetW, targetH;
-
-            if (mode === 'pixels') {
-                targetW = Math.round(parseFloat(widthPx.value) || f.w);
-                targetH = Math.round(parseFloat(heightPx.value) || f.h);
-                if (lockAspect.checked) {
-                    const ratio = f.w / f.h;
-                    // Keep whichever dimension fits the aspect
-                    const byW = targetW / ratio;
-                    const byH = targetH * ratio;
-                    // Prefer the smaller change
-                    if (Math.abs(byW - targetH) < Math.abs(byH - targetW)) {
-                        targetH = Math.round(byW);
-                    } else {
-                        targetW = Math.round(byH);
-                    }
-                }
-            } else if (mode === 'percent') {
-                const pct = Math.max(1, parseFloat(percentScale.value) || 100) / 100;
-                targetW = Math.round(f.w * pct);
-                targetH = Math.round(f.h * pct);
-            } else {
-                // preset applied to pixels panel
-                targetW = Math.round(parseFloat(widthPx.value) || f.w);
-                targetH = Math.round(parseFloat(heightPx.value) || f.h);
-            }
-
-            targetW = Math.max(1, targetW);
-            targetH = Math.max(1, targetH);
+            const targetW = Math.max(1, Math.round(parseFloat(widthPx.value) || f.w));
+            const targetH = Math.max(1, Math.round(parseFloat(heightPx.value) || f.h));
 
             const img = await loadImg(f.dataUrl);
             const canvas = document.createElement('canvas');
@@ -533,10 +541,31 @@ async function resizeAll() {
         }
     }
 
-    renderList();
-    showStatus(`✅ Resized ${files.length} image(s).`, 'success');
+    renderGrid();
+    showStatus(`✅ Resized ${files.length} image(s). Download below.`, 'success');
     resizeBtn.disabled = false;
-    downloadAllBtn.style.display = 'block';
+
+    if (window.gtag) {
+        gtag('event', 'tool_completed', {
+            tool_name: 'image-resizer',
+            duration_seconds: Math.round((Date.now() - toolStartTime) / 1000),
+            images_resized: files.length
+        });
+    }
+
+    setTimeout(() => {
+        compressSuggest.classList.add('show');
+        compressSuggest.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 1500);
+}
+
+function trackCompressClick() {
+    if (window.gtag) {
+        gtag('event', 'next_step_clicked', {
+            from_tool: 'image-resizer',
+            to_tool: 'image-compressor'
+        });
+    }
 }
 
 function loadImg(src) {
@@ -548,16 +577,25 @@ function loadImg(src) {
     });
 }
 
-function downloadOne(i) {
-    const f = files[i];
-    if (!f.resizedBlob) return;
-    triggerDownload(f.resizedBlob, f.outName);
-}
-
 function downloadAll() {
-    files.forEach((f, i) => {
-        if (f.resizedBlob) setTimeout(() => triggerDownload(f.resizedBlob, f.outName), i * 200);
+    const resizedFiles = files.filter(f => f.resizedBlob);
+    if (!resizedFiles.length) {
+        showStatus('No resized images to download.', 'error');
+        return;
+    }
+
+    if (window.gtag) {
+        gtag('event', 'download_all_clicked', {
+            tool_name: 'image-resizer',
+            count: resizedFiles.length
+        });
+    }
+
+    resizedFiles.forEach((f, i) => {
+        setTimeout(() => triggerDownload(f.resizedBlob, f.outName), i * 250);
     });
+
+    showStatus(`⬇️ Downloading ${resizedFiles.length} image(s)...`, 'info');
 }
 
 function triggerDownload(blob, name) {
@@ -575,8 +613,13 @@ function clearAll() {
     if (files.length && !confirm('Clear all images?')) return;
     files = [];
     fileInput.value = '';
-    renderList();
+    uploadedGrid.classList.remove('show');
+    uploadedGrid.innerHTML = '';
+    addMoreWrap.style.display = 'none';
+    dropZone.classList.remove('hidden');
+    resizeBtn.disabled = true;
     hideStatus();
+    compressSuggest.classList.remove('show');
 }
 
 function showStatus(msg, type) {
@@ -585,7 +628,7 @@ function showStatus(msg, type) {
 }
 function hideStatus() { statusMsg.className = 'status-msg'; }
 
-renderList();
+renderGrid();
 </script>
 
 </body>
