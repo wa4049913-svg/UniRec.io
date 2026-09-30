@@ -25,17 +25,17 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="format-detection" content="telephone=no">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="canonical" href="https://alphaai.app/">
+<link rel="canonical" href="https://unirecorder.online/alpha-ai.html">
 
 <!-- ============================================================
-     OPEN GRAPH
+     OPEN GRAPH (Facebook / WhatsApp / LinkedIn)
      ============================================================ -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alpha AI">
 <meta property="og:title" content="Alpha AI — Skills to Clients">
 <meta property="og:description" content="Turn your skills into real clients and earnings. AI chat, skill quiz, demand map, client finder, proposal generator and learning roadmaps — all in one place. Created by Waqar Ahmed, Founder of UniRecorder.online.">
-<meta property="og:url" content="https://alphaai.app/">
-<meta property="og:image" content="https://alphaai.app/og-image.png">
+<meta property="og:url" content="https://unirecorder.online/alpha-ai.html">
+<meta property="og:image" content="https://unirecorder.online/alpha-ai-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Alpha AI — Skills to Clients">
@@ -46,11 +46,11 @@
      TWITTER / X CARD
      ============================================================ -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@alphaai">
-<meta name="twitter:creator" content="@alphaai">
+<meta name="twitter:site" content="@unirecorder">
+<meta name="twitter:creator" content="@unirecorder">
 <meta name="twitter:title" content="Alpha AI — Skills to Clients">
 <meta name="twitter:description" content="Pakistan's smartest freelancing assistant by Waqar Ahmed. Skills → Demand → Clients → Earnings.">
-<meta name="twitter:image" content="https://alphaai.app/og-image.png">
+<meta name="twitter:image" content="https://unirecorder.online/alpha-ai-og.png">
 <meta name="twitter:image:alt" content="Alpha AI — Skills to Clients">
 
 <!-- ============================================================
@@ -68,7 +68,7 @@
   "@type": "WebApplication",
   "name": "Alpha AI",
   "alternateName": "Alpha AI — Skills to Clients",
-  "url": "https://alphaai.app/",
+  "url": "https://unirecorder.online/alpha-ai.html",
   "description": "Alpha AI — Pakistan's smartest freelancing assistant by Waqar Ahmed, founder of UniRecorder.online. Convert skills into clients and earnings.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any (Web)",
@@ -146,7 +146,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated background */
 body::before {
   content: '';
   position: fixed;
@@ -161,11 +160,7 @@ body::before {
 
 body > * { position: relative; z-index: 1; }
 
-/* ============ APP LAYOUT ============ */
-.app {
-  display: flex;
-  min-height: 100vh;
-}
+.app { display: flex; min-height: 100vh; }
 
 /* ============ SIDEBAR ============ */
 .sidebar {
@@ -308,7 +303,7 @@ body > * { position: relative; z-index: 1; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   color: white;
   flex-shrink: 0;
@@ -347,7 +342,6 @@ body > * { position: relative; z-index: 1; }
   50% { opacity: 0.4; }
 }
 
-/* Language switcher (in sidebar) */
 .lang-switch {
   display: flex;
   background: var(--bg2);
@@ -494,7 +488,6 @@ main {
 .section { display: none; }
 .section.active { display: block; animation: fadeIn 0.35s; }
 
-/* ============ CARDS ============ */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -566,7 +559,6 @@ main {
   opacity: 0.35;
 }
 
-/* ============ PANEL ============ */
 .panel {
   background: linear-gradient(135deg, var(--card), var(--card2));
   border: 1px solid var(--border);
@@ -593,7 +585,6 @@ main {
   line-height: 1.6;
 }
 
-/* ============ FORM ============ */
 .form-row {
   display: flex;
   gap: 10px;
@@ -638,7 +629,6 @@ select {
   padding-right: 34px;
 }
 
-/* ============ BUTTONS ============ */
 .btn {
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   color: white;
@@ -685,7 +675,6 @@ select {
 .btn-lg { padding: 14px 28px; font-size: 15px; }
 .btn-block { width: 100%; justify-content: center; }
 
-/* ============ CHAT ============ */
 .chat-window {
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -748,21 +737,9 @@ select {
 
 .msg.bot strong { color: #c4b5fd; }
 
-.msg-time {
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 4px;
-  opacity: 0.7;
-}
-
-.chat-input-row {
-  display: flex;
-  gap: 10px;
-}
-
+.chat-input-row { display: flex; gap: 10px; }
 .chat-input-row input { flex: 1; }
 
-/* Typing indicator */
 .typing {
   display: inline-flex;
   gap: 4px;
@@ -785,7 +762,6 @@ select {
   30% { transform: translateY(-6px); opacity: 1; }
 }
 
-/* ============ ITEM LIST ============ */
 .item {
   display: flex;
   align-items: center;
@@ -808,7 +784,6 @@ select {
 .item-title { font-size: 14px; font-weight: 600; word-wrap: break-word; }
 .item-sub { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
 
-/* ============ BADGE ============ */
 .badge {
   display: inline-block;
   padding: 4px 10px;
@@ -827,7 +802,6 @@ select {
 .badge.purple { background: rgba(139,92,246,0.18); color: #c4b5fd; }
 .badge.cyan { background: rgba(6,182,212,0.18); color: var(--info); }
 
-/* ============ PROGRESS BAR ============ */
 .progress {
   background: var(--bg2);
   height: 8px;
@@ -848,7 +822,6 @@ select {
 .progress-fill.orange { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
 .progress-fill.red { background: linear-gradient(90deg, #ef4444, #f87171); }
 
-/* ============ SKILL CARD ============ */
 .skill-card {
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -901,7 +874,6 @@ select {
   margin-top: 10px;
 }
 
-/* ============ TIP BOX ============ */
 .tip {
   background: linear-gradient(135deg, rgba(91,110,245,0.12), rgba(139,92,246,0.12));
   border: 1px solid rgba(91,110,245,0.3);
@@ -929,7 +901,6 @@ select {
 }
 .tip.danger strong { color: var(--danger); }
 
-/* ============ CHART ============ */
 .chart-bars {
   display: flex;
   align-items: flex-end;
@@ -972,7 +943,6 @@ select {
   line-height: 1.3;
 }
 
-/* ============ MODAL ============ */
 .modal {
   display: none;
   position: fixed;
@@ -1031,7 +1001,6 @@ select {
   transform: rotate(90deg);
 }
 
-/* ============ TOAST ============ */
 .toast {
   position: fixed;
   bottom: 24px;
@@ -1061,7 +1030,6 @@ select {
 .toast.danger { border-color: var(--danger); }
 .toast.warning { border-color: var(--warning); }
 
-/* ============ EMPTY STATE ============ */
 .empty {
   text-align: center;
   padding: 40px 20px;
@@ -1077,7 +1045,6 @@ select {
   opacity: 0.4;
 }
 
-/* ============ LANGUAGE-AWARE FONTS ============ */
 body.lang-ur {
   font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Segoe UI', sans-serif;
 }
@@ -1085,7 +1052,6 @@ body.lang-ur {
 body.lang-ur .msg { line-height: 2; }
 body.lang-ur .brand-text h1 { font-size: 22px; }
 
-/* ============ SCROLLBAR ============ */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg2); }
 ::-webkit-scrollbar-thumb {
@@ -1095,7 +1061,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-/* ============ LINK BUTTON ============ */
 .link-btn {
   display: inline-flex;
   align-items: center;
@@ -1118,7 +1083,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
   transform: translateY(-1px);
 }
 
-/* ============ STAT ROW ============ */
 .stat-row {
   display: flex;
   justify-content: space-between;
@@ -1132,7 +1096,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
 .stat-row .label { font-size: 13px; color: var(--muted); }
 .stat-row .value { font-size: 14px; font-weight: 700; color: var(--text); }
 
-/* ============ FOUNDER PANEL ============ */
 .founder-panel {
   background: linear-gradient(135deg, rgba(139,92,246,0.14), rgba(236,72,153,0.12));
   border: 1px solid rgba(139,92,246,0.35);
@@ -1184,7 +1147,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
   flex-wrap: wrap;
 }
 
-/* ============ RESPONSIVE ============ */
 @media (max-width: 1024px) {
   .menu-toggle { display: flex; }
   .sidebar { transform: translateX(-100%); }
@@ -1218,17 +1180,11 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
 </head>
 <body class="lang-en">
 
-<!-- ============================================================
-     MOBILE MENU TOGGLE
-     ============================================================ -->
 <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">☰</button>
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
 <div class="app">
 
-  <!-- ============================================================
-       SIDEBAR
-       ============================================================ -->
   <aside class="sidebar" id="sidebar">
     <div class="brand">
       <div class="brand-logo">🎯</div>
@@ -1277,9 +1233,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
     </div>
   </aside>
 
-  <!-- ============================================================
-       MAIN WRAP
-       ============================================================ -->
   <div class="main-wrap">
 
     <div class="topbar">
@@ -1298,9 +1251,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
 
     <main>
 
-    <!-- ============================================================
-         SECTION 1: AI CHAT
-         ============================================================ -->
     <section class="section active" id="chat">
       <div class="tip">
         <strong id="chatTipTitle">🤖 Alpha AI</strong>
@@ -1338,9 +1288,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 2: SKILL QUIZ
-         ============================================================ -->
     <section class="section" id="quiz">
       <div class="tip">
         <strong id="quizTipTitle">📝 Skill Assessment Quiz</strong>
@@ -1358,9 +1305,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 3: DEMAND MAP
-         ============================================================ -->
     <section class="section" id="demand">
       <div class="tip">
         <strong>📊 2026 Market Demand</strong>
@@ -1425,9 +1369,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 4: FIND CLIENTS
-         ============================================================ -->
     <section class="section" id="clients">
       <div class="tip">
         <strong>🎯 Client Finder</strong>
@@ -1455,9 +1396,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 5: PROPOSALS
-         ============================================================ -->
     <section class="section" id="proposal">
       <div class="tip">
         <strong>📄 Proposal Generator</strong>
@@ -1506,9 +1444,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 6: ROADMAP
-         ============================================================ -->
     <section class="section" id="roadmap">
       <div class="tip">
         <strong>🗺️ Learning Roadmap</strong>
@@ -1525,9 +1460,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       <div id="roadmapContainer"></div>
     </section>
 
-    <!-- ============================================================
-         SECTION 7: EARNINGS CALCULATOR
-         ============================================================ -->
     <section class="section" id="earnings">
       <div class="tip">
         <strong>💰 Earnings Calculator</strong>
@@ -1552,9 +1484,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       <div id="earningsResult"></div>
     </section>
 
-    <!-- ============================================================
-         SECTION 8: RESOURCES
-         ============================================================ -->
     <section class="section" id="resources">
       <div class="tip">
         <strong>📚 Free Learning Resources</strong>
@@ -1577,9 +1506,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 9: DASHBOARD
-         ============================================================ -->
     <section class="section" id="dashboard">
       <div class="tip" id="dashTip">
         <strong>👋 Welcome to Alpha AI</strong>
@@ -1624,9 +1550,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 10: SETTINGS
-         ============================================================ -->
     <section class="section" id="settings">
       <div class="tip success">
         <strong>🔒 100% Private</strong>
@@ -1689,9 +1612,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
   </div>
 </div>
 
-<!-- ============================================================
-     DETAIL MODAL
-     ============================================================ -->
 <div class="modal" id="detailModal">
   <div class="modal-content">
     <div class="modal-header">
@@ -1702,9 +1622,6 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
   </div>
 </div>
 
-<!-- ============================================================
-     FOUNDER MODAL
-     ============================================================ -->
 <div class="modal" id="founderModal">
   <div class="modal-content" style="width:560px;">
     <div class="modal-header">
@@ -1737,22 +1654,20 @@ body.lang-ur .brand-text h1 { font-size: 22px; }
    ============================================================ */
 
 // ============================================================
-// 0. FOUNDER INFO (single source of truth)
+// 0. FOUNDER INFO
 // ============================================================
 const FOUNDER = {
   name: 'Waqar Ahmed',
   role: 'Founder',
   company: 'UniRecorder.online',
-  companyUrl: 'https://unirecorder.online',
-  bio: 'Waqar Ahmed is a Pakistani entrepreneur, developer and creator. He is the founder of UniRecorder.online — a modern browser-based screen recorder that lets you record screen, webcam and audio without any installation. Alpha AI is his next project, built to help Pakistani freelancers, students and home-based workers turn their skills into real clients and earnings.',
-  bioUr: 'وقار احمد ایک پاکستانی کاروباری، ڈویلپر اور کریئٹر ہیں۔ وہ UniRecorder.online کے بانی ہیں — ایک جدید آن لائن سکرین ریکارڈر۔ الفا اے آئی ان کا نیا پروجیکٹ ہے جو پاکستانی فری لانسرز، طلبہ اور گھر بیٹھے لوگوں کو ان کی اسکلز سے کلائنٹس اور کمائی تک لے جاتا ہے۔'
+  companyUrl: 'https://unirecorder.online'
 };
 
 // ============================================================
-// 1. STORAGE LAYER
+// 1. STORAGE LAYER — UNIQUE PREFIX (Alpha AI ka data alag save hoga)
 // ============================================================
 const DB = {
-  prefix: 'aa_',
+  prefix: 'alphaai_v1_',
   get(key, def) {
     try {
       const v = localStorage.getItem(this.prefix + key);
@@ -1913,9 +1828,6 @@ function applyTranslations() {
   updateTopbar();
 }
 
-// ============================================================
-// 4. UTILITIES
-// ============================================================
 function todayKey() {
   const d = new Date();
   return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
@@ -1955,9 +1867,6 @@ function closeSidebarMobile() {
   }
 }
 
-// ============================================================
-// 5. NAVIGATION (SIDEBAR)
-// ============================================================
 const TAB_META = {
   chat: { icon: '💬', title: 'AI Chat', sub: 'Baatchit karein apne AI assistant se' },
   quiz: { icon: '📝', title: 'Skill Quiz', sub: '5 sawalon mein best skill janein' },
@@ -1997,7 +1906,6 @@ document.querySelectorAll('.tab').forEach(tab => {
     if (sec) sec.classList.add('active');
     updateTopbar();
     closeSidebarMobile();
-
     if (tab.dataset.tab === 'dashboard') renderDashboard();
     if (tab.dataset.tab === 'demand') { renderDemandChart(); renderSkillsList(); }
     if (tab.dataset.tab === 'settings') renderSettings();
@@ -2006,9 +1914,6 @@ document.querySelectorAll('.tab').forEach(tab => {
   });
 });
 
-// ============================================================
-// 6. CHAT / AI ENGINE
-// ============================================================
 function addMessage(text, sender, save = true) {
   const win = document.getElementById('chatWindow');
   if (!win) return;
@@ -2067,7 +1972,6 @@ function sendMessage() {
 function quickAsk(text) {
   const input = document.getElementById('chatInput');
   if (!input) return;
-  // Switch to chat tab first if not there
   const chatTab = document.querySelector('.tab[data-tab="chat"]');
   if (chatTab && !chatTab.classList.contains('active')) chatTab.click();
   input.value = text;
@@ -2091,113 +1995,89 @@ function welcomeMessage() {
   }
 }
 
-// ---------------- AI REPLY ENGINE ----------------
 function getAIReply(text) {
   const lower = text.toLowerCase().trim();
   const userName = DB.get('userName', '');
 
-  // Save name
   const nameMatch = text.match(/(?:mera naam|my name is|main|i am)\s+([A-Z][a-z]+)/i);
   if (nameMatch) {
     DB.set('userName', nameMatch[1]);
     return `Achha ${nameMatch[1]}! Main yaad rakhta hoon. 😊\n\nAb batayein — aapko koi skill aati hai ya zero se start karna hai?\n\nYa kuch aur poochein — freelancing, clients, kamai, kuch bhi!`;
   }
 
-  // FOUNDER / CREATOR (highest priority)
   if (isFounderQuery(lower)) return getFounderReply();
 
-  // UNIRECORDER
   if (lower.includes('unirecorder') || lower.includes('uni recorder') || lower.includes('screen record')) {
     return getUniRecorderReply();
   }
 
-  // ABOUT ALPHA AI / THIS APP
   if (lower.includes('alpha ai') || lower.includes('alphaai') || (lower.includes('ye app') && lower.includes('kya')) || lower.includes('this app') || lower.includes('is app')) {
     return getAboutAppReply();
   }
 
-  // HELP
   if (lower.includes('help') || lower.includes('madad') || lower.includes('commands') || lower === '?' || lower.includes('kya kar sakta') || lower.includes('what can you do')) {
     return getHelpText();
   }
 
-  // GREETING
   if (/^(hi|hello|hey|salam|assalam|aoa|asalam|hlo|hii+)\b/i.test(lower) || lower.includes('assalam') || lower.includes('salam')) {
     return `Walaikum Assalam${userName ? ', ' + userName : ''}! 😊\n\nMain Alpha AI hoon. Aapki skills se clients tak ka safar asaan banaunga.\n\n**Kya karna chahenge?**\n• Skills seekhni hain? → "0 skills" likhein\n• Clients dhoondhne hain? → "clients" likhein\n• Demand dekhni hai? → "top skills" likhein\n• Founder jaanna hai? → "tumhe kis ne banaya" likhein\n\nYa kuch aur — kuch bhi poochein!`;
   }
 
-  // THANKS
   if (lower.includes('thank') || lower.includes('shukriya') || lower.includes('shukria') || lower.includes('thnx') || lower.includes('jazak')) {
     return `Koi baat nahi${userName ? ', ' + userName : ''}! 😊\n\nAgar aur kuch poochna ho to bata dein — main yahin hoon. Freelancing, skills, clients, kamai — kuch bhi!`;
   }
 
-  // HOW ARE YOU
   if (lower.includes('kaise ho') || lower.includes('how are you') || lower.includes('kaisa hai') || lower.includes('kya haal')) {
     return `Main bilkul theek hoon${userName ? ', ' + userName : ''}! 😊 Shukriya poochne ke liye.\n\nAap batayein — aap kis skill par kaam karna chahte hain? Ya kuch aur poochna hai?`;
   }
 
-  // ZERO SKILLS
   if (lower.includes('kuch nahi aata') || lower.includes('zero') || lower.includes('no skill') || lower.includes('fresher') || lower.includes('shuru') || lower.includes('nothing') || lower.includes('beginner') || lower.includes('start from scratch') || lower.includes('start karna')) {
     return getZeroSkillReply();
   }
 
-  // TOP SKILLS
   if (lower.includes('top skill') || lower.includes('best skill') || lower.includes('2026') || lower.includes('highest demand') || lower.includes('sab se zyada')) {
     return getTopSkillsReply();
   }
 
-  // CLIENTS
   if (lower.includes('client') || lower.includes('kaam kaha') || lower.includes('job kaha') || lower.includes('platform') || lower.includes('upwork') || lower.includes('fiverr') || lower.includes('freelancer')) {
     return getClientsReply();
   }
 
-  // EARNINGS
   if (lower.includes('kamai') || lower.includes('earning') || lower.includes('paisa') || lower.includes('salary') || lower.includes('income') || lower.includes('kitna') || lower.includes('money')) {
     return getEarningsReply();
   }
 
-  // PROPOSAL
   if (lower.includes('proposal') || lower.includes('cover letter') || lower.includes('bid')) {
     return `📄 **Proposal Generator** ke liye sidebar mein "Proposals" tab par jayein.\n\nWahan aap apna naam, skill, client ka naam daalein — main professional proposal bana dunga (5 platforms, 4 tones ke liye).\n\nYa seedha yahan likhein: "proposal banao [skill]"`;
   }
 
-  // ROADMAP
   if (lower.includes('roadmap') || lower.includes('kaise seekh') || lower.includes('how to learn') || lower.includes('seekhna') || lower.includes('sikhna')) {
     return `🗺️ **Learning Roadmap** ke liye sidebar mein "Roadmap" tab par jayein.\n\nWahan skill select karein — main step-by-step plan dunga (free resources ke saath).\n\nYa poochein: "[skill] kaise seekhein?" — jaise "SEO kaise seekhein"`;
   }
 
-  // SPECIFIC SKILL SEARCH
   const found = findSkillInText(text);
-  if (found) {
-    return getSkillDetailReply(found);
-  }
+  if (found) return getSkillDetailReply(found);
 
-  // PAKISTAN / LOCAL
   if (lower.includes('pakistan') || lower.includes('karachi') || lower.includes('lahore') || lower.includes('islamabad')) {
     return `🇵🇰 **Pakistan freelancing facts:**\n\n• Pakistan duniya ka **#5** top freelance nation hai\n• 1.5M+ Pakistani freelancers hain\n• Har saal **$400M+** foreign exchange aata hai freelancing se\n\n**Pakistan ke liye best skills:**\n• AI Video Editing (+329%)\n• AI Data Annotation (+154%)\n• Ecommerce Management (+130%)\n• Medical Virtual Assistant (+44%)\n\n**Free government programs:**\n• DigiSkills.pk\n• NAVTTC\n• PSEB (Rs 70,000 tak reimbursement)\n\nKis skill ke baare mein jaanna chahte hain? Naam likhein!`;
   }
 
-  // EDUCATION / STUDENT
   if (lower.includes('student') || lower.includes('talib') || lower.includes('study') || lower.includes('padhai') || lower.includes('college') || lower.includes('university')) {
     return `🎓 **Students ke liye best skills:**\n\n1. **AI Data Annotation** — 1-2 months, $10-25/hr\n2. **AI Content Creation** — 1-2 months, $15-40/hr\n3. **Virtual Assistant** — 1-2 months, $10-30/hr\n4. **Video Editing** — 2-4 months, $20-55/hr\n\n**Students ke liye tips:**\n• Din mein 2-3 ghante kaafi hain\n• Weekend par zyada kaam karein\n• Fiverr se start karein (easy hai)\n• Pehle 5 projects free/sasti rate par\n\nKaunsi skill interesting lagti hai? Naam likhein!`;
   }
 
-  // MOTIVATION / FEAR / NERVOUS
   if (lower.includes('dar') || lower.includes('fear') || lower.includes('nervous') || lower.includes('confidence') || lower.includes('himmat') || lower.includes('mushkil') || lower.includes('hard')) {
     return `💪 **Bilkul normal hai ye feeling!**\n\nHar successful freelancer ne yahi socha tha pehle:\n• "Mujhse nahi hoga"\n• "Mera English weak hai"\n• "Mere paas skills nahi"\n\n**Sach kya hai?**\n✅ Aaj kal clients result dekhte hain, English nahi\n✅ AI tools ne sab kuch asaan kar diya\n✅ 3-6 mahine mein serious kamai shuru ho sakti hai\n\n**Aaj ka pehla qadam:**\nEk skill chunein. Sirf ek. 30 min YouTube dekhein. Bas.\n\n**Kaunsi skill try karna chahenge?** Main roadmap bana dunga.`;
   }
 
-  // AGE / TIME
   if (lower.includes('umar') || lower.includes('age') || lower.includes('time nahi') || lower.includes('busy') || lower.includes('no time')) {
     return `⏰ **Age aur time dono excuses nahi hain!**\n\n**Sach:**\n• 15 saal ke bachay freelancing kar rahe hain\n• 60 saal ke log bhi successful hain\n• Din ke 2 ghante se bhi shuruaat ho sakti hai\n\n**Smart time plan (2 ghante):**\n• 45 min — seekhna (YouTube/course)\n• 45 min — practice\n• 30 min — proposals/portfolio\n\nConsistency > quantity. Roz 2 ghante > hafte mein 1 din 8 ghante.\n\nKaunsi skill chunna chahenge? Naam likhein!`;
   }
 
-  // WEATHER / RANDOM OFF-TOPIC — still respond helpfully
   if (lower.includes('mausam') || lower.includes('weather') || lower.includes('cricket') || lower.includes('match') || lower.includes('movie') || lower.includes('song')) {
     return `Hehe 😄 — Main freelancing AI hoon, mausam ya cricket ka live data mere paas nahi hai. Lekin ek baat kahoon:\n\nAgar aap **skills** seekhna chahte hain, **clients** dhoondhna chahte hain, ya **kamai** badhana chahte hain — to main aapka best friend hoon.\n\n**Ye try karein:**\n• "top skills 2026"\n• "clients kaha se milenge"\n• "mujhe kuch nahi aata"\n• "SEO kaise seekhein"\n\nKya poochna chahenge?`;
   }
 
-  // DEFAULT — never say "I don't understand"
   return getSmartFallback(text);
 }
 
@@ -2214,7 +2094,7 @@ function isFounderQuery(lower) {
 
 function getFounderReply() {
   if (currentLang === 'ur') {
-    return `👤 **الفا اے آئی کے بانی (Founder)**\n\n**نام:** وقار احمد (Waqar Ahmed)\n**عہدہ:** بانی — UniRecorder.online\n\n**وقار احمد کون ہیں؟**\nوہ ایک پاکستانی کاروباری، ڈویلپر اور کریئٹر ہیں۔ وہ **UniRecorder.online** کے بانی ہیں — ایک جدید براؤزر بیسڈ سکرین ریکارڈر جہاں آپ بغیر انسٹالیشن اسکرین، ویب کیم اور آڈیو ریکارڈ کر سکتے ہیں۔\n\n**الفا اے آئی ان کا نیا پروجیکٹ ہے** — جو پاکستانی فری لانسرز، طلبہ اور گھر بیٹھے لوگوں کو ان کی اسکلز سے کلائنٹس اور کمائی تک لے جاتا ہے۔\n\n🔗 **ویب سائٹ:** [unirecorder.online](https://unirecorder.online)\n\nاور کچھ جاننا چاہیں گے؟`;
+    return `👤 **الفا اے آئی کے بانی (Founder)**\n\n**نام:** وقار احمد (Waqar Ahmed)\n**عہدہ:** بانی — UniRecorder.online\n\n**وقار احمد کون ہیں؟**\nوہ ایک پاکستانی کاروباری، ڈویلپر اور کریئٹر ہیں۔ وہ **UniRecorder.online** کے بانی ہیں — ایک جدید براؤزر بیسڈ سکرین ریکارڈر۔\n\n**الفا اے آئی ان کا نیا پروجیکٹ ہے** — جو پاکستانی فری لانسرز، طلبہ اور گھر بیٹھے لوگوں کو ان کی اسکلز سے کلائنٹس اور کمائی تک لے جاتا ہے۔\n\n🔗 **ویب سائٹ:** [unirecorder.online](https://unirecorder.online)\n\nاور کچھ جاننا چاہیں گے؟`;
   }
   return `👤 **Alpha AI ke Founder**\n\n**Naam:** Waqar Ahmed\n**Role:** Founder — UniRecorder.online\n\n**Waqar Ahmed kon hain?**\nWoh ek Pakistani entrepreneur, developer aur creator hain. Woh **UniRecorder.online** ke founder hain — ek modern browser-based screen recorder jahan aap bina installation ke screen, webcam aur audio record kar sakte hain.\n\n**Alpha AI unka next project hai** — jo Pakistani freelancers, students aur ghar baithe logon ko unki skills se clients aur kamai tak le jaata hai. 100% free, 100% offline, 100% private.\n\n🔗 **Website:** [unirecorder.online](https://unirecorder.online)\n\nAur kuch jaanna chahenge? Main aur detail bhi bata sakta hoon.`;
 }
@@ -2420,15 +2300,12 @@ function findSkillInText(text) {
     'translation': ['translation', 'translate', 'translator']
   };
   for (const [id, kws] of Object.entries(keywords)) {
-    if (kws.some(k => lower.includes(k))) {
-      return SKILLS.find(s => s.id === id);
-    }
+    if (kws.some(k => lower.includes(k))) return SKILLS.find(s => s.id === id);
   }
   return null;
 }
 
 function getSmartFallback(text) {
-  // NEVER say "I don't understand". Always give value.
   const tips = [
     `Main aapki baat samajh gaya${DB.get('userName') ? ', ' + DB.get('userName') : ''}. 🤔\n\nChalein, main aapki madad karta hoon. Freelancing mein **sab se pehla qadam** yahi hota hai: **ek skill chunna**.\n\n**Aap ye try karein:**\n• "top skills 2026" — demand dekhne ke liye\n• "mujhe kuch nahi aata" — zero se shuruaat ke liye\n• "clients kaha se milenge" — client platforms ke liye\n• "SEO kaise seekhein" — kisi skill ka roadmap\n\nYa seedha apni baat likhein — main zaroor help karunga! 💪`,
     `Achha sawal hai! 🤔\n\nMain freelancing, skills, clients, kamai aur is app ke baare mein expert hoon. Aur topics bhi handle kar sakta hoon.\n\n**Aap kya chahte hain?**\n• Skill seekhni hai → "0 skills" ya "top skills 2026"\n• Clients chahiye → "clients"\n• Kamai jaanni hai → "earnings"\n• Founder jaanna hai → "tumhe kis ne banaya"\n• App ke baare mein → "alpha ai kya hai"\n\nKuch bhi likhein — main aapko aage badhne mein madad karunga! 🎯`,
@@ -2437,9 +2314,6 @@ function getSmartFallback(text) {
   return tips[Math.floor(Math.random() * tips.length)];
 }
 
-// ============================================================
-// 7. DEMAND CHART
-// ============================================================
 function renderDemandChart() {
   const el = document.getElementById('demandChart');
   if (!el) return;
@@ -2462,9 +2336,6 @@ function renderDemandChart() {
   }).join('');
 }
 
-// ============================================================
-// 8. SKILLS LIST
-// ============================================================
 function renderSkillsList() {
   const el = document.getElementById('skillsListContainer');
   if (!el) return;
@@ -2556,9 +2427,6 @@ function showSkillModal(id) {
   openModal('detailModal');
 }
 
-// ============================================================
-// 9. DEMAND SEARCH
-// ============================================================
 function searchDemand() {
   const q = document.getElementById('demandSearch').value.trim().toLowerCase();
   const el = document.getElementById('demandSearchResults');
@@ -2583,9 +2451,6 @@ function searchDemand() {
   `).join('');
 }
 
-// ============================================================
-// 10. CLIENT FINDER
-// ============================================================
 function populateClientSkillSelect() {
   const sel = document.getElementById('clientSkillSelect');
   if (!sel) return;
@@ -2686,9 +2551,6 @@ function renderClientStrategy() {
   `).join('');
 }
 
-// ============================================================
-// 11. PROPOSAL GENERATOR
-// ============================================================
 function generateProposal() {
   const yourName = document.getElementById('propYourName').value.trim() || 'Your Name';
   const skill = document.getElementById('propSkill').value.trim() || 'your skill';
@@ -2751,9 +2613,6 @@ function copyProposal() {
     .catch(() => toast('Copy nahi hua, manually select karein.', 'warning'));
 }
 
-// ============================================================
-// 12. ROADMAP
-// ============================================================
 function populateRoadmapSelect() {
   const sel = document.getElementById('roadmapSkillSelect');
   if (!sel) return;
@@ -2847,9 +2706,6 @@ function generateRoadmap(s) {
   return html;
 }
 
-// ============================================================
-// 13. EARNINGS CALCULATOR
-// ============================================================
 function populateEarnSelect() {
   const sel = document.getElementById('earnSkill');
   if (!sel) return;
@@ -2902,9 +2758,6 @@ function calculateEarnings() {
   `;
 }
 
-// ============================================================
-// 14. RESOURCES
-// ============================================================
 function renderResources() {
   const pk = document.getElementById('pkResources');
   if (pk) {
@@ -2968,9 +2821,6 @@ function renderResources() {
   }
 }
 
-// ============================================================
-// 15. QUIZ
-// ============================================================
 const QUIZ_QUESTIONS = [
   { q: 'Aap rozana kitne ghante de sakte hain seekhne aur kaam karne ke liye?', options: [
     { text: '2 ghante (thora time)', value: 'low' },
@@ -3076,9 +2926,6 @@ function resetQuiz() {
   renderQuiz();
 }
 
-// ============================================================
-// 16. DASHBOARD
-// ============================================================
 function renderDashboard() {
   const profile = DB.get('profile', null);
   const proposals = DB.get('proposals', []);
@@ -3096,7 +2943,6 @@ function renderDashboard() {
     if (el3) el3.textContent = '—';
   }
   if (el4) el4.textContent = proposals.length;
-
   const qs = document.getElementById('quickStartGuide');
   if (qs) {
     qs.innerHTML = `
@@ -3121,9 +2967,6 @@ function renderDashboard() {
   }
 }
 
-// ============================================================
-// 17. SETTINGS
-// ============================================================
 function renderSettings() {
   let size = 0;
   DB.allKeys().forEach(k => {
@@ -3173,9 +3016,6 @@ function clearAllData() {
   setTimeout(() => location.reload(), 600);
 }
 
-// ============================================================
-// 18. INIT
-// ============================================================
 function init() {
   const hist = DB.get('chatHistory', []);
   if (hist.length > 0) {
@@ -3183,11 +3023,9 @@ function init() {
   } else {
     addMessage(welcomeMessage(), 'bot', false);
   }
-
   populateClientSkillSelect();
   populateRoadmapSelect();
   populateEarnSelect();
-
   renderDemandChart();
   renderSkillsList();
   renderPlatforms();
@@ -3207,7 +3045,6 @@ function init() {
     m.addEventListener('click', e => { if (e.target === m) m.classList.remove('active'); });
   });
 
-  // Keyboard: ESC closes sidebar / modals
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closeSidebarMobile();
@@ -3218,7 +3055,6 @@ function init() {
   setTimeout(() => toast('Welcome to Alpha AI! 🎯', 'success'), 500);
 }
 
-// Global bindings
 window.setLang = setLang;
 window.sendMessage = sendMessage;
 window.quickAsk = quickAsk;
